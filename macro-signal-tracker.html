@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Macro Signal Tracker</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d0f12;--bg2:#13161b;--bg3:#1a1e25;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);--text:#e8eaf0;--text2:#8a8f9e;--text3:#555a68;--red:#ff4d4d;--red-bg:rgba(255,77,77,0.1);--amber:#f5a623;--amber-bg:rgba(245,166,35,0.1);--green:#3ecf8e;--green-bg:rgba(62,207,142,0.1);--blue:#4d9fff;--blue-bg:rgba(77,159,255,0.1);--mono:'IBM Plex Mono',monospace;--sans:'IBM Plex Sans KR',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:14px;line-height:1.6;min-height:100vh}
+.header{border-bottom:1px solid var(--border);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:var(--bg);z-index:100;gap:12px;flex-wrap:wrap}
+.logo{font-family:var(--mono);font-size:13px;letter-spacing:.08em;color:var(--text2);display:flex;align-items:center;gap:10px}
+.logo-dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.header-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.date-badge{font-family:var(--mono);font-size:11px;color:var(--text3);background:var(--bg3);border:1px solid var(--border);padding:4px 10px;border-radius:4px}
+.hbtn{background:transparent;border:1px solid var(--border2);color:var(--text2);font-size:12px;font-family:var(--sans);padding:5px 12px;border-radius:4px;cursor:pointer;transition:all .15s}
+.hbtn:hover{border-color:var(--blue);color:var(--blue)}
+.save-status{font-family:var(--mono);font-size:11px;color:var(--text3)}
+.save-status.saving{color:var(--amber)}.save-status.saved{color:var(--green)}.save-status.error{color:var(--red)}
+.summary{display:flex;gap:1px;background:var(--border);border-bottom:1px solid var(--border)}
+.sc{flex:1;background:var(--bg);padding:14px 20px}
+.sc-label{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--text3);text-transform:uppercase;margin-bottom:4px}
+.sc-val{font-family:var(--mono);font-size:28px;font-weight:500}
+.sc-val.r{color:var(--red)}.sc-val.a{color:var(--amber)}.sc-val.g{color:var(--green)}.sc-val.n{color:var(--text2)}
+.sc-sub{font-size:11px;color:var(--text3);margin-top:2px}
+.toolbar{padding:14px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--border);flex-wrap:wrap}
+.fbtn{background:transparent;border:1px solid var(--border);color:var(--text3);font-size:12px;font-family:var(--mono);padding:5px 14px;border-radius:3px;cursor:pointer;transition:all .15s;letter-spacing:.04em}
+.fbtn:hover{border-color:var(--border2);color:var(--text2)}
+.fbtn.active{background:var(--bg3);border-color:var(--border2);color:var(--text)}
+.fbtn.at{border-color:var(--red);color:var(--red);background:var(--red-bg)}
+.fbtn.aw{border-color:var(--amber);color:var(--amber);background:var(--amber-bg)}
+.fbtn.an{border-color:var(--green);color:var(--green);background:var(--green-bg)}
+.toolbar-right{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--text3);display:flex;align-items:center;gap:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1px;background:var(--border)}
+.card{background:var(--bg2);padding:18px 20px;transition:background .15s}
+.card:hover{background:var(--bg3)}
+.card.triggered{border-top:2px solid var(--red)}.card.watch{border-top:2px solid var(--amber)}.card.normal{border-top:2px solid var(--green)}
+.card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;gap:8px}
+.card-title{font-size:13px;font-weight:500;line-height:1.4}
+.card-sub{font-family:var(--mono);font-size:10px;color:var(--text3);margin-top:2px;letter-spacing:.04em}
+.sbadge{font-family:var(--mono);font-size:9px;letter-spacing:.08em;padding:3px 7px;border-radius:2px;white-space:nowrap;flex-shrink:0}
+.sbadge.triggered{background:var(--red-bg);color:var(--red);border:1px solid rgba(255,77,77,.25)}
+.sbadge.watch{background:var(--amber-bg);color:var(--amber);border:1px solid rgba(245,166,35,.25)}
+.sbadge.normal{background:var(--green-bg);color:var(--green);border:1px solid rgba(62,207,142,.25)}
+.mbadge{font-family:var(--mono);font-size:9px;padding:1px 6px;border-radius:2px;margin-left:6px;vertical-align:middle}
+.mbadge.new{background:var(--blue-bg);color:var(--blue);border:1px solid rgba(77,159,255,.3)}
+.mbadge.upd{background:var(--amber-bg);color:var(--amber);border:1px solid rgba(245,166,35,.3)}
+.card-value{font-family:var(--mono);font-size:20px;font-weight:500;margin-bottom:2px}
+.card-ctx{font-size:11px;color:var(--text3);margin-bottom:12px;font-family:var(--mono)}
+.div{height:1px;background:var(--border);margin:12px 0}
+.fl{font-family:var(--mono);font-size:9px;letter-spacing:.1em;color:var(--text3);text-transform:uppercase;margin-bottom:5px}
+.ft{font-size:12px;color:var(--text2);line-height:1.6}
+.tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:10px}
+.tag{font-family:var(--mono);font-size:9px;padding:2px 6px;border-radius:2px;letter-spacing:.04em}
+.tag.r{background:var(--red-bg);color:var(--red)}.tag.g{background:var(--green-bg);color:var(--green)}.tag.n{background:var(--bg3);color:var(--text3);border:1px solid var(--border)}
+.note-area{width:100%;background:var(--bg);border:1px solid var(--border);color:var(--text2);font-size:12px;font-family:var(--sans);padding:8px 10px;border-radius:3px;resize:none;margin-top:4px;transition:border .15s}
+.note-area:focus{outline:none;border-color:var(--border2)}
+.note-area::placeholder{color:var(--text3)}
+.card-footer{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+.card-date{font-family:var(--mono);font-size:10px;color:var(--text3)}
+.card-upd{font-family:var(--mono);font-size:10px;color:var(--amber)}
+.loading{display:flex;align-items:center;justify-content:center;padding:60px 24px;gap:12px;color:var(--text3);font-family:var(--mono);font-size:13px;grid-column:1/-1}
+.spinner{width:16px;height:16px;border:2px solid var(--border2);border-top-color:var(--green);border-radius:50%;animation:spin .7s linear infinite}
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:200;align-items:center;justify-content:center}
+.modal-overlay.open{display:flex}
+.modal{background:var(--bg2);border:1px solid var(--border2);border-radius:6px;padding:28px;width:500px;max-width:95vw;max-height:90vh;overflow-y:auto}
+.modal-title{font-family:var(--mono);font-size:14px;color:var(--text);margin-bottom:6px}
+.modal-desc{font-size:12px;color:var(--text3);margin-bottom:20px;line-height:1.7}
+.modal-desc a{color:var(--blue);text-decoration:none}
+.msec{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--text3);text-transform:uppercase;margin:20px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.fg{margin-bottom:14px}
+.fg label{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--text2);text-transform:uppercase;margin-bottom:6px}
+.fg input{width:100%;background:var(--bg3);border:1px solid var(--border2);color:var(--text);font-family:var(--mono);font-size:12px;padding:9px 12px;border-radius:3px}
+.fg input:focus{outline:none;border-color:var(--blue)}
+.fg input::placeholder{color:var(--text3)}
+.mnote{font-size:11px;color:var(--text3);background:var(--bg3);border-left:2px solid var(--border2);padding:8px 12px;border-radius:0 3px 3px 0;margin-bottom:16px;line-height:1.6}
+.mnote code{color:var(--green);font-family:var(--mono)}
+.wflow{background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:12px 14px;margin-bottom:14px}
+.wstep{display:flex;gap:10px;align-items:flex-start;margin-bottom:8px;font-size:12px;color:var(--text2)}
+.wstep:last-child{margin-bottom:0}
+.wnum{font-family:var(--mono);font-size:10px;color:var(--green);background:var(--green-bg);border:1px solid rgba(62,207,142,.2);padding:1px 6px;border-radius:2px;flex-shrink:0;margin-top:2px}
+.modal-btns{display:flex;gap:8px;justify-content:flex-end;margin-top:20px}
+.btn{font-family:var(--sans);font-size:12px;padding:7px 16px;border-radius:3px;cursor:pointer;transition:all .15s}
+.btn-cancel{background:transparent;border:1px solid var(--border2);color:var(--text2)}
+.btn-cancel:hover{color:var(--text)}
+.btn-save{background:var(--blue);border:1px solid var(--blue);color:#fff}
+.btn-save:hover{opacity:.85}
+.btn-full{width:100%;background:transparent;border:1px solid var(--green);color:var(--green);font-family:var(--mono);font-size:11px;padding:7px 12px;border-radius:3px;cursor:pointer;transition:all .15s;margin-top:6px}
+.btn-full:hover{background:var(--green-bg)}
+.mmsg{font-family:var(--mono);font-size:11px;margin-top:10px;padding:7px 10px;border-radius:3px}
+.mmsg.error{background:var(--red-bg);color:var(--red)}.mmsg.success{background:var(--green-bg);color:var(--green)}.mmsg.info{background:var(--blue-bg);color:var(--blue)}
+.footer{border-top:1px solid var(--border);padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.footer-l,.footer-r{font-family:var(--mono);font-size:10px;color:var(--text3)}
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="logo"><div class="logo-dot"></div>MACRO_SIGNAL_TRACKER</div>
+  <div class="header-right">
+    <span class="save-status" id="saveStatus">——</span>
+    <span class="date-badge" id="todayDate"></span>
+    <button class="hbtn" onclick="reloadData()">↻ 새로고침</button>
+    <button class="hbtn" onclick="openModal()">⚙ 설정</button>
+  </div>
+</div>
+<div class="summary">
+  <div class="sc"><div class="sc-label">▲ triggered</div><div class="sc-val r" id="cnt-t">—</div><div class="sc-sub">즉시 대응</div></div>
+  <div class="sc"><div class="sc-label">◎ watch</div><div class="sc-val a" id="cnt-w">—</div><div class="sc-sub">임계값 접근</div></div>
+  <div class="sc"><div class="sc-label">○ normal</div><div class="sc-val g" id="cnt-n">—</div><div class="sc-sub">정상 범위</div></div>
+  <div class="sc"><div class="sc-label">∑ total</div><div class="sc-val n" id="cnt-total">—</div><div class="sc-sub">추적 지표</div></div>
+</div>
+<div class="toolbar">
+  <button class="fbtn active" id="fb-all" onclick="setFilter('all')">ALL</button>
+  <button class="fbtn" id="fb-triggered" onclick="setFilter('triggered')">TRIGGERED</button>
+  <button class="fbtn" id="fb-watch" onclick="setFilter('watch')">WATCH</button>
+  <button class="fbtn" id="fb-normal" onclick="setFilter('normal')">NORMAL</button>
+  <div class="toolbar-right">
+    <span id="lastUpdated"></span>
+    <span id="filterCount"></span>
+  </div>
+</div>
+<div class="grid" id="grid"><div class="loading"><div class="spinner"></div>⚙ 설정에서 GitHub Gist를 연결하세요</div></div>
+<div class="footer">
+  <div class="footer-l">Daily Shot 기반 · 매주 업데이트</div>
+  <div class="footer-r" id="gistLink"></div>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <div class="modal-title">// 설정 & 매주 업데이트 방법</div>
+    <div class="msec">매주 업데이트 워크플로우</div>
+    <div class="wflow">
+      <div class="wstep"><span class="wnum">01</span><span>매주 Daily Shot PDF를 Claude에게 공유</span></div>
+      <div class="wstep"><span class="wnum">02</span><span>Claude가 변경 지표 JSON 추출 → 복사</span></div>
+      <div class="wstep"><span class="wnum">03</span><span>Gist의 <code style="color:var(--green);font-family:var(--mono)">macro_indicators.json</code> 파일에 붙여넣기</span></div>
+      <div class="wstep"><span class="wnum">04</span><span>↻ 새로고침 클릭 → 대시보드 자동 반영</span></div>
+    </div>
+    <div class="mnote">
+      NEW · UPDATED 뱃지가 자동으로 표시됩니다.<br>
+      메모(<code>macro_tracker_notes.json</code>)는 별도 저장되어 업데이트해도 유지됩니다.
+    </div>
+    <div class="msec">GitHub Gist 연동</div>
+    <div class="modal-desc">
+      <a href="https://github.com/settings/tokens/new?scopes=gist" target="_blank">GitHub → Settings → Tokens</a>에서 <code style="color:var(--green);font-family:var(--mono)">gist</code> 권한 토큰을 발급하세요.
+    </div>
+    <div class="fg">
+      <label>Personal Access Token (gist scope)</label>
+      <input type="password" id="inputToken" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx"/>
+    </div>
+    <div class="fg">
+      <label>Gist ID <span style="color:var(--text3)">(처음이면 아래 버튼으로 생성)</span></label>
+      <input type="text" id="inputGistId" placeholder="a1b2c3d4e5f6..."/>
+      <button class="btn-full" onclick="createGist()">+ 새 Gist 자동 생성 (indicators + notes 파일 포함)</button>
+    </div>
+    <div id="modalMsg"></div>
+    <div class="modal-btns">
+      <button class="btn btn-cancel" onclick="closeModal()">취소</button>
+      <button class="btn btn-save" onclick="saveSettings()">저장 &amp; 연동</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const NOTES_FILE='macro_tracker_notes.json';
+const IND_FILE='macro_indicators.json';
+const DEFAULT=[
+  {id:'tips-30y',title:'30년 TIPS 실질금리',sub:'US 30Y Inflation-Protected',status:'triggered',val:'~3.0%',ctx:'2008 GFC 이후 최고 수준',threshold:'3% 돌파 — 2008 GFC 당시 동일 수준',history:'2008년 GFC 직전 기록. 실질금리 3%+는 무위험 실질수익률이 주식 ERP를 잠식. 성장주 밸류에이션 직접 압박. 장기채 상대 매력 상승.',tags:['growth stocks hit(r)','bonds attractive(g)','equity multiple compression(r)'],date:'2026-03-30',isNew:false,isChanged:false},
+  {id:'oil-yoy',title:'유가 YoY 상승률',sub:'Brent $116 · WTI $101',status:'watch',val:'Brent +60%+ YoY',ctx:'이란 분쟁 2개월째 · 100% 임박 모니터링',threshold:'YoY +100% 돌파 시 역대 리세션 동행 조건',history:'1970년대~2008년까지 유가 YoY 100%+ 상승은 모든 미국 리세션과 동행. 현재는 이란 분쟁발 공급 충격. 원인 구조가 달라 100% 도달 시 파급 경로 다를 수 있음.',tags:['recession risk if 100%(r)','energy sector outperform(g)','consumer purchasing hit(r)'],date:'2026-03-30',isNew:false,isChanged:false},
+  {id:'michigan',title:'미시간 소비자심리지수',sub:'University of Michigan',status:'triggered',val:'53.3',ctx:'추정치 54 하회 · 기대 51.7',threshold:'55 이하 지속 — 역대 리세션 선행 구간',history:'1980, 1990, 2008, 2020 리세션 모두 50대 초반 선행. 단 실제 카드 지출은 견조 — sentiment-spending 괴리 좁혀지는 시점이 리세션 확인 핵심.',tags:['recession leading indicator(r)','card spending still solid(g)','consumer disc risk(r)'],date:'2026-03-30',isNew:false,isChanged:false},
+  {id:'infl-1y',title:'1년 인플레이션 기대',sub:'Michigan Survey + CPI Fixings',status:'triggered',val:'3.8%',ctx:'3.4%에서 급등 · CPI 픽싱 동반 상승',threshold:'3.5% 이상 + 상향 추세 지속',history:'단기 기대 급등 → Fed 금리인하 기대 후퇴 → 채권 수익률 상승 → 주식 멀티플 압박. 오일 쇼크의 임금 2차 전이 여부가 관건.',tags:['fed pivot delay(r)','bond yields up(r)','rate-sensitive sectors down(r)'],date:'2026-03-30',isNew:false,isChanged:false},
+  {id:'infl-diverge',title:'장단기 인플레 기대 괴리',sub:'Short ↑ vs Long-term ↓',status:'triggered',val:'1yr 3.8% / 5-10yr 3.2%',ctx:'장기 breakeven 1년 최저 · 단기 급등',threshold:'단기 급등 + 장기 동시 하락 — 스태그플레이션 구조',history:'스태그플레이션의 전형 패턴. 시장이 단기 물가 충격은 인정하되 장기 성장 둔화를 동시 반영. 1970년대 오일쇼크 + 경기침체 국면과 유사.',tags:['stagflation signal(r)','TIPS vs nominals(n)','fed dilemma(r)'],date:'2026-03-30',isNew:false,isChanged:false},
+  {id:'sp500-streak',title:'S&P 500 연속 주간 하락',sub:'Consecutive Weekly Losses',status:'triggered',val:'5주 연속',ctx:'2022년 5월 이후 최장 · RSI 과매도',threshold:'5주+ 연속 하락 — 기술적 극단 구간',history:'5주+ 연속 하락 후 단기 기술적 반등 확률 높음. 단 구조적 약세장 초입이면 반등 후 추가 하락. 2008에는 RSI 과매도 이후에도 수개월 추가 하락.',tags:['short-term bounce possible(g)','structural bear risk(r)','Nasdaq correction(r)'],date:'2026-03-30',isNew:false,isChanged:false},
+  {id:'vix',title:'VIX 공포지수',sub:'CBOE Volatility Index',status:'triggered',val:'31.05',ctx:'+3.6pt · 30선 상향 돌파',threshold:'30 돌파(공포 극단) · 40+(시스템 리스크)',history:'VIX 30+ = 공포 극단, 역발상 매수 신호로 작용 경향. VIX 40+ = 시스템 리스크 수준(2008 GFC, 2020 코로나). 2008 리먼 때 30→80 순서.',tags:['contrarian buy zone(g)','40+ = systemic risk watch(r)','ETF hedge demand high(n)'],date:'2026-03-30',isNew:false,isChanged:false},
+  {id:'hf-leverage',title:'헤지펀드 넷 레버리지',sub:'GS Prime Book Net L/S',status:'triggered',val:'Liberation Day 이후 최대 감소',ctx:'산업재 월간 매도 역대 최대 · -3 SD',threshold:'넷 레버리지 주간 감소 역대급 — 항복 신호',history:'극단적 디레버리징 = 강제 매도 완료 후 수급 진공 → 단기 바닥 형성 패턴. 2008에는 항복 신호 이후에도 수개월 추가 하락 지속.',tags:['capitulation signal(g)','forced selling complete(n)','industrials record selling(r)'],date:'2026-03-30',isNew:false,isChanged:false},
+  {id:'lt-bond',title:'장기채 펀드 유출',sub:'6Y+ Duration Bond Funds',status:'triggered',val:'역대 2위 규모 유출',ctx:'BofA 기준 · TIPS 실질금리 최고와 동시',threshold:'역대 최대 유출 수준 진입',history:'극단적 유출은 장기금리 정점 부근 + 공포 극단에서 발생. 2008에는 유출 후 국채 랠리. 현재는 인플레 환경으로 국채 안전자산 기능 약화됐을 가능성.',tags:['rates may peak(g)','or structural yield rise(r)','flight from duration(n)'],date:'2026-03-30',isNew:false,isChanged:false},
+  {id:'jgb-30y',title:'일본 JGB 30년 금리',sub:'Japan Government Bond',status:'triggered',val:'3.69% (+7.5bp)',ctx:'2003년 이후 최대 월간 상승 궤도',threshold:'월간 +20bp+(2003년 VaR 쇼크 수준)',history:'일본 장기금리 상승 = 엔 캐리 트레이드 청산 위험 → 글로벌 유동성 축소. 2008 GFC 때 엔 캐리 대규모 청산이 위기 증폭. 일본 당국 결정적 조치 경고 발령 중.',tags:['carry trade unwind risk(r)','global liquidity tightening(r)','JPY strengthen watch(n)'],date:'2026-03-30',isNew:false,isChanged:false},
+  {id:'usdkrw',title:'원/달러 환율',sub:'USD/KRW',status:'triggered',val:'1,519원 (+0.72%)',ctx:'2009년 3월 이후 최고 · KOSPI 50일선 하회',threshold:'1,500 돌파 — GFC 직후 수준 복귀',history:'GFC 때 원/달러 1,570원 돌파. 현재 1,519원 근접. 원화 약세 → 수출 수혜 vs 수입 물가 상승 + 외국인 자금 이탈 가속.',tags:['exporters FX benefit(g)','import inflation(r)','foreign outflow risk(r)'],date:'2026-03-30',isNew:false,isChanged:false},
+  {id:'energy-streak',title:'에너지 섹터 연속 상승',sub:'S&P 500 Energy',status:'watch',val:'14주 연속 (사상 최장)',ctx:'올해 25회 신고가 · Exxon PER > Nvidia',threshold:'14주 이상 — 극단적 모멘텀 과열 구간',history:'모멘텀 극단 후 섹터 로테이션·차익실현 발생 경향. 단 유가 공급 충격 지속 시 추가 상승 가능. 2008에는 상반기 에너지 급등 후 하반기 폭락.',tags:['overbought rotation risk(r)','if war persists upside(g)','Exxon PER > Nvidia(n)'],date:'2026-03-30',isNew:false,isChanged:false}
+];
+let indicators=[],notes={},curFilter='all',saveTimer=null;
+const getToken=()=>localStorage.getItem('gist_token')||'';
+const getGistId=()=>localStorage.getItem('gist_id')||'';
+const setSS=(cls,txt)=>{const e=document.getElementById('saveStatus');e.className='save-status '+cls;e.textContent=txt;};
+async function reloadData(){setSS('saving','불러오는 중...');await loadFromGist();}
+async function loadFromGist(){
+  const token=getToken(),gistId=getGistId();
+  if(!token||!gistId){indicators=DEFAULT;renderGrid();setSS('','——');return;}
+  try{
+    const res=await fetch(`https://api.github.com/gists/${gistId}`,{headers:{'Authorization':`token ${token}`}});
+    if(res.ok){
+      const data=await res.json();
+      const iFile=data.files[IND_FILE],nFile=data.files[NOTES_FILE];
+      try{indicators=iFile?JSON.parse(iFile.content):DEFAULT;}catch{indicators=DEFAULT;}
+      try{notes=nFile?JSON.parse(nFile.content):{};}catch{notes={};}
+      const upd=data.updated_at?new Date(data.updated_at).toLocaleDateString('ko-KR'):'';
+      document.getElementById('lastUpdated').textContent=upd?`업데이트: ${upd}`:'';
+      document.getElementById('gistLink').innerHTML=`<a href="https://gist.github.com/${gistId}" target="_blank" style="color:var(--blue);text-decoration:none">Gist 편집 →</a>`;
+      setSS('saved','✓ 연동됨');renderGrid();
+    }else{setSS('error','불러오기 실패');indicators=DEFAULT;renderGrid();}
+  }catch{setSS('error','네트워크 오류');indicators=DEFAULT;renderGrid();}
+}
+function setFilter(f){
+  curFilter=f;
+  document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('active','at','aw','an'));
+  const el=document.getElementById('fb-'+f);
+  el.classList.add('active');
+  if(f==='triggered')el.classList.add('at');
+  else if(f==='watch')el.classList.add('aw');
+  else if(f==='normal')el.classList.add('an');
+  renderGrid();
+}
+function renderGrid(){
+  const list=curFilter==='all'?indicators:indicators.filter(i=>i.status===curFilter);
+  const labels={triggered:'TRIGGERED',watch:'WATCH',normal:'NORMAL'};
+  document.getElementById('grid').innerHTML=list.map(ind=>{
+    const tags=(ind.tags||[]).map(t=>{const m=t.match(/^(.+)\(([rgn])\)$/);return m?`<span class="tag ${m[2]}">${m[1].trim()}</span>`:''}).join('');
+    const nv=(notes[ind.id]||'').replace(/"/g,'&quot;');
+    const nb=ind.isNew?'<span class="mbadge new">NEW</span>':'';
+    const ub=ind.isChanged?'<span class="mbadge upd">UPDATED</span>':'';
+    return `<div class="card ${ind.status}">
+      <div class="card-header"><div><div class="card-title">${ind.title}${nb}${ub}</div><div class="card-sub">${ind.sub||''}</div></div><span class="sbadge ${ind.status}">${labels[ind.status]||ind.status}</span></div>
+      <div class="card-value">${ind.val}</div><div class="card-ctx">${ind.ctx||''}</div>
+      <div class="div"></div><div class="fl">시그널 조건</div><div class="ft">${ind.threshold}</div>
+      <div class="div"></div><div class="fl">역사적 사례 & 시장 영향</div><div class="ft">${ind.history}</div>
+      <div class="tags">${tags}</div>
+      <div class="div"></div><div class="fl">내 메모</div>
+      <textarea class="note-area" rows="2" placeholder="추가 관찰, 투자 아이디어..." onchange="noteChanged('${ind.id}',this.value)">${nv}</textarea>
+      <div class="card-footer"><span class="card-date">포착: ${ind.date||''}</span>${ind.updatedDate?`<span class="card-upd">↑ ${ind.updatedDate}</span>`:''}</div>
+    </div>`;
+  }).join('')||'<div class="loading">해당 상태의 지표가 없습니다</div>';
+  document.getElementById('cnt-t').textContent=indicators.filter(i=>i.status==='triggered').length;
+  document.getElementById('cnt-w').textContent=indicators.filter(i=>i.status==='watch').length;
+  document.getElementById('cnt-n').textContent=indicators.filter(i=>i.status==='normal').length;
+  document.getElementById('cnt-total').textContent=indicators.length;
+  document.getElementById('filterCount').textContent=`${list.length} indicators`;
+}
+function noteChanged(id,val){notes[id]=val;setSS('saving','저장 중...');clearTimeout(saveTimer);saveTimer=setTimeout(saveNotes,1500);}
+async function saveNotes(){
+  const token=getToken(),gistId=getGistId();
+  if(!token||!gistId){setSS('error','설정 필요');return;}
+  try{const res=await fetch(`https://api.github.com/gists/${gistId}`,{method:'PATCH',headers:{'Authorization':`token ${token}`,'Content-Type':'application/json'},body:JSON.stringify({files:{[NOTES_FILE]:{content:JSON.stringify(notes,null,2)}}})});setSS(res.ok?'saved':'error',res.ok?'✓ 저장됨':'저장 실패');}
+  catch{setSS('error','네트워크 오류');}
+}
+function openModal(){document.getElementById('inputToken').value=getToken();document.getElementById('inputGistId').value=getGistId();document.getElementById('modalMsg').innerHTML='';document.getElementById('modalOverlay').classList.add('open');}
+function closeModal(){document.getElementById('modalOverlay').classList.remove('open');}
+async function createGist(){
+  const token=document.getElementById('inputToken').value.trim();
+  if(!token){showMM('error','토큰을 먼저 입력하세요');return;}
+  showMM('info','생성 중...');
+  try{
+    const res=await fetch('https://api.github.com/gists',{method:'POST',headers:{'Authorization':`token ${token}`,'Content-Type':'application/json'},body:JSON.stringify({description:'Macro Signal Tracker — Daily Shot 기반',public:false,files:{[IND_FILE]:{content:JSON.stringify(DEFAULT,null,2)},[NOTES_FILE]:{content:'{}'}}})});
+    if(res.ok){const d=await res.json();document.getElementById('inputGistId').value=d.id;showMM('success',`✓ 생성 완료! ID: ${d.id}`);}
+    else showMM('error','생성 실패 — 토큰 권한 확인');
+  }catch{showMM('error','네트워크 오류');}
+}
+async function saveSettings(){
+  const token=document.getElementById('inputToken').value.trim(),gistId=document.getElementById('inputGistId').value.trim();
+  if(!token||!gistId){showMM('error','토큰과 Gist ID 모두 입력하세요');return;}
+  localStorage.setItem('gist_token',token);localStorage.setItem('gist_id',gistId);
+  closeModal();await loadFromGist();
+}
+function showMM(type,text){const e=document.getElementById('modalMsg');e.className='mmsg '+type;e.textContent=text;}
+document.addEventListener('DOMContentLoaded',()=>{
+  document.getElementById('todayDate').textContent=new Date().toLocaleDateString('ko-KR',{year:'numeric',month:'2-digit',day:'2-digit'});
+  loadFromGist();
+});
+</script>
+</body>
+</html>
