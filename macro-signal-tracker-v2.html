@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Macro Signal Tracker v2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:        #0d0f13;
+  --bg2:       #131720;
+  --bg3:       #1a1f2e;
+  --border:    #252d3d;
+  --border2:   #1e2535;
+  --txt:       #e2e8f0;
+  --txt2:      #8c9ab0;
+  --txt3:      #5a6478;
+  --red:       #e84040;
+  --red-bg:    rgba(232,64,64,.12);
+  --amber:     #f59e0b;
+  --amber-bg:  rgba(245,158,11,.1);
+  --green:     #22c55e;
+  --green-bg:  rgba(34,197,94,.1);
+  --blue:      #3b82f6;
+  --blue-bg:   rgba(59,130,246,.1);
+  --accent:    #4f7cff;
+  --radius:    8px;
+  --mono: 'IBM Plex Mono', monospace;
+  --sans: 'IBM Plex Sans KR', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--txt);
+  min-height: 100vh;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+/* ── Layout ── */
+.app { max-width: 1200px; margin: 0 auto; padding: 20px 16px 60px; }
+
+/* ── Header ── */
+.hdr {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 20px; padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+.hdr-left { display: flex; align-items: baseline; gap: 12px; }
+.hdr-title {
+  font-family: var(--mono); font-size: 14px; font-weight: 600;
+  letter-spacing: .04em; color: var(--txt);
+}
+.hdr-version {
+  font-family: var(--mono); font-size: 10px; color: var(--accent);
+  background: var(--blue-bg); padding: 2px 6px; border-radius: 3px;
+}
+.hdr-right { display: flex; align-items: center; gap: 10px; }
+.hdr-date { font-family: var(--mono); font-size: 11px; color: var(--txt3); }
+.btn-sm {
+  display: flex; align-items: center; gap: 5px;
+  padding: 5px 10px; border-radius: var(--radius);
+  font-family: var(--mono); font-size: 11px; cursor: pointer;
+  border: 1px solid var(--border); background: var(--bg2);
+  color: var(--txt2); transition: all .15s;
+}
+.btn-sm:hover { border-color: var(--accent); color: var(--txt); }
+.btn-sm svg { width: 12px; height: 12px; }
+
+/* ── Summary Card ── */
+.summary-card {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 10px; padding: 18px 20px; margin-bottom: 20px;
+  position: relative; overflow: hidden;
+}
+.summary-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--red), var(--amber), var(--accent));
+}
+.summary-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 14px; }
+.summary-label {
+  font-family: var(--mono); font-size: 9px; letter-spacing: .12em;
+  color: var(--txt3); text-transform: uppercase; margin-bottom: 4px;
+}
+.summary-thesis {
+  font-size: 14px; font-weight: 500; color: var(--txt); line-height: 1.55;
+  max-width: 720px;
+}
+.summary-meta { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.risk-badge {
+  font-family: var(--mono); font-size: 10px; font-weight: 600;
+  padding: 4px 10px; border-radius: 4px; letter-spacing: .06em;
+}
+.risk-critical { background: var(--red-bg); color: var(--red); border: 1px solid rgba(232,64,64,.3); }
+.risk-high     { background: rgba(239,115,22,.12); color: #ef7316; border: 1px solid rgba(239,115,22,.3); }
+.risk-moderate { background: var(--amber-bg); color: var(--amber); border: 1px solid rgba(245,158,11,.3); }
+.risk-low      { background: var(--green-bg); color: var(--green); border: 1px solid rgba(34,197,94,.3); }
+.summary-stats { display: flex; gap: 20px; }
+.stat-pill {
+  display: flex; align-items: center; gap: 6px;
+  font-family: var(--mono); font-size: 11px; color: var(--txt2);
+}
+.stat-dot { width: 7px; height: 7px; border-radius: 50%; }
+.stat-dot.r { background: var(--red); }
+.stat-dot.a { background: var(--amber); }
+.stat-dot.g { background: var(--green); }
+.stat-num { font-weight: 600; color: var(--txt); }
+
+.summary-week {
+  font-family: var(--mono); font-size: 10px; color: var(--txt3);
+  margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border2);
+}
+
+/* ── Tabs ── */
+.tabs { display: flex; gap: 6px; margin-bottom: 16px; flex-wrap: wrap; }
+.tab {
+  padding: 5px 14px; border-radius: 6px;
+  font-family: var(--mono); font-size: 11px; cursor: pointer;
+  border: 1px solid var(--border2); background: transparent;
+  color: var(--txt3); transition: all .15s; white-space: nowrap;
+}
+.tab:hover { border-color: var(--border); color: var(--txt2); }
+.tab.active {
+  background: var(--bg3); border-color: var(--accent);
+  color: var(--accent); font-weight: 500;
+}
+.tab .tab-cnt {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 16px; height: 16px; border-radius: 50%;
+  background: var(--border); font-size: 9px; margin-left: 5px;
+  color: var(--txt2);
+}
+.tab.active .tab-cnt { background: rgba(79,124,255,.2); color: var(--accent); }
+
+/* ── Grid ── */
+.panel { display: none; }
+.panel.active { display: block; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 12px;
+}
+
+/* ── Card ── */
+.card {
+  background: var(--bg2); border: 1px solid var(--border2);
+  border-radius: var(--radius); padding: 14px 16px;
+  position: relative; transition: all .2s;
+  cursor: default;
+}
+.card:hover { border-color: var(--border); background: var(--bg3); }
+.card.triggered { border-left: 3px solid var(--red); }
+.card.watch { border-left: 3px solid var(--amber); }
+.card.normal { border-left: 3px solid var(--border); }
+.card.highlighted { box-shadow: 0 0 0 2px var(--accent); border-color: var(--accent); }
+.card.dimmed { opacity: 0.35; }
+.card.is-new::after {
+  content: 'NEW'; position: absolute; top: 10px; right: 10px;
+  font-family: var(--mono); font-size: 8px; letter-spacing: .1em;
+  padding: 2px 5px; border-radius: 3px;
+  background: var(--blue-bg); color: var(--accent); border: 1px solid rgba(79,124,255,.3);
+}
+
+/* Card top row */
+.card-top {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 6px; gap: 8px;
+}
+.card-name { font-size: 13px; font-weight: 500; color: var(--txt); }
+.card-badges { display: flex; align-items: center; gap: 5px; }
+
+.badge-status {
+  font-family: var(--mono); font-size: 9px; letter-spacing: .06em;
+  padding: 2px 7px; border-radius: 3px; font-weight: 600;
+}
+.badge-triggered { background: var(--red-bg); color: var(--red); }
+.badge-watch     { background: var(--amber-bg); color: var(--amber); }
+.badge-normal    { background: var(--bg3); color: var(--txt3); }
+
+.badge-type {
+  font-family: var(--mono); font-size: 8px; letter-spacing: .06em;
+  padding: 2px 5px; border-radius: 3px;
+  background: var(--bg3); color: var(--txt3); border: 1px solid var(--border2);
+}
+.badge-type.core { color: var(--accent); border-color: rgba(79,124,255,.25); background: rgba(79,124,255,.06); }
+
+/* Sparkline row */
+.card-spark-row {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 8px; gap: 8px;
+}
+.card-val {
+  font-family: var(--mono); font-size: 12px; font-weight: 500;
+  color: var(--txt);
+}
+.spark-wrap { display: flex; align-items: center; gap: 8px; }
+.spark-svg { display: block; }
+.zscore-wrap {
+  display: flex; flex-direction: column; align-items: flex-end; gap: 2px;
+}
+.zscore-val {
+  font-family: var(--mono); font-size: 10px; font-weight: 600;
+}
+.zscore-val.zr { color: var(--red); }
+.zscore-val.za { color: var(--amber); }
+.zscore-val.zg { color: var(--green); }
+.zscore-val.zn { color: var(--txt3); }
+.zscore-bar-wrap { width: 48px; height: 3px; background: var(--border); border-radius: 2px; position: relative; }
+.zscore-bar { height: 100%; border-radius: 2px; position: absolute; }
+.zscore-center { position: absolute; left: 50%; top: 0; width: 1px; height: 100%; background: var(--txt3); }
+
+/* Sub / ctx */
+.card-sub { font-size: 11px; color: var(--txt3); margin-bottom: 6px; }
+.card-ctx { font-size: 12px; color: var(--txt2); margin-bottom: 8px; line-height: 1.5; }
+.card-thr {
+  font-family: var(--mono); font-size: 10px; color: var(--txt3);
+  padding: 5px 8px; background: var(--bg3); border-radius: 4px;
+  margin-bottom: 8px; line-height: 1.45;
+}
+.card-thr::before { content: '⚡ '; }
+
+/* Tags */
+.tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 6px; }
+.tag {
+  font-family: var(--mono); font-size: 9px; letter-spacing: .03em;
+  padding: 2px 6px; border-radius: 3px;
+}
+.tag-r { background: var(--red-bg); color: var(--red); }
+.tag-g { background: var(--green-bg); color: var(--green); }
+.tag-n { background: var(--bg3); color: var(--txt3); }
+
+/* Impact chips */
+.impacts-row { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+.impacts-label { font-family: var(--mono); font-size: 9px; color: var(--txt3); margin-right: 2px; }
+.impact-chip {
+  font-family: var(--mono); font-size: 9px;
+  padding: 2px 7px; border-radius: 3px;
+  background: rgba(79,124,255,.08); color: var(--accent);
+  border: 1px solid rgba(79,124,255,.2);
+  cursor: pointer; transition: all .15s;
+}
+.impact-chip:hover { background: rgba(79,124,255,.18); }
+
+/* Changed marker */
+.changed-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--amber); flex-shrink: 0;
+  box-shadow: 0 0 6px var(--amber);
+}
+
+/* ── Archive Section ── */
+.archive-section { margin-top: 32px; }
+.archive-toggle {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 14px; background: var(--bg2);
+  border: 1px solid var(--border2); border-radius: var(--radius);
+  cursor: pointer; width: 100%; text-align: left;
+  font-family: var(--mono); font-size: 11px; color: var(--txt3);
+  transition: all .15s;
+}
+.archive-toggle:hover { border-color: var(--border); color: var(--txt2); }
+.archive-toggle svg { transition: transform .2s; }
+.archive-toggle.open svg { transform: rotate(180deg); }
+.archive-grid { display: none; margin-top: 12px; }
+.archive-grid.open { display: block; }
+.archive-card { opacity: 0.55; }
+.archive-label {
+  font-family: var(--mono); font-size: 8px; letter-spacing: .1em;
+  padding: 2px 6px; border-radius: 3px;
+  background: var(--bg3); color: var(--txt3); border: 1px solid var(--border2);
+}
+
+/* ── Settings Modal ── */
+.modal-overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,.7); z-index: 100;
+  align-items: center; justify-content: center;
+}
+.modal-overlay.open { display: flex; }
+.modal {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 12px; padding: 24px; width: 420px; max-width: 95vw;
+}
+.modal-title {
+  font-family: var(--mono); font-size: 13px; font-weight: 600;
+  color: var(--txt); margin-bottom: 16px;
+}
+.field { margin-bottom: 14px; }
+.field label {
+  display: block; font-family: var(--mono); font-size: 10px;
+  color: var(--txt3); margin-bottom: 5px; letter-spacing: .06em;
+}
+.field input, .field select {
+  width: 100%; padding: 8px 10px;
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: 6px; color: var(--txt);
+  font-family: var(--mono); font-size: 12px;
+  outline: none; transition: border-color .15s;
+}
+.field input:focus, .field select:focus { border-color: var(--accent); }
+.field-hint { font-size: 10px; color: var(--txt3); margin-top: 4px; }
+.modal-btns { display: flex; gap: 8px; justify-content: flex-end; margin-top: 20px; }
+.btn-primary {
+  padding: 8px 18px; border-radius: 6px;
+  background: var(--accent); color: #fff;
+  font-family: var(--mono); font-size: 11px; font-weight: 600;
+  border: none; cursor: pointer; transition: opacity .15s;
+}
+.btn-primary:hover { opacity: .85; }
+.btn-cancel {
+  padding: 8px 14px; border-radius: 6px;
+  background: transparent; color: var(--txt2);
+  font-family: var(--mono); font-size: 11px;
+  border: 1px solid var(--border); cursor: pointer;
+}
+
+/* ── Loading / Error ── */
+.state-box {
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; gap: 12px; padding: 60px 20px;
+  color: var(--txt3); font-family: var(--mono); font-size: 12px;
+}
+.spinner {
+  width: 24px; height: 24px; border: 2px solid var(--border);
+  border-top-color: var(--accent); border-radius: 50%;
+  animation: spin .7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Tooltip ── */
+.tooltip {
+  position: fixed; z-index: 200; pointer-events: none;
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: 6px; padding: 8px 10px;
+  font-family: var(--mono); font-size: 10px; color: var(--txt2);
+  max-width: 220px; line-height: 1.5;
+  opacity: 0; transition: opacity .1s;
+  box-shadow: 0 8px 24px rgba(0,0,0,.4);
+}
+.tooltip.visible { opacity: 1; }
+
+/* ── Impact graph legend ── */
+.graph-bar {
+  height: 2px; background: linear-gradient(90deg, var(--border), var(--accent));
+  margin: 20px 0 12px; border-radius: 1px;
+}
+</style>
+</head>
+<body>
+<div class="app" id="app">
+  <div class="state-box" id="loading">
+    <div class="spinner"></div>
+    <span>데이터 로딩 중...</span>
+  </div>
+</div>
+
+<div class="modal-overlay" id="settingsModal">
+  <div class="modal">
+    <div class="modal-title">⚙ 설정</div>
+    <div class="field">
+      <label>GITHUB GIST ID</label>
+      <input type="text" id="gistId" placeholder="e.g. abc123def456...">
+      <div class="field-hint">github.com/gist/your-username/<b>GIST_ID</b></div>
+    </div>
+    <div class="field">
+      <label>GITHUB TOKEN (optional — for private Gist)</label>
+      <input type="password" id="ghToken" placeholder="ghp_...">
+    </div>
+    <div class="modal-btns">
+      <button class="btn-cancel" onclick="closeSettings()">취소</button>
+      <button class="btn-primary" onclick="saveSettings()">저장 & 연결</button>
+    </div>
+  </div>
+</div>
+
+<div class="tooltip" id="tooltip"></div>
+
+<script>
+// ── Config ──────────────────────────────────────────────────────────────────
+const GROUPS = {
+  energy_geo: '에너지·지정학',
+  inflation:  '인플레이션',
+  growth:     '경기·성장',
+  rates:      '금리·채권',
+  positioning:'포지셔닝',
+  korea:      '한국'
+};
+
+let state = {
+  data: null,
+  activeTab: 'all',
+  highlightIds: null,   // set of ids highlighted via impact click
+  archivedOpen: false,
+  gistId: localStorage.getItem('gistId') || '',
+  ghToken: localStorage.getItem('ghToken') || ''
+};
+
+// ── Gist Fetch ───────────────────────────────────────────────────────────────
+async function fetchData() {
+  const { gistId, ghToken } = state;
+  if (!gistId) { renderNoConfig(); return; }
+  try {
+    const headers = ghToken ? { Authorization: `token ${ghToken}` } : {};
+    const res = await fetch(`https://api.github.com/gists/${gistId}`, { headers });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const gist = await res.json();
+    const file = Object.values(gist.files).find(f => f.filename.endsWith('.json'));
+    if (!file) throw new Error('JSON 파일을 찾을 수 없습니다.');
+    const raw = await fetch(file.raw_url).then(r => r.text());
+    const parsed = JSON.parse(raw);
+    // Support both old array schema and new object schema
+    state.data = Array.isArray(parsed)
+      ? { summary: null, indicators: parsed }
+      : parsed;
+    render();
+  } catch (e) {
+    renderError(e.message);
+  }
+}
+
+// ── Z-Score → Status ────────────────────────────────────────────────────────
+function resolveStatus(ind) {
+  if (typeof ind.z_score === 'number') {
+    const z = ind.z_score;
+    if (z >= 2 || z <= -2) return 'triggered';
+    if (z >= 1.5 || z <= -1.5) return 'watch';
+    return 'normal';
+  }
+  return ind.status || 'normal';
+}
+
+// ── Sparkline SVG ────────────────────────────────────────────────────────────
+function sparklineSVG(history, status) {
+  if (!history || history.length < 2) return '';
+  const vals = history.map(h => h.val);
+  const min = Math.min(...vals), max = Math.max(...vals);
+  const range = max - min || 1;
+  const W = 72, H = 26, PAD = 2;
+  const pts = vals.map((v, i) => {
+    const x = PAD + (i / (vals.length - 1)) * (W - PAD * 2);
+    const y = H - PAD - ((v - min) / range) * (H - PAD * 2);
+    return [x, y];
+  });
+  const pathD = pts.map((p, i) => `${i === 0 ? 'M' : 'L'}${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(' ');
+
+  // Fill path (area under line)
+  const fillD = pathD + ` L${pts[pts.length-1][0]},${H} L${pts[0][0]},${H} Z`;
+
+  const color = status === 'triggered' ? '#e84040' : status === 'watch' ? '#f59e0b' : '#4f7cff';
+  const fillColor = status === 'triggered' ? 'rgba(232,64,64,.08)' : status === 'watch' ? 'rgba(245,158,11,.08)' : 'rgba(79,124,255,.08)';
+  const [lx, ly] = pts[pts.length - 1];
+
+  return `<svg class="spark-svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
+    <path d="${fillD}" fill="${fillColor}" stroke="none"/>
+    <path d="${pathD}" fill="none" stroke="${color}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="${lx.toFixed(1)}" cy="${ly.toFixed(1)}" r="2.5" fill="${color}"/>
+  </svg>`;
+}
+
+// ── Z-Score Badge + Bar ───────────────────────────────────────────────────────
+function zscoreBadge(z_score) {
+  if (typeof z_score !== 'number') return '';
+  const z = z_score;
+  const cls = Math.abs(z) >= 2 ? 'zr' : Math.abs(z) >= 1.5 ? 'za' : z > 0 ? 'zn' : 'zg';
+  const sign = z > 0 ? '+' : '';
+  const label = `${sign}${z.toFixed(1)}σ`;
+
+  // Bar: -3 to +3, center = 50%
+  const pct = Math.min(Math.max((z + 3) / 6 * 100, 0), 100);
+  const left = Math.min(50, pct), width = Math.abs(pct - 50);
+  const barColor = Math.abs(z) >= 2 ? '#e84040' : Math.abs(z) >= 1.5 ? '#f59e0b' : '#4f7cff';
+
+  return `<div class="zscore-wrap" title="Z-Score: ${label} (과거 평균 대비 표준편차)">
+    <span class="zscore-val ${cls}">${label}</span>
+    <div class="zscore-bar-wrap">
+      <div class="zscore-center"></div>
+      <div class="zscore-bar" style="left:${left.toFixed(1)}%;width:${width.toFixed(1)}%;background:${barColor};${z < 0 ? 'right:' + (100-left).toFixed(1) + '%;left:auto;' : ''}"></div>
+    </div>
+  </div>`;
+}
+
+// ── Tag render ───────────────────────────────────────────────────────────────
+function tagHTML(t) {
+  const cls = t.endsWith('(r)') ? 'tag-r' : t.endsWith('(g)') ? 'tag-g' : 'tag-n';
+  const label = t.replace(/\([rng]\)$/, '');
+  return `<span class="tag ${cls}">${label}</span>`;
+}
+
+// ── Impact Chips ─────────────────────────────────────────────────────────────
+function impactHTML(id, impacts) {
+  if (!impacts || impacts.length === 0) return '';
+  const chips = impacts.map(imp =>
+    `<span class="impact-chip" onclick="highlightImpact('${id}', ${JSON.stringify(impacts)})" title="${imp}으로 리스크 전이">→ ${imp}</span>`
+  ).join('');
+  return `<div class="impacts-row">
+    <span class="impacts-label">IMPACTS:</span>
+    ${chips}
+  </div>`;
+}
+
+// ── Render Card ──────────────────────────────────────────────────────────────
+function renderCard(ind, archived = false) {
+  const status = resolveStatus(ind);
+  const spark = sparklineSVG(ind.history_data, status);
+  const zBadge = zscoreBadge(ind.z_score);
+  const isHL = state.highlightIds;
+  const cardClass = [
+    'card',
+    status,
+    ind.isNew ? 'is-new' : '',
+    archived ? 'archive-card' : '',
+    isHL && isHL.has(ind.id) ? 'highlighted' : '',
+    isHL && !isHL.has(ind.id) ? 'dimmed' : ''
+  ].filter(Boolean).join(' ');
+
+  const statusLabel = { triggered: 'Triggered', watch: 'Watch', normal: 'Normal' }[status];
+  const statusBadge = `<span class="badge-status badge-${status}">${statusLabel}</span>`;
+  const typeBadge = `<span class="badge-type${ind.type === 'core' ? ' core' : ''}">${ind.type === 'core' ? 'CORE' : 'THEME'}</span>`;
+  const changedDot = ind.isChanged ? '<div class="changed-dot" title="이번 업데이트 변경됨"></div>' : '';
+  const archiveLabel = archived ? '<span class="archive-label">ARCHIVED</span>' : '';
+
+  const sparkRow = (spark || zBadge)
+    ? `<div class="card-spark-row">
+        <span class="card-val">${ind.val || ''}</span>
+        <div class="spark-wrap">
+          ${spark}
+          ${zBadge}
+        </div>
+       </div>`
+    : `<div class="card-val" style="margin-bottom:8px">${ind.val || ''}</div>`;
+
+  return `
+  <div class="card ${cardClass}" id="card-${ind.id}" data-id="${ind.id}">
+    <div class="card-top">
+      <span class="card-name">${ind.title}</span>
+      <div class="card-badges">
+        ${changedDot}
+        ${archiveLabel}
+        ${typeBadge}
+        ${statusBadge}
+      </div>
+    </div>
+    <div class="card-sub">${ind.sub || ''}</div>
+    ${sparkRow}
+    <div class="card-ctx">${ind.ctx || ''}</div>
+    ${ind.threshold ? `<div class="card-thr">${ind.threshold}</div>` : ''}
+    <div class="tags">${(ind.tags || []).map(tagHTML).join('')}</div>
+    ${impactHTML(ind.id, ind.impacts)}
+  </div>`;
+}
+
+// ── Highlight by Impact ───────────────────────────────────────────────────────
+function highlightImpact(sourceId, impacts) {
+  const ids = new Set([sourceId, ...impacts]);
+  const sameSet = state.highlightIds
+    && [...ids].every(id => state.highlightIds.has(id))
+    && state.highlightIds.size === ids.size;
+  state.highlightIds = sameSet ? null : ids;
+  // Re-render without full page reload
+  const cards = document.querySelectorAll('.card');
+  cards.forEach(card => {
+    const id = card.dataset.id;
+    card.classList.remove('highlighted', 'dimmed');
+    if (state.highlightIds) {
+      if (state.highlightIds.has(id)) card.classList.add('highlighted');
+      else card.classList.add('dimmed');
+    }
+  });
+}
+
+// ── Render Summary ────────────────────────────────────────────────────────────
+function renderSummary(summary, indicators) {
+  const triggered = indicators.filter(i => resolveStatus(i) === 'triggered').length;
+  const watch = indicators.filter(i => resolveStatus(i) === 'watch').length;
+  const normal = indicators.filter(i => resolveStatus(i) === 'normal').length;
+
+  if (!summary) {
+    return `<div class="summary-card">
+      <div class="summary-top">
+        <div>
+          <div class="summary-label">Weekly Thesis</div>
+          <div class="summary-thesis" style="color:var(--txt3);font-size:12px;">
+            summary 필드가 없습니다 — JSON 최상단에 <code style="color:var(--accent)">summary</code> 객체를 추가하세요.
+          </div>
+        </div>
+        <div class="summary-meta">
+          <div class="summary-stats">
+            <div class="stat-pill"><div class="stat-dot r"></div><span class="stat-num">${triggered}</span> Triggered</div>
+            <div class="stat-pill"><div class="stat-dot a"></div><span class="stat-num">${watch}</span> Watch</div>
+            <div class="stat-pill"><div class="stat-dot g"></div><span class="stat-num">${normal}</span> Normal</div>
+          </div>
+        </div>
+      </div>
+    </div>`;
+  }
+
+  const riskClass = `risk-${summary.risk_level || 'moderate'}`;
+  const riskLabels = { critical:'⚠ CRITICAL', high:'▲ HIGH', moderate:'◆ MODERATE', low:'▽ LOW' };
+  return `<div class="summary-card">
+    <div class="summary-top">
+      <div>
+        <div class="summary-label">Weekly Thesis · ${summary.date || ''}</div>
+        <div class="summary-thesis">${summary.thesis || summary.key_thesis || ''}</div>
+      </div>
+      <div class="summary-meta">
+        <span class="risk-badge ${riskClass}">${riskLabels[summary.risk_level] || 'MODERATE'}</span>
+      </div>
+    </div>
+    <div class="summary-stats" style="margin-top:10px;">
+      <div class="stat-pill"><div class="stat-dot r"></div><span class="stat-num">${triggered}</span> Triggered</div>
+      <div class="stat-pill"><div class="stat-dot a"></div><span class="stat-num">${watch}</span> Watch</div>
+      <div class="stat-pill"><div class="stat-dot g"></div><span class="stat-num">${normal}</span> Normal</div>
+    </div>
+    <div class="summary-week">
+      ${summary.week ? `Week: ${summary.week}` : ''}
+      ${summary.updated_by ? ` · Source: ${summary.updated_by}` : ''}
+    </div>
+  </div>`;
+}
+
+// ── Main Render ───────────────────────────────────────────────────────────────
+function render() {
+  const { data } = state;
+  const indicators = (data.indicators || data || []).filter(i => !i.isArchived);
+  const archived = (data.indicators || data || []).filter(i => i.isArchived);
+
+  // Count per group
+  const groupCounts = {};
+  indicators.forEach(ind => {
+    groupCounts[ind.group] = (groupCounts[ind.group] || 0) + 1;
+  });
+
+  // Build tabs
+  const tabAll = `<button class="tab ${state.activeTab === 'all' ? 'active' : ''}" onclick="switchTab('all')">
+    전체 <span class="tab-cnt">${indicators.length}</span>
+  </button>`;
+  const groupTabs = Object.entries(GROUPS).map(([g, label]) => {
+    const cnt = groupCounts[g] || 0;
+    if (!cnt) return '';
+    return `<button class="tab ${state.activeTab === g ? 'active' : ''}" onclick="switchTab('${g}')">
+      ${label} <span class="tab-cnt">${cnt}</span>
+    </button>`;
+  }).join('');
+
+  // Active indicators
+  const activeInds = state.activeTab === 'all'
+    ? indicators
+    : indicators.filter(i => i.group === state.activeTab);
+
+  // Sort: triggered first, then watch, then normal; core before thematic
+  activeInds.sort((a, b) => {
+    const order = { triggered: 0, watch: 1, normal: 2 };
+    const sa = order[resolveStatus(a)] ?? 2;
+    const sb = order[resolveStatus(b)] ?? 2;
+    if (sa !== sb) return sa - sb;
+    const ta = a.type === 'core' ? 0 : 1;
+    const tb = b.type === 'core' ? 0 : 1;
+    return ta - tb;
+  });
+
+  const cards = activeInds.map(ind => renderCard(ind)).join('');
+  const archiveSection = archived.length > 0
+    ? `<div class="archive-section">
+        <button class="archive-toggle ${state.archivedOpen ? 'open' : ''}" onclick="toggleArchive()">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="12" height="12"><path d="M4 6l4 4 4-4"/></svg>
+          보관된 지표 (${archived.length}개) — 이슈 종료 처리됨
+        </button>
+        <div class="archive-grid ${state.archivedOpen ? 'open' : ''}">
+          <div class="grid">${archived.map(i => renderCard(i, true)).join('')}</div>
+        </div>
+      </div>`
+    : '';
+
+  // Updated date
+  const lastUpdate = data.summary?.date
+    || indicators.filter(i => i.updatedDate).map(i => i.updatedDate).sort().reverse()[0]
+    || '—';
+
+  document.getElementById('app').innerHTML = `
+    <div class="hdr">
+      <div class="hdr-left">
+        <div class="hdr-title">MACRO SIGNAL TRACKER</div>
+        <div class="hdr-version">v2</div>
+      </div>
+      <div class="hdr-right">
+        <div class="hdr-date">${lastUpdate}</div>
+        <button class="btn-sm" onclick="fetchData()">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13.5 8A5.5 5.5 0 112.5 5"/><path d="M2.5 2v3h3"/></svg>
+          새로고침
+        </button>
+        <button class="btn-sm" onclick="openSettings()">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="2.5"/><path d="M8 1.5V3m0 10v1.5M1.5 8H3m10 0h1.5m-2.4-4.6-1.05 1.05M4.95 11.05 3.9 12.1M12.1 12.1l-1.05-1.05M4.95 4.95 3.9 3.9"/></svg>
+          설정
+        </button>
+      </div>
+    </div>
+    ${renderSummary(data.summary, indicators)}
+    <div class="tabs">${tabAll}${groupTabs}</div>
+    <div class="grid">${cards}</div>
+    ${archiveSection}`;
+}
+
+// ── Tab / Archive ─────────────────────────────────────────────────────────────
+function switchTab(tab) {
+  state.activeTab = tab;
+  state.highlightIds = null;
+  render();
+}
+
+function toggleArchive() {
+  state.archivedOpen = !state.archivedOpen;
+  const grid = document.querySelector('.archive-grid');
+  const btn = document.querySelector('.archive-toggle');
+  if (grid) grid.classList.toggle('open', state.archivedOpen);
+  if (btn) btn.classList.toggle('open', state.archivedOpen);
+}
+
+// ── Settings ──────────────────────────────────────────────────────────────────
+function openSettings() {
+  document.getElementById('gistId').value = state.gistId;
+  document.getElementById('ghToken').value = state.ghToken;
+  document.getElementById('settingsModal').classList.add('open');
+}
+
+function closeSettings() {
+  document.getElementById('settingsModal').classList.remove('open');
+}
+
+function saveSettings() {
+  const gistId = document.getElementById('gistId').value.trim();
+  const ghToken = document.getElementById('ghToken').value.trim();
+  state.gistId = gistId;
+  state.ghToken = ghToken;
+  localStorage.setItem('gistId', gistId);
+  localStorage.setItem('ghToken', ghToken);
+  closeSettings();
+  fetchData();
+}
+
+// ── No Config / Error States ──────────────────────────────────────────────────
+function renderNoConfig() {
+  document.getElementById('app').innerHTML = `
+    <div class="hdr">
+      <div class="hdr-left">
+        <div class="hdr-title">MACRO SIGNAL TRACKER</div>
+        <div class="hdr-version">v2</div>
+      </div>
+      <div class="hdr-right">
+        <button class="btn-sm" onclick="openSettings()">⚙ 설정</button>
+      </div>
+    </div>
+    <div class="state-box" style="min-height:300px">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32" style="color:var(--txt3)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <div style="text-align:center">
+        <div style="color:var(--txt2);margin-bottom:6px">Gist ID가 설정되지 않았습니다</div>
+        <div style="color:var(--txt3)">설정 버튼을 클릭해 GitHub Gist ID를 입력하세요</div>
+      </div>
+      <button class="btn-primary" onclick="openSettings()">⚙ 설정 열기</button>
+    </div>`;
+}
+
+function renderError(msg) {
+  document.getElementById('app').innerHTML = `
+    <div class="hdr">
+      <div class="hdr-left">
+        <div class="hdr-title">MACRO SIGNAL TRACKER</div>
+        <div class="hdr-version">v2</div>
+      </div>
+      <div class="hdr-right">
+        <button class="btn-sm" onclick="fetchData()">↻ 재시도</button>
+        <button class="btn-sm" onclick="openSettings()">⚙ 설정</button>
+      </div>
+    </div>
+    <div class="state-box" style="min-height:300px">
+      <div style="color:var(--red)">데이터 로드 실패</div>
+      <div style="color:var(--txt3);font-size:11px;">${msg}</div>
+      <button class="btn-primary" onclick="fetchData()">재시도</button>
+    </div>`;
+}
+
+// ── Tooltip ───────────────────────────────────────────────────────────────────
+const tip = document.getElementById('tooltip');
+document.addEventListener('mousemove', e => {
+  if (tip.classList.contains('visible')) {
+    tip.style.left = (e.clientX + 14) + 'px';
+    tip.style.top  = (e.clientY - 8) + 'px';
+  }
+});
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+fetchData();
+</script>
+</body>
+</html>
