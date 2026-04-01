@@ -57,6 +57,17 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:14
 
 /* ── GRID ── */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1px;background:var(--border)}
+
+/* ── GROUP HEADER ── */
+.group-header{grid-column:1/-1;background:var(--bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:10px 18px;display:flex;align-items:center;gap:10px;position:sticky;top:84px;z-index:50}
+.group-icon{font-size:14px;line-height:1}
+.group-name{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--text2);font-weight:500}
+.group-meta{margin-left:auto;display:flex;align-items:center;gap:6px}
+.group-pill{font-family:var(--mono);font-size:8px;padding:2px 6px;border-radius:2px;letter-spacing:.04em}
+.group-pill.r{background:var(--red-bg);color:var(--red);border:1px solid rgba(255,77,77,.2)}
+.group-pill.a{background:var(--amber-bg);color:var(--amber);border:1px solid rgba(245,166,35,.2)}
+.group-pill.g{background:var(--green-bg);color:var(--green);border:1px solid rgba(62,207,142,.2)}
+.group-pill.n{background:var(--bg3);color:var(--text3);border:1px solid var(--border)}
 .card{background:var(--bg2);padding:16px 18px;transition:background .15s}
 .card:hover{background:var(--bg3)}
 .card.triggered{border-top:2px solid var(--red)}.card.watch{border-top:2px solid var(--amber)}.card.normal{border-top:2px solid var(--green)}
@@ -167,6 +178,9 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:14
   .sc-sub{color:#999}
   .toolbar{display:none}
   .grid{grid-template-columns:repeat(2,1fr);gap:0;background:#fff;border-top:1px solid #ddd}
+  .group-header{background:#f8f8f8;border-top:2px solid #ddd;border-bottom:1px solid #eee;padding:7px 14px;position:static}
+  .group-name{color:#444;font-size:9px}
+  .group-icon{font-size:12px}
   .card{background:#fff;border:none;border-bottom:1px solid #eee;border-right:1px solid #eee;padding:12px 14px;break-inside:avoid;page-break-inside:avoid}
   .card:hover{background:#fff}
   .card.triggered{border-top:3px solid var(--red)}.card.watch{border-top:3px solid var(--amber)}.card.normal{border-top:3px solid var(--green)}
@@ -277,19 +291,47 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:14
 
 <script>
 const NOTES_FILE='macro_tracker_notes.json', IND_FILE='macro_indicators.json';
+
+const GROUPS=[
+  {id:'energy_geo', icon:'🔥', name:'에너지 & 지정학'},
+  {id:'inflation',  icon:'📈', name:'인플레이션 & 비용'},
+  {id:'growth',     icon:'📉', name:'성장 & 수요'},
+  {id:'rates',      icon:'💰', name:'금리 & 채권'},
+  {id:'positioning',icon:'⚡', name:'포지셔닝 & 유동성'},
+  {id:'korea',      icon:'🇰🇷', name:'한국 집중 관찰'},
+];
+
 const DEFAULT=[
-  {id:'tips-30y',title:'30년 TIPS 실질금리',sub:'US 30Y Inflation-Protected',status:'triggered',val:'~3.0%',ctx:'2008 GFC 이후 최고 수준',threshold:'3% 돌파 — 2008 GFC 당시 동일 수준',history:'2008년 GFC 직전 기록. 실질금리 3%+는 무위험 실질수익률이 주식 ERP를 잠식. 성장주 밸류에이션 직접 압박. 장기채 상대 매력 상승.',tags:['growth stocks hit(r)','bonds attractive(g)','equity multiple compression(r)'],date:'2026-03-30',isNew:false,isChanged:false},
-  {id:'oil-yoy',title:'유가 YoY 상승률',sub:'Brent $116 · WTI $101',status:'watch',val:'Brent +60%+ YoY',ctx:'이란 분쟁 2개월째 · 100% 임박 모니터링',threshold:'YoY +100% 돌파 시 역대 리세션 동행 조건',history:'1970년대~2008년까지 유가 YoY 100%+ 상승은 모든 미국 리세션과 동행. 현재는 이란 분쟁발 공급 충격. 100% 도달 시 파급 경로 다를 수 있음.',tags:['recession risk if 100%(r)','energy sector outperform(g)','consumer purchasing hit(r)'],date:'2026-03-30',isNew:false,isChanged:false},
-  {id:'michigan',title:'미시간 소비자심리지수',sub:'University of Michigan',status:'triggered',val:'53.3',ctx:'추정치 54 하회 · 기대 51.7',threshold:'55 이하 지속 — 역대 리세션 선행 구간',history:'1980, 1990, 2008, 2020 리세션 모두 50대 초반 선행. 단 실제 카드 지출은 견조 — sentiment-spending 괴리 좁혀지는 시점이 리세션 확인 핵심.',tags:['recession leading indicator(r)','card spending still solid(g)','consumer disc risk(r)'],date:'2026-03-30',isNew:false,isChanged:false},
-  {id:'infl-1y',title:'1년 인플레이션 기대',sub:'Michigan Survey + CPI Fixings',status:'triggered',val:'3.8%',ctx:'3.4%에서 급등 · CPI 픽싱 동반 상승',threshold:'3.5% 이상 + 상향 추세 지속',history:'단기 기대 급등 → Fed 금리인하 기대 후퇴 → 채권 수익률 상승 → 주식 멀티플 압박. 오일 쇼크의 임금 2차 전이 여부가 관건.',tags:['fed pivot delay(r)','bond yields up(r)','rate-sensitive sectors down(r)'],date:'2026-03-30',isNew:false,isChanged:false},
-  {id:'infl-diverge',title:'장단기 인플레 기대 괴리',sub:'Short ↑ vs Long-term ↓',status:'triggered',val:'1yr 3.8% / 5-10yr 3.2%',ctx:'장기 breakeven 1년 최저 · 단기 급등',threshold:'단기 급등 + 장기 동시 하락 — 스태그플레이션 구조',history:'스태그플레이션의 전형 패턴. 시장이 단기 물가 충격은 인정하되 장기 성장 둔화를 동시 반영. 1970년대 오일쇼크 + 경기침체 국면과 유사.',tags:['stagflation signal(r)','TIPS vs nominals(n)','fed dilemma(r)'],date:'2026-03-30',isNew:false,isChanged:false},
-  {id:'sp500-streak',title:'S&P 500 연속 주간 하락',sub:'Consecutive Weekly Losses',status:'triggered',val:'5주 연속',ctx:'2022년 5월 이후 최장 · RSI 과매도',threshold:'5주+ 연속 하락 — 기술적 극단 구간',history:'5주+ 연속 하락 후 단기 기술적 반등 확률 높음. 단 구조적 약세장 초입이면 반등 후 추가 하락. 2008에는 RSI 과매도 이후에도 수개월 추가 하락.',tags:['short-term bounce possible(g)','structural bear risk(r)','Nasdaq correction(r)'],date:'2026-03-30',isNew:false,isChanged:false},
-  {id:'vix',title:'VIX 공포지수',sub:'CBOE Volatility Index',status:'triggered',val:'31.05',ctx:'+3.6pt · 30선 상향 돌파',threshold:'30 돌파(공포 극단) · 40+(시스템 리스크)',history:'VIX 30+ = 공포 극단, 역발상 매수 신호로 작용 경향. VIX 40+ = 시스템 리스크 수준(2008 GFC, 2020 코로나). 2008 리먼 때 30→80 순서.',tags:['contrarian buy zone(g)','40+ = systemic risk watch(r)','ETF hedge demand high(n)'],date:'2026-03-30',isNew:false,isChanged:false},
-  {id:'hf-leverage',title:'헤지펀드 넷 레버리지',sub:'GS Prime Book Net L/S',status:'triggered',val:'Liberation Day 이후 최대 감소',ctx:'산업재 월간 매도 역대 최대 · -3 SD',threshold:'넷 레버리지 주간 감소 역대급 — 항복 신호',history:'극단적 디레버리징 = 강제 매도 완료 후 수급 진공 → 단기 바닥 형성 패턴. 2008에는 항복 신호 이후에도 수개월 추가 하락 지속.',tags:['capitulation signal(g)','forced selling complete(n)','industrials record selling(r)'],date:'2026-03-30',isNew:false,isChanged:false},
-  {id:'lt-bond',title:'장기채 펀드 유출',sub:'6Y+ Duration Bond Funds',status:'triggered',val:'역대 2위 규모 유출',ctx:'BofA 기준 · TIPS 실질금리 최고와 동시',threshold:'역대 최대 유출 수준 진입',history:'극단적 유출은 장기금리 정점 부근 + 공포 극단에서 발생. 2008에는 유출 후 국채 랠리. 현재는 인플레 환경으로 국채 안전자산 기능 약화됐을 가능성.',tags:['rates may peak(g)','or structural yield rise(r)','flight from duration(n)'],date:'2026-03-30',isNew:false,isChanged:false},
-  {id:'jgb-30y',title:'일본 JGB 30년 금리',sub:'Japan Government Bond',status:'triggered',val:'3.69% (+7.5bp)',ctx:'2003년 이후 최대 월간 상승 궤도',threshold:'월간 +20bp+(2003년 VaR 쇼크 수준)',history:'일본 장기금리 상승 = 엔 캐리 트레이드 청산 위험 → 글로벌 유동성 축소. 2008 GFC 때 엔 캐리 대규모 청산이 위기 증폭. 일본 당국 결정적 조치 경고 발령 중.',tags:['carry trade unwind risk(r)','global liquidity tightening(r)','JPY strengthen watch(n)'],date:'2026-03-30',isNew:false,isChanged:false},
-  {id:'usdkrw',title:'원/달러 환율',sub:'USD/KRW',status:'triggered',val:'1,519원 (+0.72%)',ctx:'2009년 3월 이후 최고 · KOSPI 50일선 하회',threshold:'1,500 돌파 — GFC 직후 수준 복귀',history:'GFC 때 원/달러 1,570원 돌파. 현재 1,519원 근접. 원화 약세 → 수출 수혜 vs 수입 물가 상승 + 외국인 자금 이탈 가속.',tags:['exporters FX benefit(g)','import inflation(r)','foreign outflow risk(r)'],date:'2026-03-30',isNew:false,isChanged:false},
-  {id:'energy-streak',title:'에너지 섹터 연속 상승',sub:'S&P 500 Energy',status:'watch',val:'14주 연속 (사상 최장)',ctx:'올해 25회 신고가 · Exxon PER > Nvidia',threshold:'14주 이상 — 극단적 모멘텀 과열 구간',history:'모멘텀 극단 후 섹터 로테이션·차익실현 발생 경향. 단 유가 공급 충격 지속 시 추가 상승 가능. 2008에는 상반기 에너지 급등 후 하반기 폭락.',tags:['overbought rotation risk(r)','if war persists upside(g)','Exxon PER > Nvidia(n)'],date:'2026-03-30',isNew:false,isChanged:false}
+  /* ── 🔥 에너지 & 지정학 ── */
+  {id:'oil-yoy',title:'유가 YoY 상승률',sub:'Brent $113 (현재) vs $98.66 (3/25)',group:'energy_geo',status:'watch',val:'Brent +60%+ YoY · 3월 월간 +55% (1988년 이후 최대)',ctx:'3/25 이란 외교 소식에 $98 급락 → 이후 반등 $113+ · 호르무즈 사실상 봉쇄 중',threshold:'YoY +100% 돌파 시 역대 리세션 동행 조건',history:'1970년대~2008년까지 유가 YoY 100%+ 상승은 모든 미국 리세션과 동행. 3/31 S&P 반등은 이란 협상 기대 때문이지만 Brent는 $113 유지. Trump 4/6 데드라인. Goldman 배럴당 $14~18 리스크 프리미엄. SocGen $150 tail risk 경고.',tags:['April 6 deadline key(r)','$150 tail risk(r)','ceasefire = sharp reversal(g)'],date:'2026-03-30',isNew:false,isChanged:true,updatedDate:'2026-04-01'},
+  {id:'hormuz-risk',title:'호르무즈 봉쇄 — 복합 상품 충격',sub:'Strait of Hormuz Full Blockade',group:'energy_geo',status:'triggered',val:'일 1,780만 배럴 차질 · 상업 트래픽 전면 중단',ctx:'이란 위안화 통행료 부과 · 트럼프 4/6 데드라인 · $150 tail risk',threshold:'봉쇄 지속 + 확전 = 역대급 복합 공급 충격',history:'호르무즈 통과 상업 선박 2/28 개전 이후 사실상 전면 중단. 이란이 중국·러시아 선박에 위안화 통행료 부과 — 오일달러 질서에 구조적 도전. 황 45%, 헬륨 30%, 원유·LNG·비료 각 20% 글로벌 공급이 이 해협 의존. 트럼프 카르그섬 점령·유전 파괴 위협.',tags:['petrodollar order at risk(r)','$150 oil tail(r)','food+energy combined shock(r)'],date:'2026-03-25',isNew:true,isChanged:true,updatedDate:'2026-04-01'},
+  {id:'energy-streak',title:'에너지 섹터 ATH · 내부 분화',sub:'S&P 500 Energy · Upstream vs Midstream',group:'energy_geo',status:'triggered',val:'올해 신고가 23회 (2007년 이후 최다)',ctx:'Energy/SPX 비율 2년 최고 · 상류+LNG 급등 vs 미드스트림 부진',threshold:'올해 신고가 23회+ — 2007년 에너지 버블 동일 구간',history:'2007년에도 에너지만 ATH 연속 갱신 → 2008 상반기 고점 후 하반기 -50%. 현재 이란 분쟁 지속 시 추가 상승 vs 휴전 시 급락 리스크 병존. 상류(Devon·EOG·OXY)·LNG는 전쟁 이후 +10~11%, 서비스(SLB·BKR·WHT)는 -12~18% — 내부 분화 심화.',tags:['2007 energy bubble analog(r)','upstream LNG outperform(g)','services stocks underperform(n)'],date:'2026-03-30',isNew:false,isChanged:true,updatedDate:'2026-04-01'},
+
+  /* ── 📈 인플레이션 & 비용 ── */
+  {id:'infl-1y',title:'1년 인플레이션 기대',sub:'Michigan Survey + CPI Fixings',group:'inflation',status:'triggered',val:'3.8%',ctx:'3.4%에서 급등 · CPI 픽싱 동반 상승',threshold:'3.5% 이상 + 상향 추세 지속',history:'단기 기대 급등 → Fed 금리인하 기대 후퇴 → 채권 수익률 상승 → 주식 멀티플 압박. 오일 쇼크의 임금 2차 전이 여부가 관건.',tags:['fed pivot delay(r)','bond yields up(r)','rate-sensitive sectors down(r)'],date:'2026-03-30',isNew:false,isChanged:false},
+  {id:'infl-diverge',title:'장단기 인플레 기대 괴리',sub:'Short ↑ vs Long-term ↓',group:'inflation',status:'triggered',val:'1yr 3.8% / 5-10yr 3.2%',ctx:'장기 breakeven 1년 최저 · 단기 급등',threshold:'단기 급등 + 장기 동시 하락 — 스태그플레이션 구조',history:'스태그플레이션의 전형 패턴. 시장이 단기 물가 충격은 인정하되 장기 성장 둔화를 동시 반영. 1970년대 오일쇼크 + 경기침체 국면과 유사.',tags:['stagflation signal(r)','TIPS vs nominals(n)','fed dilemma(r)'],date:'2026-03-30',isNew:false,isChanged:false},
+  {id:'pmi-input-prices',title:'글로벌 PMI 투입물가 급등',sub:'US · UK · Eurozone Input Prices',group:'inflation',status:'triggered',val:'US: 2025년 5월 이후 최고',ctx:'UK 투입가 1992년 10월 이후 최대폭↑ · EU 2023년 초 이후 최고',threshold:'복수 주요국 동시 급등 — 글로벌 비용 충격 구조화',history:'에너지 쇼크가 글로벌 생산비용으로 전이되는 2차 파급 확인. UK 투입가 상승폭은 1992년 이후 최대 — 1991 걸프전 오일 쇼크 동급. 공급 측 인플레가 수요 둔화와 동시 진행 = 스태그플레이션 구조 강화.',tags:['stagflation 2nd round(r)','margin compression(r)','rate cut delay global(r)'],date:'2026-03-25',isNew:true,isChanged:false},
+  {id:'ulc',title:'미국 단위 노동비용',sub:'US Unit Labor Cost Q4 2025',group:'inflation',status:'triggered',val:'4.4% (초기 2.8%에서 상향 수정)',ctx:'생산성 하향(2.8%→1.8%) 동시 · 에너지+노동 이중 비용 압박',threshold:'4%+ 지속 — 임금발 인플레 재가속 조건',history:'ULC = 보상 ÷ 산출물. 생산성이 1.8%로 하향 수정되면서 ULC 역방향 급등(4.4%). 에너지 비용 급등과 노동 비용 급등의 이중 압박. Fed 금리인하 경로에 직접 제약.',tags:['wage inflation sticky(r)','productivity declining(r)','fed pivot delay(r)'],date:'2026-03-25',isNew:true,isChanged:false},
+
+  /* ── 📉 성장 & 수요 ── */
+  {id:'michigan',title:'미시간 소비자심리지수',sub:'University of Michigan',group:'growth',status:'triggered',val:'53.3',ctx:'추정치 54 하회 · 기대 51.7',threshold:'55 이하 지속 — 역대 리세션 선행 구간',history:'1980, 1990, 2008, 2020 리세션 모두 50대 초반 선행. 단 실제 카드 지출은 견조(Gen Z·밀레니얼 소비 오히려 반등) — sentiment-spending 괴리 좁혀지는 시점이 리세션 확인 핵심.',tags:['recession leading indicator(r)','card spending still solid(g)','consumer disc risk(r)'],date:'2026-03-30',isNew:false,isChanged:false},
+  {id:'sp500-streak',title:'S&P 500 · 5주 하락 후 대반등',sub:'Weekly Losses → Relief Rally',group:'growth',status:'watch',val:'3/31 S&P 6,528 (+2.9%) · 다우 +1,100pt',ctx:'5주 연속 하락 후 이란 협상 기대 대형 반등 · 지속성 확인 중',threshold:'반등 지속 = 유가 $90 이하 복귀 필요 조건',history:'5주 연속 하락 후 이란 기대에 3/31 단하루 S&P +2.9%. 분석가들은 지속 랠리 위해 유가 $90 이하 복귀 필요 지적. 4/6 트럼프 데드라인 결과에 따라 랠리 지속 vs 재하락 갈림길.',tags:['relief rally fragile(n)','oil below $90 = rally(g)','April 6 = binary event(r)'],date:'2026-03-30',isNew:false,isChanged:true,updatedDate:'2026-04-01'},
+  {id:'sp500-breadth',title:'S&P 500 내부 광범위 조정',sub:'52W High Drawdown Breadth',group:'growth',status:'watch',val:'38.4% 종목 -20%+ (3/25 기준)',ctx:'3/31 반등에도 내부 약세 미해소 · 상위 5종목 28% 집중',threshold:'40%+ 종목 베어마켓 진입 → 지수 붕괴 전조',history:'3/31 반등에도 개별 종목 광범위 조정은 미해소. 에너지·국방 섹터만 강세, 나머지 광범위 부진. 지수 수치와 내부 브레드스 간 괴리 지속 — 상위 5종목이 지수의 28% 차지.',tags:['breadth needs to improve(n)','mega cap dependency(r)','sector concentration risk(r)'],date:'2026-03-25',isNew:true,isChanged:false},
+
+  /* ── 💰 금리 & 채권 ── */
+  {id:'tips-30y',title:'30년 TIPS 실질금리',sub:'US 30Y Inflation-Protected',group:'rates',status:'triggered',val:'~3.0%',ctx:'2008 GFC 이후 최고 수준',threshold:'3% 돌파 — 2008 GFC 당시 동일 수준',history:'2008년 GFC 직전 기록. 실질금리 3%+는 무위험 실질수익률이 주식 ERP를 잠식. 성장주 밸류에이션 직접 압박. 장기채 상대 매력 상승.',tags:['growth stocks hit(r)','bonds attractive(g)','equity multiple compression(r)'],date:'2026-03-30',isNew:false,isChanged:false},
+  {id:'lt-bond',title:'장기채 펀드 유출',sub:'6Y+ Duration Bond Funds',group:'rates',status:'triggered',val:'역대 2위 규모 유출',ctx:'BofA 기준 · TIPS 실질금리 최고와 동시',threshold:'역대 최대 유출 수준 진입',history:'극단적 유출은 장기금리 정점 부근 + 공포 극단에서 발생. 2008에는 유출 후 국채 랠리. 현재는 인플레 환경으로 국채 안전자산 기능 약화됐을 가능성.',tags:['rates may peak(g)','or structural yield rise(r)','flight from duration(n)'],date:'2026-03-30',isNew:false,isChanged:false},
+  {id:'jgb-30y',title:'일본 JGB 30년 금리',sub:'Japan Government Bond',group:'rates',status:'triggered',val:'3.69% (+7.5bp)',ctx:'2003년 이후 최대 월간 상승 궤도',threshold:'월간 +20bp+(2003년 VaR 쇼크 수준)',history:'일본 장기금리 상승 = 엔 캐리 트레이드 청산 위험 → 글로벌 유동성 축소. 2008 GFC 때 엔 캐리 대규모 청산이 위기 증폭. 일본 당국 결정적 조치 경고 발령 중.',tags:['carry trade unwind risk(r)','global liquidity tightening(r)','JPY strengthen watch(n)'],date:'2026-03-30',isNew:false,isChanged:false},
+
+  /* ── ⚡ 포지셔닝 & 유동성 ── */
+  {id:'vix',title:'VIX 공포지수',sub:'CBOE Volatility Index',group:'positioning',status:'watch',val:'25.25 (3/31) ← 31.05 (3/25)',ctx:'이란 협상 기대에 하루 -17.5% 급락 · 52주 범위 13~60',threshold:'30 재돌파 = 공포 극단 · 40+ = 시스템 리스크',history:'3/31 25.25로 복귀. 이란 휴전 기대가 일시 공포 완화. 단 52주 고점 60.13 — 3월 한달 VIX +30.9%. 4/6 데드라인 결과에 따라 재급등 가능성 잔존. 30 이하에서 WATCH로 하향.',tags:['fear subsiding temporarily(n)','April 6 re-spike risk(r)','contrarian signal if 40+(g)'],date:'2026-03-30',isNew:false,isChanged:true,updatedDate:'2026-04-01'},
+  {id:'hf-leverage',title:'헤지펀드 넷 레버리지',sub:'GS Prime Book Net L/S',group:'positioning',status:'triggered',val:'Liberation Day 이후 최대 감소',ctx:'산업재 월간 매도 역대 최대 · -3 SD',threshold:'넷 레버리지 주간 감소 역대급 — 항복 신호',history:'극단적 디레버리징 = 강제 매도 완료 후 수급 진공 → 단기 바닥 형성 패턴. 2008에는 항복 신호 이후에도 수개월 추가 하락 지속.',tags:['capitulation signal(g)','forced selling complete(n)','industrials record selling(r)'],date:'2026-03-30',isNew:false,isChanged:false},
+  {id:'private-credit',title:'사모 크레딧 환매 제한',sub:'Apollo · Ares · Blackstone · BLK 등',group:'positioning',status:'watch',val:'주요 6개사 동시 환매 제한',ctx:'Ares $10.7bn 포함 · 두바이 부동산 채권 15% 부실',threshold:'환매 제한 확산 + 스프레드 급등 시 신용 위기 1단계',history:'에버그린 사모 크레딧 유동성 미스매치 현실화. 두바이 부동산 채권 15% 부실화. IG 딜러 재고 역대 최저(-$16B). 지정학 리스크가 신용 시장으로 전이 중. 2008 ABCP 동결 패턴과 구조적 유사성.',tags:['liquidity mismatch(r)','Dubai RE distress(r)','credit stress spreading(r)'],date:'2026-03-25',isNew:true,isChanged:false},
+
+  /* ── 🇰🇷 한국 집중 관찰 ── */
+  {id:'usdkrw',title:'원/달러 환율',sub:'USD/KRW',group:'korea',status:'triggered',val:'1,534원 (현재) ← 1,519원 (3/25)',ctx:'3월 평균 환율 1997년 외환위기 이후 역대 4위 · 52주 최고 1,535 근접',threshold:'1,550원+ 또는 추가 외국인 이탈 가속 시 위기 경보',history:'3/25 이후 추가 약세. 트럼프 이란 유전 파괴 위협 → 아시아 통화 유출. 한국은행 금리 최소 8월까지 2.50% 동결 시사(인플레 우려). 3월 한달 원화 -5%. 국민연금 헤지 확대 논의 중이나 단기 효과 제한.',tags:['97 FX crisis analog(r)','BoK policy trapped(r)','export hedging benefit limited(n)'],date:'2026-03-30',isNew:false,isChanged:true,updatedDate:'2026-04-01'},
+  {id:'kr-consumer',title:'한국 소비자신뢰 + 에너지 이중 압박',sub:'Consumer Confidence + Energy Import',group:'korea',status:'triggered',val:'신뢰 10개월 최저 · 원화 52주 최고 · 에너지 100% 수입',ctx:'중동 긴장 → 에너지가격·물가 우려 · 한은 금리동결 · 외국인 이탈',threshold:'원화 1,550원+ 또는 호르무즈 봉쇄 장기화 시 시스템 리스크',history:'한국은 원유 전량 수입국으로 에너지 쇼크 직격. 소비자신뢰 하락 → 내수 둔화. 원/달러 1,534원(52주 최고) 병행으로 실질 구매력 이중 압박. 한국은행은 인플레 우려로 금리동결 유지 — 통화완화로 방어 불가.',tags:['energy import 100%(r)','real purchasing power hit(r)','BoK trapped between inflation and growth(r)'],date:'2026-03-25',isNew:true,isChanged:true,updatedDate:'2026-04-01'},
+  {id:'retail-flow',title:'미국 개인투자자 순매도 전환',sub:'US Retail Single Stock Net Flow',group:'positioning',status:'watch',val:'순매도 전환 (2023/11 이후 첫)',ctx:'3/31 반등 시 재유입 확인 필요 · MTUM 200일선 돌파와 역설',threshold:'2주+ 연속 순매도 유지 시 → 시장 하방 지지 구조 붕괴',history:'미국 개인투자자는 2023년 이후 하락 시 매수가 시장 하방 방어의 핵심이었음. 첫 순매도 전환 = 이 구조 약화 시작. 3/31 반등에 재유입 여부 확인 필요. 동시에 모멘텀 팩터(MTUM) 200일선 상향 돌파 — 모순적 신호.',tags:['retail support at risk(r)','MTUM breakout positive(g)','flows to confirm(n)'],date:'2026-03-25',isNew:true,isChanged:false}
 ];
 let indicators=[],notes={},curFilter='all',saveTimer=null;
 const getToken=()=>localStorage.getItem('gist_token')||'';
@@ -326,7 +368,18 @@ function setFilter(f){
 function renderGrid(){
   const list=curFilter==='all'?indicators:indicators.filter(i=>i.status===curFilter);
   const labels={triggered:'TRIGGERED',watch:'WATCH',normal:'NORMAL'};
-  document.getElementById('grid').innerHTML=list.map(ind=>{
+
+  // Build group map preserving GROUPS order
+  const grouped={};
+  GROUPS.forEach(g=>{grouped[g.id]=[];});
+  grouped['_ungrouped']=[];
+  list.forEach(ind=>{
+    const gid=ind.group||'_ungrouped';
+    if(grouped[gid])grouped[gid].push(ind);
+    else grouped['_ungrouped'].push(ind);
+  });
+
+  const cardHTML=ind=>{
     const tags=(ind.tags||[]).map(t=>{const m=t.match(/^(.+)\(([rgn])\)$/);return m?`<span class="tag ${m[2]}">${m[1].trim()}</span>`:''}).join('');
     const nv=(notes[ind.id]||'').replace(/"/g,'&quot;');
     const nb=ind.isNew?'<span class="mbadge new">NEW</span>':'';
@@ -341,7 +394,33 @@ function renderGrid(){
       <textarea class="note-area" rows="2" placeholder="추가 관찰, 투자 아이디어..." onchange="noteChanged('${ind.id}',this.value)">${nv}</textarea>
       <div class="card-footer"><span class="card-date">포착: ${ind.date||''}</span>${ind.updatedDate?`<span class="card-upd">↑ ${ind.updatedDate}</span>`:''}</div>
     </div>`;
-  }).join('')||'<div class="loading">해당 상태의 지표가 없습니다</div>';
+  };
+
+  const groupHeaderHTML=(g, cards)=>{
+    const t=cards.filter(i=>i.status==='triggered').length;
+    const w=cards.filter(i=>i.status==='watch').length;
+    const n=cards.filter(i=>i.status==='normal').length;
+    const pills=[
+      t?`<span class="group-pill r">▲ ${t} TRIGGERED</span>`:'',
+      w?`<span class="group-pill a">◎ ${w} WATCH</span>`:'',
+      n?`<span class="group-pill g">○ ${n} NORMAL</span>`:'',
+    ].join('');
+    return `<div class="group-header"><span class="group-icon">${g.icon}</span><span class="group-name">${g.name}</span><div class="group-meta">${pills}</div></div>`;
+  };
+
+  let html='';
+  GROUPS.forEach(g=>{
+    const cards=grouped[g.id]||[];
+    if(!cards.length)return;
+    html+=groupHeaderHTML(g,cards);
+    html+=cards.map(cardHTML).join('');
+  });
+  // ungrouped fallback
+  if(grouped['_ungrouped']&&grouped['_ungrouped'].length){
+    html+=grouped['_ungrouped'].map(cardHTML).join('');
+  }
+
+  document.getElementById('grid').innerHTML=html||'<div class="loading">해당 상태의 지표가 없습니다</div>';
   document.getElementById('cnt-t').textContent=indicators.filter(i=>i.status==='triggered').length;
   document.getElementById('cnt-w').textContent=indicators.filter(i=>i.status==='watch').length;
   document.getElementById('cnt-n').textContent=indicators.filter(i=>i.status==='normal').length;
