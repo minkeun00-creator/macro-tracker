@@ -365,19 +365,19 @@ body {
 
 <div class="modal-overlay" id="settingsModal">
   <div class="modal">
-    <div class="modal-title">⚙ 설정</div>
-    <div class="field">
-      <label>GITHUB GIST ID</label>
-      <input type="text" id="gistId" placeholder="e.g. abc123def456...">
-      <div class="field-hint">github.com/gist/your-username/<b>GIST_ID</b></div>
+    <div class="modal-title">⚙ 업데이트 방법</div>
+    <div style="font-family:var(--mono);font-size:10px;color:var(--txt3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border)">매주 워크플로우</div>
+    <div style="background:var(--bg3);border-radius:6px;padding:14px;margin-bottom:16px">
+      <div style="display:flex;gap:10px;margin-bottom:10px;font-size:12px;color:var(--txt2)"><span style="font-family:var(--mono);font-size:10px;color:var(--green);background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.2);padding:1px 6px;border-radius:3px;flex-shrink:0">01</span>Daily Shot 메일을 Claude에 공유</div>
+      <div style="display:flex;gap:10px;margin-bottom:10px;font-size:12px;color:var(--txt2)"><span style="font-family:var(--mono);font-size:10px;color:var(--green);background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.2);padding:1px 6px;border-radius:3px;flex-shrink:0">02</span>Claude가 업데이트 JSON 생성</div>
+      <div style="display:flex;gap:10px;margin-bottom:10px;font-size:12px;color:var(--txt2)"><span style="font-family:var(--mono);font-size:10px;color:var(--green);background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.2);padding:1px 6px;border-radius:3px;flex-shrink:0">03</span>GitHub 저장소의 <span style="font-family:var(--mono);color:var(--accent);margin:0 4px">macro_indicators.json</span> 파일 교체</div>
+      <div style="display:flex;gap:10px;font-size:12px;color:var(--txt2)"><span style="font-family:var(--mono);font-size:10px;color:var(--green);background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.2);padding:1px 6px;border-radius:3px;flex-shrink:0">04</span>↻ 새로고침 → 자동 반영</div>
     </div>
-    <div class="field">
-      <label>GITHUB TOKEN (optional — for private Gist)</label>
-      <input type="password" id="ghToken" placeholder="ghp_...">
+    <div style="font-size:11px;color:var(--txt3);background:var(--bg3);border-left:2px solid var(--border);padding:8px 12px;border-radius:0 4px 4px 0">
+      <span style="font-family:var(--mono);color:var(--accent)">macro_indicators.json</span> 파일을 이 HTML과 같은 저장소에 두면 됩니다. 토큰·Gist 불필요.
     </div>
     <div class="modal-btns">
-      <button class="btn-cancel" onclick="closeSettings()">취소</button>
-      <button class="btn-primary" onclick="saveSettings()">저장 & 연결</button>
+      <button class="btn-primary" onclick="closeSettings()">확인</button>
     </div>
   </div>
 </div>
@@ -405,28 +405,22 @@ let state = {
   ghToken: localStorage.getItem('ghToken') || localStorage.getItem('gist_token') || ''
 };
 
-// ── Gist Fetch ───────────────────────────────────────────────────────────────
+// ── Data Fetch (같은 저장소 JSON 직접 로드 — Gist/토큰 불필요) ──────────────
+const DATA_FILE = 'macro_indicators.json';
+
 async function fetchData() {
-  const { gistId, ghToken } = state;
-  if (!gistId) { renderNoConfig(); return; }
   try {
-    const headers = ghToken ? { Authorization: `token ${ghToken}` } : {};
-    const res = await fetch(`https://api.github.com/gists/${gistId}`, { headers });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const gist = await res.json();
-    const file = Object.values(gist.files).find(f => f.filename.endsWith('.json'));
-    if (!file) throw new Error('JSON 파일을 찾을 수 없습니다.');
-    // ✅ file.content 직접 사용 (CORS 문제 없음)
-    // file.truncated인 경우만 raw_url fallback (인증 헤더 없이 — pre-signed URL)
-    const raw = file.truncated
-      ? await fetch(file.raw_url).then(r => r.text())
-      : file.content;
-    const parsed = JSON.parse(raw);
-    // Support both old array schema and new object schema
-    state.data = Array.isArray(parsed)
-      ? { summary: null, indicators: parsed }
-      : parsed;
-    render();
+    // 1순위: 같은 저장소의 macro_indicators.json
+    const res = await fetch(DATA_FILE + '?t=' + Date.now());
+    if (res.ok) {
+      const parsed = await res.json();
+      state.data = Array.isArray(parsed)
+        ? { summary: null, indicators: parsed }
+        : parsed;
+      render();
+      return;
+    }
+    throw new Error('macro_indicators.json 파일을 찾을 수 없습니다. 저장소에 파일을 추가하세요.');
   } catch (e) {
     renderError(e.message);
   }
@@ -731,26 +725,11 @@ function toggleArchive() {
 
 // ── Settings ──────────────────────────────────────────────────────────────────
 function openSettings() {
-  document.getElementById('gistId').value = state.gistId;
-  document.getElementById('ghToken').value = state.ghToken;
   document.getElementById('settingsModal').classList.add('open');
 }
 
 function closeSettings() {
   document.getElementById('settingsModal').classList.remove('open');
-}
-
-function saveSettings() {
-  const gistId = document.getElementById('gistId').value.trim();
-  const ghToken = document.getElementById('ghToken').value.trim();
-  state.gistId = gistId;
-  state.ghToken = ghToken;
-  localStorage.setItem('gistId', gistId);
-  localStorage.setItem('ghToken', ghToken);
-  localStorage.setItem('gist_id', gistId);
-  localStorage.setItem('gist_token', ghToken);
-  closeSettings();
-  fetchData();
 }
 
 // ── No Config / Error States ──────────────────────────────────────────────────
