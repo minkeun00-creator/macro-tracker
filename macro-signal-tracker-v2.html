@@ -416,8 +416,11 @@ async function fetchData() {
     const gist = await res.json();
     const file = Object.values(gist.files).find(f => f.filename.endsWith('.json'));
     if (!file) throw new Error('JSON 파일을 찾을 수 없습니다.');
-    // ✅ raw_url 요청에도 동일한 인증 헤더 포함 (Private Gist 필수)
-    const raw = await fetch(file.raw_url, { headers }).then(r => r.text());
+    // ✅ file.content 직접 사용 (CORS 문제 없음)
+    // file.truncated인 경우만 raw_url fallback (인증 헤더 없이 — pre-signed URL)
+    const raw = file.truncated
+      ? await fetch(file.raw_url).then(r => r.text())
+      : file.content;
     const parsed = JSON.parse(raw);
     // Support both old array schema and new object schema
     state.data = Array.isArray(parsed)
