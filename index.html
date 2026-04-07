@@ -89,11 +89,13 @@ body {
 .summary-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 14px; }
 .summary-label {
   font-family: var(--mono); font-size: 9px; letter-spacing: .12em;
-  color: var(--txt3); text-transform: uppercase; margin-bottom: 4px;
+  color: var(--txt3); text-transform: uppercase; margin-bottom: 6px;
 }
 .summary-thesis {
-  font-size: 14px; font-weight: 500; color: var(--txt); line-height: 1.55;
+  font-size: 13px; font-weight: 400; color: var(--txt2); line-height: 1.7;
   max-width: 720px;
+  /* ── 단락 줄바꿈 활성화 ── */
+  white-space: pre-line;
 }
 .summary-meta { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
 .risk-badge {
@@ -195,14 +197,16 @@ body {
 
 /* Sparkline row */
 .card-spark-row {
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex; align-items: flex-start; justify-content: space-between;
   margin-bottom: 8px; gap: 8px;
 }
 .card-val {
-  font-family: var(--mono); font-size: 12px; font-weight: 500;
-  color: var(--txt);
+  font-family: var(--mono); font-size: 11px; font-weight: 400;
+  color: var(--txt2); line-height: 1.6; flex: 1;
+  /* ── val 필드 줄바꿈 활성화 ── */
+  white-space: pre-line;
 }
-.spark-wrap { display: flex; align-items: center; gap: 8px; }
+.spark-wrap { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
 .spark-svg { display: block; }
 .zscore-wrap {
   display: flex; flex-direction: column; align-items: flex-end; gap: 2px;
@@ -219,12 +223,25 @@ body {
 .zscore-center { position: absolute; left: 50%; top: 0; width: 1px; height: 100%; background: var(--txt3); }
 
 /* Sub / ctx */
-.card-sub { font-size: 11px; color: var(--txt3); margin-bottom: 6px; }
-.card-ctx { font-size: 12px; color: var(--txt2); margin-bottom: 8px; line-height: 1.5; }
+.card-sub { font-size: 11px; color: var(--txt3); margin-bottom: 8px; }
+
+/* ── ctx 단락 처리 핵심 ── */
+.card-ctx {
+  font-size: 12px; color: var(--txt2); margin-bottom: 10px;
+  line-height: 1.65;
+  white-space: pre-line;          /* \n을 실제 줄바꿈으로 렌더 */
+}
+.card-ctx p {
+  margin-bottom: 6px;
+}
+.card-ctx p:last-child { margin-bottom: 0; }
+
 .card-thr {
   font-family: var(--mono); font-size: 10px; color: var(--txt3);
-  padding: 5px 8px; background: var(--bg3); border-radius: 4px;
-  margin-bottom: 8px; line-height: 1.45;
+  padding: 6px 10px; background: var(--bg3); border-radius: 4px;
+  margin-bottom: 8px; line-height: 1.55;
+  /* ── threshold 줄바꿈 활성화 ── */
+  white-space: pre-line;
 }
 .card-thr::before { content: '⚡ '; }
 
@@ -244,7 +261,7 @@ body {
 .impact-chip {
   font-family: var(--mono); font-size: 9px;
   padding: 2px 7px; border-radius: 3px;
-  background: rgba(79,124,255,.08); color: var(--accent);
+  background: rgba(79,124,246,.08); color: var(--accent);
   border: 1px solid rgba(79,124,255,.2);
   cursor: pointer; transition: all .15s;
 }
@@ -400,17 +417,15 @@ let state = {
   activeTab: 'all',
   highlightIds: null,
   archivedOpen: false,
-  // 두 가지 키 모두 지원 (index.html 호환)
   gistId: localStorage.getItem('gistId') || localStorage.getItem('gist_id') || '',
   ghToken: localStorage.getItem('ghToken') || localStorage.getItem('gist_token') || ''
 };
 
-// ── Data Fetch (같은 저장소 JSON 직접 로드 — Gist/토큰 불필요) ──────────────
+// ── Data Fetch ───────────────────────────────────────────────────────────────
 const DATA_FILE = 'macro_indicators.json';
 
 async function fetchData() {
   try {
-    // 1순위: 같은 저장소의 macro_indicators.json
     const res = await fetch(DATA_FILE + '?t=' + Date.now());
     if (res.ok) {
       const parsed = await res.json();
@@ -426,7 +441,41 @@ async function fetchData() {
   }
 }
 
-// ── Z-Score → Status ────────────────────────────────────────────────────────
+// ── Text Formatter ───────────────────────────────────────────────────────────
+// ctx / threshold / thesis 텍스트를 문장 단위로 줄바꿈 처리
+function formatCtx(text) {
+  if (!text) return '';
+
+  return text
+    // 마침표 뒤 한국어 시작 → 줄바꿈
+    .replace(/\. ([가-힣])/g, '.\n$1')
+    // 마침표 뒤 날짜 패턴(4/7, 2026-) → 줄바꿈
+    .replace(/\. ([0-9]{1,2}\/[0-9]{1,2})/g, '.\n$1')
+    // 마침표 뒤 주요 출처·기관 키워드 → 줄바꿈
+    .replace(/\. (WSJ|Daily Shot|Bloomberg|Reuters|BofA|Goldman|Barclays|UBS|Oxford|Dimon|Fed |IMF|OECD|WTO|UNCTAD|ISM |CPI|NFP|GDPNow|IRGC|NASA)/g, '.\n$1')
+    // 연속 공백·줄바꿈 정리
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
+
+// val 필드: · 구분자를 줄바꿈으로 변환
+function formatVal(text) {
+  if (!text) return '';
+  return text.replace(/ · /g, '\n');
+}
+
+// summary thesis: 문장 단위 줄바꿈 + 【】 블록 앞 구분
+function formatThesis(text) {
+  if (!text) return '';
+  return text
+    .replace(/\. ([가-힣])/g, '.\n$1')
+    .replace(/\. ([0-9]{1,2}\/)/g, '.\n$1')
+    .replace(/\. (WSJ|Daily Shot|Bloomberg|Dimon|Goldman|BofA|Fed |ISM |GDPNow|NFP)/g, '.\n$1')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
+
+// ── Z-Score → Status ─────────────────────────────────────────────────────────
 function resolveStatus(ind) {
   if (typeof ind.z_score === 'number') {
     const z = ind.z_score;
@@ -437,7 +486,7 @@ function resolveStatus(ind) {
   return ind.status || 'normal';
 }
 
-// ── Sparkline SVG ────────────────────────────────────────────────────────────
+// ── Sparkline SVG ─────────────────────────────────────────────────────────────
 function sparklineSVG(history, status) {
   if (!history || history.length < 2) return '';
   const vals = history.map(h => h.val);
@@ -450,14 +499,10 @@ function sparklineSVG(history, status) {
     return [x, y];
   });
   const pathD = pts.map((p, i) => `${i === 0 ? 'M' : 'L'}${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(' ');
-
-  // Fill path (area under line)
   const fillD = pathD + ` L${pts[pts.length-1][0]},${H} L${pts[0][0]},${H} Z`;
-
   const color = status === 'triggered' ? '#e84040' : status === 'watch' ? '#f59e0b' : '#4f7cff';
   const fillColor = status === 'triggered' ? 'rgba(232,64,64,.08)' : status === 'watch' ? 'rgba(245,158,11,.08)' : 'rgba(79,124,255,.08)';
   const [lx, ly] = pts[pts.length - 1];
-
   return `<svg class="spark-svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
     <path d="${fillD}" fill="${fillColor}" stroke="none"/>
     <path d="${pathD}" fill="none" stroke="${color}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -472,12 +517,9 @@ function zscoreBadge(z_score) {
   const cls = Math.abs(z) >= 2 ? 'zr' : Math.abs(z) >= 1.5 ? 'za' : z > 0 ? 'zn' : 'zg';
   const sign = z > 0 ? '+' : '';
   const label = `${sign}${z.toFixed(1)}σ`;
-
-  // Bar: -3 to +3, center = 50%
   const pct = Math.min(Math.max((z + 3) / 6 * 100, 0), 100);
   const left = Math.min(50, pct), width = Math.abs(pct - 50);
   const barColor = Math.abs(z) >= 2 ? '#e84040' : Math.abs(z) >= 1.5 ? '#f59e0b' : '#4f7cff';
-
   return `<div class="zscore-wrap" title="Z-Score: ${label} (과거 평균 대비 표준편차)">
     <span class="zscore-val ${cls}">${label}</span>
     <div class="zscore-bar-wrap">
@@ -487,14 +529,14 @@ function zscoreBadge(z_score) {
   </div>`;
 }
 
-// ── Tag render ───────────────────────────────────────────────────────────────
+// ── Tag render ────────────────────────────────────────────────────────────────
 function tagHTML(t) {
   const cls = t.endsWith('(r)') ? 'tag-r' : t.endsWith('(g)') ? 'tag-g' : 'tag-n';
   const label = t.replace(/\([rng]\)$/, '');
   return `<span class="tag ${cls}">${label}</span>`;
 }
 
-// ── Impact Chips ─────────────────────────────────────────────────────────────
+// ── Impact Chips ──────────────────────────────────────────────────────────────
 function impactHTML(id, impacts) {
   if (!impacts || impacts.length === 0) return '';
   const chips = impacts.map(imp =>
@@ -506,15 +548,14 @@ function impactHTML(id, impacts) {
   </div>`;
 }
 
-// ── Render Card ──────────────────────────────────────────────────────────────
+// ── Render Card ───────────────────────────────────────────────────────────────
 function renderCard(ind, archived = false) {
   const status = resolveStatus(ind);
   const spark = sparklineSVG(ind.history_data, status);
   const zBadge = zscoreBadge(ind.z_score);
   const isHL = state.highlightIds;
   const cardClass = [
-    'card',
-    status,
+    'card', status,
     ind.isNew ? 'is-new' : '',
     archived ? 'archive-card' : '',
     isHL && isHL.has(ind.id) ? 'highlighted' : '',
@@ -527,15 +568,23 @@ function renderCard(ind, archived = false) {
   const changedDot = ind.isChanged ? '<div class="changed-dot" title="이번 업데이트 변경됨"></div>' : '';
   const archiveLabel = archived ? '<span class="archive-label">ARCHIVED</span>' : '';
 
+  // val: · 구분자를 줄바꿈으로 변환 (sparkline 없을 때만 전체 표시)
+  const formattedVal = formatVal(ind.val || '');
+
   const sparkRow = (spark || zBadge)
     ? `<div class="card-spark-row">
-        <span class="card-val">${ind.val || ''}</span>
+        <span class="card-val">${formattedVal}</span>
         <div class="spark-wrap">
           ${spark}
           ${zBadge}
         </div>
        </div>`
-    : `<div class="card-val" style="margin-bottom:8px">${ind.val || ''}</div>`;
+    : `<div class="card-val" style="margin-bottom:10px">${formattedVal}</div>`;
+
+  // ctx: 문장 단위 줄바꿈 적용
+  const formattedCtx = formatCtx(ind.ctx || '');
+  // threshold: 문장 단위 줄바꿈 적용
+  const formattedThr = ind.threshold ? formatCtx(ind.threshold) : '';
 
   return `
   <div class="card ${cardClass}" id="card-${ind.id}" data-id="${ind.id}">
@@ -550,8 +599,8 @@ function renderCard(ind, archived = false) {
     </div>
     <div class="card-sub">${ind.sub || ''}</div>
     ${sparkRow}
-    <div class="card-ctx">${ind.ctx || ''}</div>
-    ${ind.threshold ? `<div class="card-thr">${ind.threshold}</div>` : ''}
+    <div class="card-ctx">${formattedCtx}</div>
+    ${formattedThr ? `<div class="card-thr">${formattedThr}</div>` : ''}
     <div class="tags">${(ind.tags || []).map(tagHTML).join('')}</div>
     ${impactHTML(ind.id, ind.impacts)}
   </div>`;
@@ -564,7 +613,6 @@ function highlightImpact(sourceId, impacts) {
     && [...ids].every(id => state.highlightIds.has(id))
     && state.highlightIds.size === ids.size;
   state.highlightIds = sameSet ? null : ids;
-  // Re-render without full page reload
   const cards = document.querySelectorAll('.card');
   cards.forEach(card => {
     const id = card.dataset.id;
@@ -588,7 +636,7 @@ function renderSummary(summary, indicators) {
         <div>
           <div class="summary-label">Weekly Thesis</div>
           <div class="summary-thesis" style="color:var(--txt3);font-size:12px;">
-            summary 필드가 없습니다 — JSON 최상단에 <code style="color:var(--accent)">summary</code> 객체를 추가하세요.
+            summary 필드가 없습니다 — JSON 최상단에 summary 객체를 추가하세요.
           </div>
         </div>
         <div class="summary-meta">
@@ -604,11 +652,14 @@ function renderSummary(summary, indicators) {
 
   const riskClass = `risk-${summary.risk_level || 'moderate'}`;
   const riskLabels = { critical:'⚠ CRITICAL', high:'▲ HIGH', moderate:'◆ MODERATE', low:'▽ LOW' };
+  // thesis: 문장 단위 줄바꿈 적용
+  const formattedThesis = formatThesis(summary.thesis || summary.key_thesis || '');
+
   return `<div class="summary-card">
     <div class="summary-top">
       <div>
         <div class="summary-label">Weekly Thesis · ${summary.date || ''}</div>
-        <div class="summary-thesis">${summary.thesis || summary.key_thesis || ''}</div>
+        <div class="summary-thesis">${formattedThesis}</div>
       </div>
       <div class="summary-meta">
         <span class="risk-badge ${riskClass}">${riskLabels[summary.risk_level] || 'MODERATE'}</span>
@@ -632,13 +683,11 @@ function render() {
   const indicators = (data.indicators || data || []).filter(i => !i.isArchived);
   const archived = (data.indicators || data || []).filter(i => i.isArchived);
 
-  // Count per group
   const groupCounts = {};
   indicators.forEach(ind => {
     groupCounts[ind.group] = (groupCounts[ind.group] || 0) + 1;
   });
 
-  // Build tabs
   const tabAll = `<button class="tab ${state.activeTab === 'all' ? 'active' : ''}" onclick="switchTab('all')">
     전체 <span class="tab-cnt">${indicators.length}</span>
   </button>`;
@@ -650,20 +699,16 @@ function render() {
     </button>`;
   }).join('');
 
-  // Active indicators
   const activeInds = state.activeTab === 'all'
     ? indicators
     : indicators.filter(i => i.group === state.activeTab);
 
-  // Sort: triggered first, then watch, then normal; core before thematic
   activeInds.sort((a, b) => {
     const order = { triggered: 0, watch: 1, normal: 2 };
     const sa = order[resolveStatus(a)] ?? 2;
     const sb = order[resolveStatus(b)] ?? 2;
     if (sa !== sb) return sa - sb;
-    const ta = a.type === 'core' ? 0 : 1;
-    const tb = b.type === 'core' ? 0 : 1;
-    return ta - tb;
+    return (a.type === 'core' ? 0 : 1) - (b.type === 'core' ? 0 : 1);
   });
 
   const cards = activeInds.map(ind => renderCard(ind)).join('');
@@ -679,7 +724,6 @@ function render() {
       </div>`
     : '';
 
-  // Updated date
   const lastUpdate = data.summary?.date
     || indicators.filter(i => i.updatedDate).map(i => i.updatedDate).sort().reverse()[0]
     || '—';
@@ -727,33 +771,11 @@ function toggleArchive() {
 function openSettings() {
   document.getElementById('settingsModal').classList.add('open');
 }
-
 function closeSettings() {
   document.getElementById('settingsModal').classList.remove('open');
 }
 
-// ── No Config / Error States ──────────────────────────────────────────────────
-function renderNoConfig() {
-  document.getElementById('app').innerHTML = `
-    <div class="hdr">
-      <div class="hdr-left">
-        <div class="hdr-title">MACRO SIGNAL TRACKER</div>
-        <div class="hdr-version">v2</div>
-      </div>
-      <div class="hdr-right">
-        <button class="btn-sm" onclick="openSettings()">⚙ 설정</button>
-      </div>
-    </div>
-    <div class="state-box" style="min-height:300px">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32" style="color:var(--txt3)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      <div style="text-align:center">
-        <div style="color:var(--txt2);margin-bottom:6px">Gist ID가 설정되지 않았습니다</div>
-        <div style="color:var(--txt3)">설정 버튼을 클릭해 GitHub Gist ID를 입력하세요</div>
-      </div>
-      <button class="btn-primary" onclick="openSettings()">⚙ 설정 열기</button>
-    </div>`;
-}
-
+// ── Error States ──────────────────────────────────────────────────────────────
 function renderError(msg) {
   document.getElementById('app').innerHTML = `
     <div class="hdr">
