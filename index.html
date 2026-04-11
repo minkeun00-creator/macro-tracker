@@ -40,15 +40,12 @@ body {
   line-height: 1.5;
 }
 
-/* ── Scrollbar ── */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
 
-/* ── Layout ── */
 .app { max-width: 1200px; margin: 0 auto; padding: 20px 16px 60px; }
 
-/* ── Header ── */
 .hdr {
   display: flex; align-items: center; justify-content: space-between;
   margin-bottom: 20px; padding-bottom: 16px;
@@ -75,7 +72,6 @@ body {
 .btn-sm:hover { border-color: var(--accent); color: var(--txt); }
 .btn-sm svg { width: 12px; height: 12px; }
 
-/* ── Summary Card ── */
 .summary-card {
   background: var(--bg2); border: 1px solid var(--border);
   border-radius: 10px; padding: 18px 20px; margin-bottom: 20px;
@@ -94,7 +90,6 @@ body {
 .summary-thesis {
   font-size: 13px; font-weight: 400; color: var(--txt2); line-height: 1.7;
   max-width: 720px;
-  /* ── 단락 줄바꿈 활성화 ── */
   white-space: pre-line;
 }
 .summary-meta { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
@@ -116,13 +111,135 @@ body {
 .stat-dot.a { background: var(--amber); }
 .stat-dot.g { background: var(--green); }
 .stat-num { font-weight: 600; color: var(--txt); }
-
 .summary-week {
   font-family: var(--mono); font-size: 10px; color: var(--txt3);
   margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border2);
 }
 
-/* ── Tabs ── */
+/* ── Score Card ─────────────────────────────────────────────── */
+.score-wrap {
+  margin-bottom: 16px;
+}
+.score-row {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+/* 종합 카드 */
+.score-main {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex; align-items: center; gap: 14px;
+  position: relative; overflow: hidden;
+}
+.score-main::before {
+  content: '';
+  position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  background: var(--score-accent, var(--amber));
+  border-radius: 10px 0 0 10px;
+}
+.score-dial { flex-shrink: 0; width: 64px; height: 64px; }
+.score-dial svg { width: 100%; height: 100%; }
+.score-info { flex: 1; min-width: 0; }
+.score-info-label {
+  font-family: var(--mono); font-size: 9px; letter-spacing: .1em;
+  color: var(--txt3); text-transform: uppercase; margin-bottom: 3px;
+}
+.score-info-main {
+  font-family: var(--mono); font-size: 15px; font-weight: 600;
+  line-height: 1.2; margin-bottom: 3px;
+}
+.score-info-signal {
+  font-family: var(--mono); font-size: 10px; color: var(--txt3);
+}
+.score-info-signal b { font-weight: 600; }
+/* 그룹 카드 */
+.score-group {
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+.score-group-label {
+  font-family: var(--mono); font-size: 9px; letter-spacing: .1em;
+  color: var(--txt3); text-transform: uppercase; margin-bottom: 6px;
+}
+.score-group-num {
+  font-family: var(--mono); font-size: 28px; font-weight: 600;
+  line-height: 1; margin-bottom: 3px;
+}
+.score-group-sub {
+  font-family: var(--mono); font-size: 10px; color: var(--txt3);
+}
+/* 게이지 바 */
+.score-gauge {
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+}
+.score-gauge-label {
+  font-family: var(--mono); font-size: 9px; letter-spacing: .1em;
+  color: var(--txt3); text-transform: uppercase; margin-bottom: 8px;
+}
+.score-track {
+  width: 100%; height: 6px; border-radius: 3px;
+  background: linear-gradient(to right,
+    #e84040 0%, #f59e0b 25%, #22c55e 50%, #f59e0b 75%, #e84040 100%);
+  position: relative; margin-bottom: 5px;
+}
+.score-needle {
+  position: absolute; top: -5px;
+  width: 16px; height: 16px; border-radius: 50%;
+  background: var(--bg); border: 2px solid var(--needle-c, #f59e0b);
+  box-shadow: 0 0 6px var(--needle-c, #f59e0b);
+  transform: translateX(-50%);
+  transition: left .5s cubic-bezier(.4,0,.2,1);
+}
+.score-track-labels {
+  display: flex; justify-content: space-between;
+  font-family: var(--mono); font-size: 9px; color: var(--txt3);
+}
+/* 세부 지표 그리드 */
+.score-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+}
+.score-detail-item {
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+.score-detail-name {
+  font-family: var(--mono); font-size: 9px; color: var(--txt3);
+  margin-bottom: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.score-detail-bar {
+  width: 100%; height: 3px; background: var(--border);
+  border-radius: 2px; margin-bottom: 4px; position: relative;
+}
+.score-detail-fill { height: 100%; border-radius: 2px; transition: width .5s ease; }
+.score-detail-num {
+  font-family: var(--mono); font-size: 11px; font-weight: 600;
+}
+.score-section-header {
+  font-family: var(--mono); font-size: 9px; letter-spacing: .1em;
+  color: var(--txt3); text-transform: uppercase;
+  margin: 8px 0 6px;
+}
+
+@media (max-width: 640px) {
+  .score-row { grid-template-columns: 1fr; }
+  .score-detail-grid { grid-template-columns: repeat(2, 1fr); }
+}
+/* ── /Score Card ─────────────────────────────────────────────── */
+
 .tabs { display: flex; gap: 6px; margin-bottom: 16px; flex-wrap: wrap; }
 .tab {
   padding: 5px 14px; border-radius: 6px;
@@ -143,7 +260,6 @@ body {
 }
 .tab.active .tab-cnt { background: rgba(79,124,255,.2); color: var(--accent); }
 
-/* ── Grid ── */
 .panel { display: none; }
 .panel.active { display: block; }
 .grid {
@@ -152,7 +268,6 @@ body {
   gap: 12px;
 }
 
-/* ── Card ── */
 .card {
   background: var(--bg2); border: 1px solid var(--border2);
   border-radius: var(--radius); padding: 14px 16px;
@@ -172,7 +287,6 @@ body {
   background: var(--blue-bg); color: var(--accent); border: 1px solid rgba(79,124,255,.3);
 }
 
-/* Card top row */
 .card-top {
   display: flex; align-items: center; justify-content: space-between;
   margin-bottom: 6px; gap: 8px;
@@ -195,7 +309,6 @@ body {
 }
 .badge-type.core { color: var(--accent); border-color: rgba(79,124,255,.25); background: rgba(79,124,255,.06); }
 
-/* Sparkline row */
 .card-spark-row {
   display: flex; align-items: flex-start; justify-content: space-between;
   margin-bottom: 8px; gap: 8px;
@@ -203,7 +316,6 @@ body {
 .card-val {
   font-family: var(--mono); font-size: 11px; font-weight: 400;
   color: var(--txt2); line-height: 1.6; flex: 1;
-  /* ── val 필드 줄바꿈 활성화 ── */
   white-space: pre-line;
 }
 .spark-wrap { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
@@ -222,30 +334,22 @@ body {
 .zscore-bar { height: 100%; border-radius: 2px; position: absolute; }
 .zscore-center { position: absolute; left: 50%; top: 0; width: 1px; height: 100%; background: var(--txt3); }
 
-/* Sub / ctx */
 .card-sub { font-size: 11px; color: var(--txt3); margin-bottom: 8px; }
-
-/* ── ctx 단락 처리 핵심 ── */
 .card-ctx {
   font-size: 12px; color: var(--txt2); margin-bottom: 10px;
   line-height: 1.65;
-  white-space: pre-line;          /* \n을 실제 줄바꿈으로 렌더 */
+  white-space: pre-line;
 }
-.card-ctx p {
-  margin-bottom: 6px;
-}
+.card-ctx p { margin-bottom: 6px; }
 .card-ctx p:last-child { margin-bottom: 0; }
-
 .card-thr {
   font-family: var(--mono); font-size: 10px; color: var(--txt3);
   padding: 6px 10px; background: var(--bg3); border-radius: 4px;
   margin-bottom: 8px; line-height: 1.55;
-  /* ── threshold 줄바꿈 활성화 ── */
   white-space: pre-line;
 }
 .card-thr::before { content: '⚡ '; }
 
-/* Tags */
 .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 6px; }
 .tag {
   font-family: var(--mono); font-size: 9px; letter-spacing: .03em;
@@ -255,7 +359,6 @@ body {
 .tag-g { background: var(--green-bg); color: var(--green); }
 .tag-n { background: var(--bg3); color: var(--txt3); }
 
-/* Impact chips */
 .impacts-row { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
 .impacts-label { font-family: var(--mono); font-size: 9px; color: var(--txt3); margin-right: 2px; }
 .impact-chip {
@@ -267,14 +370,12 @@ body {
 }
 .impact-chip:hover { background: rgba(79,124,255,.18); }
 
-/* Changed marker */
 .changed-dot {
   width: 6px; height: 6px; border-radius: 50%;
   background: var(--amber); flex-shrink: 0;
   box-shadow: 0 0 6px var(--amber);
 }
 
-/* ── Archive Section ── */
 .archive-section { margin-top: 32px; }
 .archive-toggle {
   display: flex; align-items: center; gap: 8px;
@@ -296,7 +397,6 @@ body {
   background: var(--bg3); color: var(--txt3); border: 1px solid var(--border2);
 }
 
-/* ── Settings Modal ── */
 .modal-overlay {
   display: none; position: fixed; inset: 0;
   background: rgba(0,0,0,.7); z-index: 100;
@@ -340,7 +440,6 @@ body {
   border: 1px solid var(--border); cursor: pointer;
 }
 
-/* ── Loading / Error ── */
 .state-box {
   display: flex; flex-direction: column; align-items: center;
   justify-content: center; gap: 12px; padding: 60px 20px;
@@ -353,7 +452,6 @@ body {
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* ── Tooltip ── */
 .tooltip {
   position: fixed; z-index: 200; pointer-events: none;
   background: var(--bg3); border: 1px solid var(--border);
@@ -365,7 +463,6 @@ body {
 }
 .tooltip.visible { opacity: 1; }
 
-/* ── Impact graph legend ── */
 .graph-bar {
   height: 2px; background: linear-gradient(90deg, var(--border), var(--accent));
   margin: 20px 0 12px; border-radius: 1px;
@@ -402,14 +499,18 @@ body {
 <div class="tooltip" id="tooltip"></div>
 
 <script>
-// ── Config ──────────────────────────────────────────────────────────────────
 const GROUPS = {
   energy_geo: '에너지·지정학',
   inflation:  '인플레이션',
   growth:     '경기·성장',
   rates:      '금리·채권',
   positioning:'포지셔닝',
-  korea:      '한국'
+  korea:      '한국',
+  liquidity:  '유동성',
+  sentiment:  '심리지표',
+  credit:     '크레딧',
+  growth_sentiment: '경기·심리',
+  korea_asia: '한국·아시아'
 };
 
 let state = {
@@ -417,11 +518,8 @@ let state = {
   activeTab: 'all',
   highlightIds: null,
   archivedOpen: false,
-  gistId: localStorage.getItem('gistId') || localStorage.getItem('gist_id') || '',
-  ghToken: localStorage.getItem('ghToken') || localStorage.getItem('gist_token') || ''
 };
 
-// ── Data Fetch ───────────────────────────────────────────────────────────────
 const DATA_FILE = 'macro_indicators.json';
 
 async function fetchData() {
@@ -435,36 +533,26 @@ async function fetchData() {
       render();
       return;
     }
-    throw new Error('macro_indicators.json 파일을 찾을 수 없습니다. 저장소에 파일을 추가하세요.');
+    throw new Error('macro_indicators.json 파일을 찾을 수 없습니다.');
   } catch (e) {
     renderError(e.message);
   }
 }
 
-// ── Text Formatter ───────────────────────────────────────────────────────────
-// ctx / threshold / thesis 텍스트를 문장 단위로 줄바꿈 처리
+// ── Text Formatter ────────────────────────────────────────────
 function formatCtx(text) {
   if (!text) return '';
-
   return text
-    // 마침표 뒤 한국어 시작 → 줄바꿈
     .replace(/\. ([가-힣])/g, '.\n$1')
-    // 마침표 뒤 날짜 패턴(4/7, 2026-) → 줄바꿈
     .replace(/\. ([0-9]{1,2}\/[0-9]{1,2})/g, '.\n$1')
-    // 마침표 뒤 주요 출처·기관 키워드 → 줄바꿈
-    .replace(/\. (WSJ|Daily Shot|Bloomberg|Reuters|BofA|Goldman|Barclays|UBS|Oxford|Dimon|Fed |IMF|OECD|WTO|UNCTAD|ISM |CPI|NFP|GDPNow|IRGC|NASA)/g, '.\n$1')
-    // 연속 공백·줄바꿈 정리
+    .replace(/\. (WSJ|Daily Shot|Bloomberg|Reuters|BofA|Goldman|Barclays|UBS|Oxford|Dimon|Fed |IMF|OECD|WTO|UNCTAD|ISM |CPI|NFP|GDPNow|IRGC)/g, '.\n$1')
     .replace(/\n{3,}/g, '\n\n')
     .trim();
 }
-
-// val 필드: · 구분자를 줄바꿈으로 변환
 function formatVal(text) {
   if (!text) return '';
   return text.replace(/ · /g, '\n');
 }
-
-// summary thesis: 문장 단위 줄바꿈 + 【】 블록 앞 구분
 function formatThesis(text) {
   if (!text) return '';
   return text
@@ -475,7 +563,191 @@ function formatThesis(text) {
     .trim();
 }
 
-// ── Z-Score → Status ─────────────────────────────────────────────────────────
+// ── Score Card ────────────────────────────────────────────────
+function scoreColor(s) {
+  if (s <= 20) return '#e84040';
+  if (s <= 35) return '#f59e0b';
+  if (s <= 50) return '#ef7316';
+  if (s <= 65) return '#22c55e';
+  if (s <= 80) return '#f59e0b';
+  return '#e84040';
+}
+function scoreLabel(s) {
+  if (s <= 20) return '⚡ Extreme Stress';
+  if (s <= 35) return '😨 Stress';
+  if (s <= 50) return '⚠️ Caution';
+  if (s <= 65) return '😐 Neutral';
+  if (s <= 80) return '😄 Greed';
+  return '🔥 Extreme Greed';
+}
+function scoreSignal(s) {
+  if (s <= 20) return 'Strong Buy';
+  if (s <= 35) return 'Accumulate';
+  if (s <= 50) return 'Watch';
+  if (s <= 65) return 'Hold';
+  if (s <= 80) return 'Reduce';
+  return 'Strong Sell';
+}
+
+const IND_LABELS = {
+  fed_balance_sheet: 'Fed BS',
+  sofr_repo_stress:  'SOFR',
+  tga_balance:       'TGA',
+  mmf_flow:          'MMF',
+  credit_spread_hy:  'HY Sprd',
+  cnn_fear_greed:    'F&G',
+  aaii_bull_bear:    'AAII',
+  sp500_rsi:         'RSI',
+  put_call_ratio:    'P/C',
+  vix_term_structure:'VIX TS',
+};
+
+// scores가 없으면 z-score에서 즉석 계산
+const SCORE_PARAMS = {
+  fed_balance_sheet:  { z: -1.3, d: +1, w: 1.0 },
+  sofr_repo_stress:   { z:  0.1, d: -1, w: 1.0 },
+  tga_balance:        { z:  0.7, d: -1, w: 0.8 },
+  mmf_flow:           { z:  2.0, d: -1, w: 0.8 },
+  credit_spread_hy:   { z:  0.4, d: -1, w: 1.2 },
+  cnn_fear_greed:     { z: -1.3, d: +1, w: 1.0 },
+  aaii_bull_bear:     { z: -1.6, d: +1, w: 1.0 },
+  sp500_rsi:          { z:  0.3, d: +1, w: 0.8 },
+  put_call_ratio:     { z:  0.8, d: -1, w: 1.0 },
+  vix_term_structure: { z: -1.0, d: +1, w: 1.2 },
+};
+const LIQ_IDS  = ['fed_balance_sheet','sofr_repo_stress','tga_balance','mmf_flow','credit_spread_hy'];
+const SENT_IDS = ['cnn_fear_greed','aaii_bull_bear','sp500_rsi','put_call_ratio','vix_term_structure'];
+
+function z2score(z, d) {
+  return Math.round(((Math.max(-3, Math.min(3, z * d)) + 3) / 6) * 100);
+}
+
+function computeScores(indicators) {
+  // indicators 배열에서 z-score 실시간 반영
+  const idxMap = {};
+  indicators.forEach(i => { idxMap[i.id] = i; });
+
+  const allIds = [...LIQ_IDS, ...SENT_IDS];
+  const details = { liquidity: {}, sentiment: {} };
+
+  allIds.forEach(id => {
+    const p = SCORE_PARAMS[id];
+    // 실제 지표가 있으면 그 z_score 우선
+    const z = (idxMap[id] && typeof idxMap[id].z_score === 'number')
+      ? idxMap[id].z_score : p.z;
+    const sc = z2score(z, p.d);
+    if (LIQ_IDS.includes(id)) details.liquidity[id] = { score: sc, z };
+    else details.sentiment[id] = { score: sc, z };
+  });
+
+  function grpScore(ids, grpDetails) {
+    let tw = 0, tws = 0;
+    ids.forEach(id => {
+      const w = SCORE_PARAMS[id].w;
+      tws += grpDetails[id].score * w;
+      tw  += w;
+    });
+    return Math.round(tws / tw);
+  }
+
+  const liq  = grpScore(LIQ_IDS,  details.liquidity);
+  const sent = grpScore(SENT_IDS, details.sentiment);
+  return {
+    composite: Math.round((liq + sent) / 2),
+    liquidity: liq,
+    sentiment: sent,
+    details
+  };
+}
+
+function renderScoreCard(summary, indicators) {
+  // JSON에 scores 있으면 사용, 없으면 실시간 계산
+  const sc = summary?.scores || computeScores(indicators);
+  const comp = sc.composite;
+  const liq  = sc.liquidity;
+  const sent = sc.sentiment;
+  const cc = scoreColor(comp);
+  const lc = scoreColor(liq);
+  const scc = scoreColor(sent);
+
+  // 원형 게이지 (반원 arc, r=28, 둘레≈175.9)
+  const CIRC = 175.9;
+  const compArc = (comp / 100) * CIRC;
+  const dialSVG = `<svg viewBox="0 0 64 64">
+    <circle cx="32" cy="32" r="28" fill="none" stroke="#1e2535" stroke-width="6"/>
+    <circle cx="32" cy="32" r="28" fill="none"
+      stroke="${cc}" stroke-width="6"
+      stroke-dasharray="${compArc.toFixed(1)} ${CIRC}"
+      stroke-linecap="round"
+      transform="rotate(-90 32 32)"
+      style="transition:stroke-dasharray .6s ease"/>
+    <text x="32" y="35" font-family="IBM Plex Mono,monospace"
+      font-size="13" font-weight="600" fill="${cc}"
+      text-anchor="middle" dominant-baseline="middle">${comp}</text>
+  </svg>`;
+
+  // 세부 지표 렌더
+  function detailItems(ids, grpDet) {
+    return ids.map(id => {
+      const d = grpDet[id];
+      const c = scoreColor(d.score);
+      return `<div class="score-detail-item">
+        <div class="score-detail-name">${IND_LABELS[id]}</div>
+        <div class="score-detail-bar">
+          <div class="score-detail-fill" style="width:${d.score}%;background:${c}"></div>
+        </div>
+        <div class="score-detail-num" style="color:${c}">${d.score}</div>
+      </div>`;
+    }).join('');
+  }
+
+  return `<div class="score-wrap">
+    <div class="score-row">
+      <!-- 종합 점수 -->
+      <div class="score-main" style="--score-accent:${cc}">
+        <div class="score-dial">${dialSVG}</div>
+        <div class="score-info">
+          <div class="score-info-label">종합 매크로 점수</div>
+          <div class="score-info-main" style="color:${cc}">${scoreLabel(comp)}</div>
+          <div class="score-info-signal">신호: <b style="color:${cc}">${scoreSignal(comp)}</b></div>
+        </div>
+      </div>
+      <!-- Liquidity -->
+      <div class="score-group">
+        <div class="score-group-label">💧 Liquidity</div>
+        <div class="score-group-num" style="color:${lc}">${liq}</div>
+        <div class="score-group-sub">${scoreLabel(liq)}</div>
+      </div>
+      <!-- Sentiment -->
+      <div class="score-group">
+        <div class="score-group-label">🧠 Sentiment</div>
+        <div class="score-group-num" style="color:${scc}">${sent}</div>
+        <div class="score-group-sub">${scoreLabel(sent)}</div>
+      </div>
+    </div>
+
+    <!-- 게이지 바 -->
+    <div class="score-gauge">
+      <div class="score-gauge-label">스트레스 게이지 — 낮을수록 역발상 매수 구간</div>
+      <div class="score-track">
+        <div class="score-needle" style="left:${comp}%;--needle-c:${cc}"></div>
+      </div>
+      <div class="score-track-labels">
+        <span>⚡ Extreme Stress (매수)</span>
+        <span>중립 50</span>
+        <span>🔥 Extreme Greed (매도)</span>
+      </div>
+    </div>
+
+    <!-- 세부 지표 -->
+    <div class="score-section-header">💧 Liquidity 세부</div>
+    <div class="score-detail-grid">${detailItems(LIQ_IDS, sc.details.liquidity)}</div>
+    <div class="score-section-header" style="margin-top:10px">🧠 Sentiment 세부</div>
+    <div class="score-detail-grid">${detailItems(SENT_IDS, sc.details.sentiment)}</div>
+  </div>`;
+}
+
+// ── Z-Score ───────────────────────────────────────────────────
 function resolveStatus(ind) {
   if (typeof ind.z_score === 'number') {
     const z = ind.z_score;
@@ -486,7 +758,6 @@ function resolveStatus(ind) {
   return ind.status || 'normal';
 }
 
-// ── Sparkline SVG ─────────────────────────────────────────────────────────────
 function sparklineSVG(history, status) {
   if (!history || history.length < 2) return '';
   const vals = history.map(h => h.val);
@@ -510,7 +781,6 @@ function sparklineSVG(history, status) {
   </svg>`;
 }
 
-// ── Z-Score Badge + Bar ───────────────────────────────────────────────────────
 function zscoreBadge(z_score) {
   if (typeof z_score !== 'number') return '';
   const z = z_score;
@@ -520,7 +790,7 @@ function zscoreBadge(z_score) {
   const pct = Math.min(Math.max((z + 3) / 6 * 100, 0), 100);
   const left = Math.min(50, pct), width = Math.abs(pct - 50);
   const barColor = Math.abs(z) >= 2 ? '#e84040' : Math.abs(z) >= 1.5 ? '#f59e0b' : '#4f7cff';
-  return `<div class="zscore-wrap" title="Z-Score: ${label} (과거 평균 대비 표준편차)">
+  return `<div class="zscore-wrap" title="Z-Score: ${label}">
     <span class="zscore-val ${cls}">${label}</span>
     <div class="zscore-bar-wrap">
       <div class="zscore-center"></div>
@@ -529,26 +799,22 @@ function zscoreBadge(z_score) {
   </div>`;
 }
 
-// ── Tag render ────────────────────────────────────────────────────────────────
 function tagHTML(t) {
   const cls = t.endsWith('(r)') ? 'tag-r' : t.endsWith('(g)') ? 'tag-g' : 'tag-n';
   const label = t.replace(/\([rng]\)$/, '');
   return `<span class="tag ${cls}">${label}</span>`;
 }
 
-// ── Impact Chips ──────────────────────────────────────────────────────────────
 function impactHTML(id, impacts) {
   if (!impacts || impacts.length === 0) return '';
   const chips = impacts.map(imp =>
-    `<span class="impact-chip" onclick="highlightImpact('${id}', ${JSON.stringify(impacts)})" title="${imp}으로 리스크 전이">→ ${imp}</span>`
+    `<span class="impact-chip" onclick="highlightImpact('${id}', ${JSON.stringify(impacts)})" title="${imp}">${imp}</span>`
   ).join('');
   return `<div class="impacts-row">
-    <span class="impacts-label">IMPACTS:</span>
-    ${chips}
+    <span class="impacts-label">IMPACTS:</span>${chips}
   </div>`;
 }
 
-// ── Render Card ───────────────────────────────────────────────────────────────
 function renderCard(ind, archived = false) {
   const status = resolveStatus(ind);
   const spark = sparklineSVG(ind.history_data, status);
@@ -563,38 +829,25 @@ function renderCard(ind, archived = false) {
   ].filter(Boolean).join(' ');
 
   const statusLabel = { triggered: 'Triggered', watch: 'Watch', normal: 'Normal' }[status];
-  const statusBadge = `<span class="badge-status badge-${status}">${statusLabel}</span>`;
-  const typeBadge = `<span class="badge-type${ind.type === 'core' ? ' core' : ''}">${ind.type === 'core' ? 'CORE' : 'THEME'}</span>`;
   const changedDot = ind.isChanged ? '<div class="changed-dot" title="이번 업데이트 변경됨"></div>' : '';
   const archiveLabel = archived ? '<span class="archive-label">ARCHIVED</span>' : '';
-
-  // val: · 구분자를 줄바꿈으로 변환 (sparkline 없을 때만 전체 표시)
   const formattedVal = formatVal(ind.val || '');
-
   const sparkRow = (spark || zBadge)
     ? `<div class="card-spark-row">
         <span class="card-val">${formattedVal}</span>
-        <div class="spark-wrap">
-          ${spark}
-          ${zBadge}
-        </div>
+        <div class="spark-wrap">${spark}${zBadge}</div>
        </div>`
     : `<div class="card-val" style="margin-bottom:10px">${formattedVal}</div>`;
-
-  // ctx: 문장 단위 줄바꿈 적용
   const formattedCtx = formatCtx(ind.ctx || '');
-  // threshold: 문장 단위 줄바꿈 적용
   const formattedThr = ind.threshold ? formatCtx(ind.threshold) : '';
 
-  return `
-  <div class="card ${cardClass}" id="card-${ind.id}" data-id="${ind.id}">
+  return `<div class="card ${cardClass}" id="card-${ind.id}" data-id="${ind.id}">
     <div class="card-top">
       <span class="card-name">${ind.title}</span>
       <div class="card-badges">
-        ${changedDot}
-        ${archiveLabel}
-        ${typeBadge}
-        ${statusBadge}
+        ${changedDot}${archiveLabel}
+        <span class="badge-type${ind.type === 'core' ? ' core' : ''}">${ind.type === 'core' ? 'CORE' : 'THEME'}</span>
+        <span class="badge-status badge-${status}">${statusLabel}</span>
       </div>
     </div>
     <div class="card-sub">${ind.sub || ''}</div>
@@ -606,15 +859,13 @@ function renderCard(ind, archived = false) {
   </div>`;
 }
 
-// ── Highlight by Impact ───────────────────────────────────────────────────────
 function highlightImpact(sourceId, impacts) {
   const ids = new Set([sourceId, ...impacts]);
   const sameSet = state.highlightIds
     && [...ids].every(id => state.highlightIds.has(id))
     && state.highlightIds.size === ids.size;
   state.highlightIds = sameSet ? null : ids;
-  const cards = document.querySelectorAll('.card');
-  cards.forEach(card => {
+  document.querySelectorAll('.card').forEach(card => {
     const id = card.dataset.id;
     card.classList.remove('highlighted', 'dimmed');
     if (state.highlightIds) {
@@ -624,35 +875,27 @@ function highlightImpact(sourceId, impacts) {
   });
 }
 
-// ── Render Summary ────────────────────────────────────────────────────────────
 function renderSummary(summary, indicators) {
   const triggered = indicators.filter(i => resolveStatus(i) === 'triggered').length;
-  const watch = indicators.filter(i => resolveStatus(i) === 'watch').length;
-  const normal = indicators.filter(i => resolveStatus(i) === 'normal').length;
+  const watch     = indicators.filter(i => resolveStatus(i) === 'watch').length;
+  const normal    = indicators.filter(i => resolveStatus(i) === 'normal').length;
 
   if (!summary) {
     return `<div class="summary-card">
-      <div class="summary-top">
-        <div>
-          <div class="summary-label">Weekly Thesis</div>
-          <div class="summary-thesis" style="color:var(--txt3);font-size:12px;">
-            summary 필드가 없습니다 — JSON 최상단에 summary 객체를 추가하세요.
-          </div>
-        </div>
-        <div class="summary-meta">
-          <div class="summary-stats">
-            <div class="stat-pill"><div class="stat-dot r"></div><span class="stat-num">${triggered}</span> Triggered</div>
-            <div class="stat-pill"><div class="stat-dot a"></div><span class="stat-num">${watch}</span> Watch</div>
-            <div class="stat-pill"><div class="stat-dot g"></div><span class="stat-num">${normal}</span> Normal</div>
-          </div>
-        </div>
+      <div class="summary-top"><div>
+        <div class="summary-label">Weekly Thesis</div>
+        <div class="summary-thesis" style="color:var(--txt3);font-size:12px;">summary 필드가 없습니다.</div>
+      </div></div>
+      <div class="summary-stats" style="margin-top:10px">
+        <div class="stat-pill"><div class="stat-dot r"></div><span class="stat-num">${triggered}</span> Triggered</div>
+        <div class="stat-pill"><div class="stat-dot a"></div><span class="stat-num">${watch}</span> Watch</div>
+        <div class="stat-pill"><div class="stat-dot g"></div><span class="stat-num">${normal}</span> Normal</div>
       </div>
     </div>`;
   }
 
   const riskClass = `risk-${summary.risk_level || 'moderate'}`;
   const riskLabels = { critical:'⚠ CRITICAL', high:'▲ HIGH', moderate:'◆ MODERATE', low:'▽ LOW' };
-  // thesis: 문장 단위 줄바꿈 적용
   const formattedThesis = formatThesis(summary.thesis || summary.key_thesis || '');
 
   return `<div class="summary-card">
@@ -665,7 +908,7 @@ function renderSummary(summary, indicators) {
         <span class="risk-badge ${riskClass}">${riskLabels[summary.risk_level] || 'MODERATE'}</span>
       </div>
     </div>
-    <div class="summary-stats" style="margin-top:10px;">
+    <div class="summary-stats" style="margin-top:10px">
       <div class="stat-pill"><div class="stat-dot r"></div><span class="stat-num">${triggered}</span> Triggered</div>
       <div class="stat-pill"><div class="stat-dot a"></div><span class="stat-num">${watch}</span> Watch</div>
       <div class="stat-pill"><div class="stat-dot g"></div><span class="stat-num">${normal}</span> Normal</div>
@@ -677,11 +920,11 @@ function renderSummary(summary, indicators) {
   </div>`;
 }
 
-// ── Main Render ───────────────────────────────────────────────────────────────
+// ── Main Render ───────────────────────────────────────────────
 function render() {
   const { data } = state;
   const indicators = (data.indicators || data || []).filter(i => !i.isArchived);
-  const archived = (data.indicators || data || []).filter(i => i.isArchived);
+  const archived   = (data.indicators || data || []).filter(i => i.isArchived);
 
   const groupCounts = {};
   indicators.forEach(ind => {
@@ -691,7 +934,11 @@ function render() {
   const tabAll = `<button class="tab ${state.activeTab === 'all' ? 'active' : ''}" onclick="switchTab('all')">
     전체 <span class="tab-cnt">${indicators.length}</span>
   </button>`;
-  const groupTabs = Object.entries(GROUPS).map(([g, label]) => {
+
+  // 동적으로 그룹 탭 생성 (GROUPS에 없는 그룹도 표시)
+  const allGroups = { ...GROUPS };
+  Object.keys(groupCounts).forEach(g => { if (!allGroups[g]) allGroups[g] = g; });
+  const groupTabs = Object.entries(allGroups).map(([g, label]) => {
     const cnt = groupCounts[g] || 0;
     if (!cnt) return '';
     return `<button class="tab ${state.activeTab === g ? 'active' : ''}" onclick="switchTab('${g}')">
@@ -747,42 +994,31 @@ function render() {
       </div>
     </div>
     ${renderSummary(data.summary, indicators)}
+    ${renderScoreCard(data.summary, indicators)}
     <div class="tabs">${tabAll}${groupTabs}</div>
     <div class="grid">${cards}</div>
     ${archiveSection}`;
 }
 
-// ── Tab / Archive ─────────────────────────────────────────────────────────────
 function switchTab(tab) {
   state.activeTab = tab;
   state.highlightIds = null;
   render();
 }
-
 function toggleArchive() {
   state.archivedOpen = !state.archivedOpen;
   const grid = document.querySelector('.archive-grid');
-  const btn = document.querySelector('.archive-toggle');
+  const btn  = document.querySelector('.archive-toggle');
   if (grid) grid.classList.toggle('open', state.archivedOpen);
-  if (btn) btn.classList.toggle('open', state.archivedOpen);
+  if (btn)  btn.classList.toggle('open', state.archivedOpen);
 }
+function openSettings()  { document.getElementById('settingsModal').classList.add('open'); }
+function closeSettings() { document.getElementById('settingsModal').classList.remove('open'); }
 
-// ── Settings ──────────────────────────────────────────────────────────────────
-function openSettings() {
-  document.getElementById('settingsModal').classList.add('open');
-}
-function closeSettings() {
-  document.getElementById('settingsModal').classList.remove('open');
-}
-
-// ── Error States ──────────────────────────────────────────────────────────────
 function renderError(msg) {
   document.getElementById('app').innerHTML = `
     <div class="hdr">
-      <div class="hdr-left">
-        <div class="hdr-title">MACRO SIGNAL TRACKER</div>
-        <div class="hdr-version">v2</div>
-      </div>
+      <div class="hdr-left"><div class="hdr-title">MACRO SIGNAL TRACKER</div><div class="hdr-version">v2</div></div>
       <div class="hdr-right">
         <button class="btn-sm" onclick="fetchData()">↻ 재시도</button>
         <button class="btn-sm" onclick="openSettings()">⚙ 설정</button>
@@ -795,7 +1031,6 @@ function renderError(msg) {
     </div>`;
 }
 
-// ── Tooltip ───────────────────────────────────────────────────────────────────
 const tip = document.getElementById('tooltip');
 document.addEventListener('mousemove', e => {
   if (tip.classList.contains('visible')) {
@@ -804,7 +1039,6 @@ document.addEventListener('mousemove', e => {
   }
 });
 
-// ── Init ──────────────────────────────────────────────────────────────────────
 fetchData();
 </script>
 </body>

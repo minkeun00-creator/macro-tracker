@@ -10,7 +10,61 @@
     "watch_count": 27,
     "updated_by": "Web update 2026-04-11 + Liquidity·Sentiment 10개 신규 추가",
     "updated_at": "2026-04-11T22:00:00+09:00",
-    "update_type": "weekly"
+    "update_type": "weekly",
+    "scores": {
+      "composite": 35,
+      "liquidity": 36,
+      "sentiment": 34,
+      "composite_label": "⚠️ Caution",
+      "composite_signal": "Watch",
+      "details": {
+        "liquidity": {
+          "fed_balance_sheet": {
+            "score": 28,
+            "z": -1.3
+          },
+          "sofr_repo_stress": {
+            "score": 48,
+            "z": 0.1
+          },
+          "tga_balance": {
+            "score": 38,
+            "z": 0.7
+          },
+          "mmf_flow": {
+            "score": 17,
+            "z": 2.0
+          },
+          "credit_spread_hy": {
+            "score": 43,
+            "z": 0.4
+          }
+        },
+        "sentiment": {
+          "cnn_fear_greed": {
+            "score": 28,
+            "z": -1.3
+          },
+          "aaii_bull_bear": {
+            "score": 23,
+            "z": -1.6
+          },
+          "sp500_rsi": {
+            "score": 55,
+            "z": 0.3
+          },
+          "put_call_ratio": {
+            "score": 37,
+            "z": 0.8
+          },
+          "vix_term_structure": {
+            "score": 33,
+            "z": -1.0
+          }
+        }
+      },
+      "methodology": "각 지표 z-score를 방향성(direction)·가중치(weight) 반영해 0-100점 변환. 낮을수록 스트레스/역발상 매수, 높을수록 과열/리스크. Liquidity(5개)·Sentiment(5개) 단순평균 후 50:50 합산."
+    }
   },
   "indicators": [
     {
