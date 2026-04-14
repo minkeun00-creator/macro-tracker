@@ -1,22 +1,22 @@
 {
   "_schema_version": "2.0",
-  "_comment": "WSJ 4/11-12 주말판 반영. 3월 CPI +3.3% YoY(2년 최고) 실현 확인. 미시간 소비자심리 47.6 사상 최저(triggered 상향). 실질주간임금 -0.9% MoM. WTI 주간 -13.42%. 이슬라마바드 협상 진행 중. CDX Financials 사모신용 숏 인덱스 출시 예정. S&P 주간 +3.56% 올해 최고. risk_level HIGH 유지. Liquidity(5개: Fed BS·SOFR·TGA·MMF·HY Spread) + Sentiment(5개: CNN F&G·AAII·RSI·Put/Call·VIX Term Str.) 신규 추가. 2026-04-11 기준.",
+  "_comment": "Daily Shot 4/13 반영. 미-이란 협상 완전 결렬 + 트럼프 호르무즈 봉쇄 선언. WTI/Brent 모두 $100 재돌파(oil-yoy triggered 상향). 3월 CPI 헤드라인 급등(에너지 주도, 가솔린 MoM 사상 최대), 코어는 예상 소폭 하회. UMich 47.6 역대 최저 재확인, 단기 인플레 기대 4.8%(+1.0%p). BCA 글로벌 원유 12% 오프라인. 알루미늄 4년 최고. APAC 연료부족 급증. HF 매크로 순매수 2025년5월 이후 최대, 기술 순매도 5년+ 최대. HY OAS 200일선 하향. BDC 순펀딩 Q4 마이너스 확인. triggers_count 5, risk_level HIGH. 2026-04-13 기준.",
   "summary": {
-    "week": "2026-W15",
-    "date": "2026-04-10",
-    "thesis": "【① 레벨: 35점 — 회복 초입】\n종합 35점. 공개시장 심리·포지셔닝은 회복 중이나 사모신용(Carlyle 환매 5% 캡)과 실물 펀더멘털(Q4 GDP 0.5%, 실질 가처분소득 급감)이 역방향. 같은 35점이지만 구성 요소들이 서로 다른 방향을 향하는 분기 국면.\n\n【② 방향성: 기술/포지셔닝 ↑ vs 펀더멘털 ↓】\nS&P 7연속 상승·100일선 돌파, VIX 100일선 하향, Goldman HF 순레버리지 2025년 중반 이후 최대. 기술적·포지셔닝 복원이 강하게 진행 중. 반면 Q4 GDP 0.5%(3차 하향), 실질 가처분소득 급격 수축, 저축률 지속 불가 수준 접근. 돈이 먼저 움직이고 펀더멘털이 뒤따르는 것인지, 아니면 기술적 반등이 펀더멘털에 막히는 것인지가 핵심 질문.\n\n【③ Liquidity·Sentiment 괴리: 공개 vs 사모 분기】\n공개시장: HY 스프레드 294bps 안정, MOVE 200일선 하향, ETF 유입 $510B. 사모시장: Carlyle 환매 5% 캡 발동(15.7% 요청의 1/3만 허용). CDX Financials 출시와 맞물려 사모신용 헤지 수요가 실제 스트레스로 전환 시작. MMF $7.86T 여전히 미해제 — Dry Powder가 공개시장으로 유입되기 전 사모신용 스트레스가 먼저 가시화.\n\n【④ 촉매: 호르무즈 물리적 개방이 유일한 게임체인저】\n휴전 합의(4/8) 후에도 호르무즈 통항 여전히 심각하게 제한(Bloomberg 4/9). North Sea Forties Blend $147 기록 — 물리적 공급 긴박감 지속. BofA News Pulse 분쟁 이후 첫 개선은 심리적 완화 신호. 다음 전환점: 호르무즈 실제 개방 확인 → HY 스프레드 200bps대 → Liquidity 점수 50점대 진입.",
+    "week": "2026-W16",
+    "date": "2026-04-14",
+    "thesis": "【① 레벨: 38점 — 재협상 기대 vs 구조적 스트레스 공존】\n유가 하락(재협상 기대) vs 호르무즈 봉쇄 지속의 긴장 구조 유지. 달러 장기 지지선 하향 돌파(일간 최대 신호) — 기축통화 지위 신뢰 균열 가시화. Goldman PCE 전망 상향(헤드라인 +1ppt→3.1%, 코어+0.3ppt→2.5%) — 인플레 고착 시나리오 기관 컨센서스로 수렴.\n\n【② 사모신용 In Focus: 시스템 리스크 아님, 但 성장 하방 위험】\nDaily Shot 4/14 Barclays·Alpine Macro·OFR 종합: 전 세계 사모신용 AUM $1.78T(BDC 제외, H1 2025). BDC 포함 미국 실제 배포 규모 ~$1.3T. 소매 투자자 비중 13%로 상승. Q1 환매 요청 급증 + 다수 펀드 출금 캡 발동. BDC 공개 거래가 NAV 대비 대폭 할인. 스프레드 IG·BB HY 대비 확대. 은행 직접 익스포저 ~$300B(총자산 1.5%) — IMF 최악의 경우 15% 은행 유동성 스트레스. OFR 최고 추정 카운터파티 익스포저 $540B. 결론: 시스템 리스크 아니나 딜 감소+은행 대출 기준 강화 경로로 성장 하방 압박.\n\n【③ 달러 장기 지지선 하향 돌파】\nDXY 장기 지지선 하향 돌파 — 단순 약세가 아닌 기축통화 신뢰 구조 변화 신호. 위안화 3년 최고. 크로스에셋 내재변동성 하락 시작. 10Y 실질금리 5일 연속 하락. 금융여건 완화 방향성 확인.\n\n【④ 인플레 + 성장 동시 하방: Goldman 스태그플레이션 시나리오】\nGoldman: 세금감면 성장 부양 효과 ≒ 고유가 드래그로 상쇄. 결과: 성장 중립 + 인플레만 올라가는 스태그플레이션 경로. Dec 2026 헤드라인 PCE 3.1%, 코어 2.5% 전망 — 연준 금리인하 불가 구조 재확인. 호주 소비자심리 팬데믹 이후 최대 월간 하락, 싱가포르 Q1 성장 마이너스.\n\n【⑤ 다음 전환점: 호르무즈 재협상 + 달러 추세】\n재협상 기대로 유가 일시 하락했으나 블록케이드 공식 철회 없으면 지속 불가. DXY 장기 지지선 하향 → 달러 구조적 약세 확인 시 원화·엔화 강세 + EM 자산 리레이팅. Morgan Stanley: 멀티플 하락+이익 개선 = 베어마켓 아닌 불마켓 조정 — 기술적 회복 논거 유지.",
     "risk_level": "high",
-    "triggers_count": 3,
-    "watch_count": 27,
-    "updated_by": "Daily Shot 4/10/2026",
-    "updated_at": "2026-04-10T22:00:00+09:00",
+    "triggers_count": 5,
+    "watch_count": 25,
+    "updated_by": "Daily Shot 4/14/2026",
+    "updated_at": "2026-04-14T22:00:00+09:00",
     "update_type": "daily",
     "scores": {
-      "composite": 35,
-      "liquidity": 36,
-      "sentiment": 34,
-      "composite_label": "⚠️ Caution",
-      "composite_signal": "Watch",
+      "composite": 38,
+      "liquidity": 35,
+      "sentiment": 40,
+      "composite_label": "⚠️ Elevated Caution",
+      "composite_signal": "Watch-High",
       "details": {
         "liquidity": {
           "fed_balance_sheet": {
@@ -36,58 +36,59 @@
             "z": 2.0
           },
           "credit_spread_hy": {
-            "score": 43,
-            "z": 0.4
+            "score": 44,
+            "z": 0.3
           }
         },
         "sentiment": {
           "cnn_fear_greed": {
-            "score": 28,
-            "z": -1.3
+            "score": 30,
+            "z": -1.5
           },
           "aaii_bull_bear": {
-            "score": 23,
-            "z": -1.6
+            "score": 25,
+            "z": -1.4
           },
           "sp500_rsi": {
-            "score": 55,
-            "z": 0.3
+            "score": 58,
+            "z": 0.4
           },
           "put_call_ratio": {
-            "score": 37,
-            "z": 0.8
+            "score": 40,
+            "z": 0.6
           },
           "vix_term_structure": {
-            "score": 33,
-            "z": -1.0
+            "score": 38,
+            "z": -0.7
           }
         }
       },
       "methodology": "각 지표 z-score를 방향성(direction)·가중치(weight) 반영해 0-100점 변환. 낮을수록 스트레스/역발상 매수, 높을수록 과열/리스크. Liquidity(5개)·Sentiment(5개) 단순평균 후 50:50 합산.",
-      "phase": "회복 초입",
-      "phase_en": "EARLY RECOVERY",
+      "phase": "재협상 기대+달러 균열",
+      "phase_en": "RENEGOTIATION + DOLLAR CRACK",
       "phase_color": "#f59e0b",
-      "phase_comment": "저점 공포에서 벗어나는 초기 단계입니다.\n기술 지표(RSI·VIX Term·S&P 100일선)는 강하게 정상화됐으나 개인 심리(AAII 음수 유지)와 사모신용(Carlyle 환매 캡)은 아직 공포 구간에 머물고 있습니다. MMF $7.86T 미해제 — Dry Powder 최대이나 방아쇠를 당기지 않았습니다.\n역발상 최적 타이밍(4/2~4/8)은 지나쳤고, 지금은 회복 확인 후 추격 단계입니다. 리스크 성격이 다릅니다.",
+      "phase_comment": "재협상 기대로 유가 하락하나 호르무즈 블록케이드 지속. 달러 장기 지지선 하향 돌파 — 구조적 변화 신호. 사모신용 시스템 리스크 아님 확인이나 성장 하방 압박 지속. Goldman PCE 3.1% 전망으로 스태그플레이션 시나리오 컨센서스化.",
       "phase_conditions": [
-        "기술 지표 정상화 ✓ (RSI 60.8, VIX Term 복귀 중)",
-        "크레딧 안정 ✓ (HY 294bps, 500bps 미만)",
-        "MMF 미해제 ✗ ($7.86T — Dry Powder 최대)",
-        "심리 래그 ✗ (AAII -17.9%p, CNN F&G 32)"
+        "호르무즈 블록케이드 지속 ✗ (재협상 기대로 유가 일시 하락)",
+        "달러 장기 지지선 하향 돌파 ✗ (기축통화 신뢰 균열 신호)",
+        "사모신용 시스템 리스크 아님 확인 △ (성장 하방 위험은 잔존)",
+        "Goldman PCE 3.1% 전망 ✗ (인플레 고착 시나리오 컨센서스化)"
       ],
-      "phase_next": "호르무즈 실제 개방 확인 + AAII 중립 복귀 + MMF 주간 순유출 $50B+ 중 하나 이상 충족 시 불확실 대기로 전환"
-    }
+      "phase_next": "호르무즈 블록케이드 공식 철회 + DXY 장기 지지선 재탈환 + Goldman PCE 전망 하향 조정 중 하나 이상 충족 시 위험 레벨 완화"
+    },
+    "_comment": "Daily Shot 4/13 + Daily Shot 4/14 + WSJ 4/14 종이신문 반영. WTI $99.08 확정종가(장중 $105). 사우디 Bab al-Mandeb 경고. 이란 해상재고 1.6억배럴(7월중순까지). FSB \"Triple Whammy\". Goldman Q1 +19%/PC펀드 4.99% 환매. 기존주택판매 -3.6%. 알루미늄 $3,608 4년최고+포스마쥬르. Qatar LNG 5년 수리. 걸프 인프라 피해 $250억+. 2026-04-14."
   },
   "indicators": [
     {
       "id": "oil-yoy",
       "title": "유가 YoY 상승률",
-      "sub": "WTI $98.67(live) · 주간 -13.05% · 이슬라마바드 협상 진행 · Brent-WTI 스프레드 정상화",
+      "sub": "WTI $99.08(4/14 확정종가) · 장중 $105 급등 후 재협상 기대 반락 · Brent $99.36",
       "group": "energy_geo",
       "type": "core",
       "isArchived": false,
-      "status": "watch",
-      "val": "WTI $98.67(4/11 야간 선물, 4/11 종가 $96.57) · Brent $95.92 · 주간 -13.05%(2020년 이후 최대) · YTD +42.23%",
-      "val_numeric": 98.67,
+      "status": "triggered",
+      "val": "WTI $99.08(4/14 확정종가, WSJ B7) · Brent $99.36 · 장중 최고 $105(봉쇄 선언) → 재협상 기대 하락",
+      "val_numeric": 99.08,
       "history_data": [
         {
           "date": "2026-02-09",
@@ -136,123 +137,131 @@
         {
           "date": "2026-04-11",
           "val": 98.67
+        },
+        {
+          "date": "2026-04-13",
+          "val": 101.5
+        },
+        {
+          "date": "2026-04-14",
+          "val": 99.08
         }
       ],
-      "z_score": 1.9,
-      "ctx": "oilprice.com(4/11 21:04 KST): WTI May 2026 $98.67(+$0.80, +0.81%). 이슬라마바드 협상(4/12): 미-이란 직접 회동 + 이스라엘-레바논 회담 병행. 호르무즈 선박통행료 부과 문제가 최대 변수.",
-      "threshold": "호르무즈 재개통 확인 시 $90 이하 → 위험 완화 / $110 재돌파 시 triggered 상향",
-      "history": "3/30 고점 $116.16 → 4/8 $94.41 → 4/11 $96.57.",
+      "z_score": 2.1,
+      "ctx": "WSJ B11: WTI 확정종가 $99.08(+2.51/+2.60%). 장중 최고 $105 급등(봉쇄 선언 직후) → 재협상 기대로 반락. Brent $99.36(+4.4%). 물리적 원유(즉시 인도) Brent 선물 대비 $31/배럴 프리미엄 — 역사적 이례. 제트유·경유도 즉시물 고공 프리미엄 지속.\n이란 해상 원유 재고 약 1.6억 배럴(봉쇄 전 사전 수출 가속) — 7월 중순까지 중국 공급 가능. 봉쇄가 이란을 즉각 무릎 꿇리기 어려운 구조. OPEC+ 3월 산출량 790만bpd 감소 확인.",
+      "threshold": "호르무즈 봉쇄 해제 + WTI $90 이하 시 watch 하향 / $115 재돌파 시 z_score 2.5+",
+      "history": "$116.16(3/30 고점) → $94.41(4/8 휴전) → $98.67(4/11) → $101.5+(4/13 봉쇄 선언).",
       "tags": [
-        "에너지위기",
-        "이란협상",
-        "호르무즈",
-        "유가변동성",
-        "지정학"
+        "WTI97.07재협상기대하락(n)",
+        "블록케이드공식지속(r)",
+        "OPEC+3월790만bpd감소(r)",
+        "사우디파이프라인가동복구(g)",
+        "협상재개기대변동성지속(n)"
       ],
       "impacts": [
         "inflation-expect",
         "usdkrw",
         "michigan"
       ],
-      "date": "2026-04-11",
+      "date": "2026-04-14",
       "isNew": false,
       "isChanged": true,
-      "updatedDate": "2026-04-11"
+      "updatedDate": "2026-04-14"
     },
     {
       "id": "hormuz-risk",
-      "title": "호르무즈 — 휴전 후에도 통항 제한 지속·North Sea 기록",
-      "sub": "휴전 합의 후에도 이란 통제 지속 · North Sea $147 기록 · 이슬라마바드 후속 협상 관건",
+      "title": "호르무즈 — 협상 결렬·봉쇄 선언",
+      "sub": "봉쇄 공식화 · 사우디 Bab al-Mandeb 차단 경고 · 이란 해상 재고 1.6억배럴",
       "group": "energy_geo",
       "type": "thematic",
       "isArchived": false,
-      "status": "watch",
-      "val": "호르무즈 — 휴전에도 심각한 통항 제한 지속(이란 통제권 주장·Bloomberg 4/9) · North Sea Forties Blend $147(Brent 대폭 할증)",
+      "status": "triggered",
+      "val": "호르무즈 블록케이드 공식 지속(Daily Shot 4/14) · 재협상 기대로 유가 일시 하락",
       "val_numeric": null,
       "history_data": null,
-      "z_score": 2.0,
-      "ctx": "Daily Shot 4/10 Bloomberg: 미-이란 휴전 합의(4/8) 이후에도 호르무즈 해협 통항 여전히 심각하게 제한.\n이란이 해협 통제권 지속 주장. 휴전 ≠ 해협 개방. 협상과 실제 개방 사이 갭 확인.\nNorth Sea Forties Blend 배럴당 $147(기록적 수준) — Brent 선물 대비 대폭 할증. 물리적 원유 공급 여전히 극단적 타이트.\n이슬라마바드 후속 협상(4/12+)에서 실제 해협 개방 조건 협의가 핵심 변수.\nBofA Global News Pulse — 이란 분쟁 이후 처음으로 개선 신호. 심리는 개선되나 물리적 공급은 미해결.",
-      "threshold": "협상 타결+호르무즈 완전 개방 시 글로벌 인플레 완화. 결렬+전쟁 재개 시 WTI $130+.",
-      "history": "분쟁 전 100척+/일 → 현재 유조선 주 1~2척.",
+      "z_score": 2.5,
+      "ctx": "WSJ A6: 사우디아라비아, 미국에 봉쇄 철회 + 협상 복귀 압박 — 이란이 보복으로 Bab al-Mandeb(홍해 출구) 차단 시 사우디 나머지 석유 수출 위협.\n후티 반군(예멘): 이란 압박 시 Bab al-Mandeb 재차단 옵션 보유. 사우디, 후티로부터 사우디 선박 불공격 약속 확보 — 단 유동적.\n이란 해상 원유 재고 약 1.6억 배럴(봉쇄 전 사전 수출 가속) — 7월 중순까지 중국 공급 충분. 봉쇄가 이란 즉각 굴복 강제 어려운 구조 확인.",
+      "threshold": "외교 재개+봉쇄 공식 철회 시 watch 복귀 / 봉쇄 물리적 이행+이란 보복 시 WTI $130+",
+      "history": "휴전 합의(4/8) → 통항 제한 지속(Bloomberg 4/9) → 이슬라마바드 협상 진행(4/11) → 결렬·봉쇄 선언(4/13).",
       "tags": [
-        "이슬라마바드 협상 4/11 진행(n)",
-        "이란 자산동결 해제 전제조건 추가(r)",
-        "이란 '시간은 이란 편' 판단(r)",
-        "이란 미사일 1,000기+ 잔존(r)",
-        "협상 결렬 시 WTI $130+ 꼬리 위험(r)"
+        "사우디Bab알만답차단경고(r)",
+        "이란해상재고1.6억배럴7월버팀(r)",
+        "후티홍해재차단옵션(r)",
+        "봉쇄이란즉각굴복불가(r)",
+        "재협상기대유가하락(n)"
       ],
       "impacts": [
         "oil-yoy",
         "inflation-expect",
         "global-trade-shock"
       ],
-      "date": "2026-04-10",
+      "date": "2026-04-14",
       "isNew": false,
       "isChanged": true,
-      "updatedDate": "2026-04-10"
+      "updatedDate": "2026-04-14"
     },
     {
       "id": "iran-corp-risk",
       "title": "이란 혁명수비대 美기업 타격 위협",
-      "sub": "이란 미사일 1,000기+ 잔존 · 쿠웨이트 에너지 시설 공격 · watch 유지",
+      "sub": "협상 결렬·봉쇄 선언 이후 보복 리스크 재고조 · 이란 미사일 1,000기+ 잔존",
       "group": "energy_geo",
       "type": "thematic",
       "isArchived": false,
       "status": "watch",
-      "val": "이란 미사일 전력 잔존 1,000기+(WSJ A8)",
+      "val": "이란 미사일 전력 잔존 1,000기+(WSJ A8) · 협상 결렬로 보복 경로 재개방",
       "val_numeric": null,
       "history_data": null,
       "z_score": null,
-      "ctx": "WSJ A8: 이란 탄도미사일 1,000기+ 지하 보관. WSJ A12: 이란이 쿠웨이트 에너지 시설 드론 공격, 사우디 동서 파이프라인 피해.",
-      "threshold": "협상 결렬+전쟁 재개 시 나스닥 기술주 급락 재발.",
-      "history": "Hegseth 선언 vs 실제 잔존 미사일 1,000기+.",
+      "ctx": "Daily Shot 4/13: 미-이란 협상 결렬 + 호르무즈 봉쇄 선언 → 이란 보복 옵션 재활성화.\n이전 WSJ A8: 이란 탄도미사일 1,000기+ 지하 보관. WSJ A12: 쿠웨이트 에너지 시설 드론 공격, 사우디 동서 파이프라인 피해.\n봉쇄 공식화로 이란의 보복 수단(에너지 인프라 공격, 미사일 위협) 협상 카드에서 실행 압박으로 전환 가능성 증가.",
+      "threshold": "이란 보복 공격 재개 시 나스닥 기술주 즉각 급락 / 협상 재개 시 watch 완화",
+      "history": "협상 진행(4/11) → 결렬(4/13) → 보복 위험 재고조.",
       "tags": [
-        "이란 미사일 1,000기+ 지하 잔존(r)",
-        "쿠웨이트 에너지 시설 드론 공격(r)",
-        "사우디 파이프라인 피해(r)",
-        "Hegseth 발표 vs 정보 괴리(r)",
-        "이슬라마바드 협상 진행 중(n)"
+        "이란미사일1000기잔존(r)",
+        "협상결렬보복경로재개방(r)",
+        "쿠웨이트에너지시설공격(r)",
+        "사우디파이프라인피해(r)",
+        "호르무즈봉쇄선언병행(r)"
       ],
       "impacts": [
         "equity-technical",
         "hf-leverage"
       ],
-      "date": "2026-04-11",
+      "date": "2026-04-13",
       "isNew": false,
       "isChanged": true,
-      "updatedDate": "2026-04-11"
+      "updatedDate": "2026-04-13"
     },
     {
       "id": "global-trade-shock",
-      "title": "글로벌 교역 급감 — 호르무즈 효과",
-      "sub": "제트유 $200+ · 건설비 PVC +50% · 항공 2개월+ 위기 · 미해양패권 균열",
+      "title": "글로벌 교역 급감 — 호르무즈 + 봉쇄 공식화",
+      "sub": "알루미늄 $3,608 4년최고+포스마쥬르 · Qatar LNG 5년 수리 · 걸프 인프라 $250억+ 피해",
       "group": "energy_geo",
       "type": "thematic",
       "isArchived": false,
       "status": "watch",
-      "val": "제트유 $200/bbl+(2배+) · 항공사 2개월+ 연료 부족 · PVC 파이프 +50%",
+      "val": "알루미늄 $3,608/ton(4년최고, LME +3.1%) · Emirates Global 포스마쥬르 · Qatar LNG 최대 5년 수리 · 걸프 에너지 인프라 피해 $250억+(Rystad)",
       "val_numeric": null,
       "history_data": null,
       "z_score": null,
-      "ctx": "WSJ B11: 항공 제트유 위기. 유럽 5월 임계 예상. WSJ A2: 건설업 충격 — PVC +50%, 건설 트럭 연료 할증 $600/대.",
-      "threshold": "교역증가율 1% 이하 시 글로벌 리세션 동행.",
-      "history": "2020년 코로나 무역 충격 이후 최대.",
+      "ctx": "WSJ B11: LME 3개월 알루미늄 +3.1% → $3,608/ton(4년 최고, 2022년 3월 이후 최고). 중동 세계 알루미늄 생산 약 9% 차지 + 호르무즈 통해 원자재 수입·금속 수출.\nEmirates Global Aluminium(Abu Dhabi): 이란 공격으로 Al Taweelah 생산시설 피해 → 일부 계약 포스마쥬르 선언. 완전 복구 최대 1년. Alba(바레인): 3월 호르무즈 통해 선적 불가로 생산 감축. Norsk Hydro: 카타르 Qatalum 가동 둔화.\n카타르: LNG 시설 피해 수리 최대 5년 소요(WSJ A6). 걸프 에너지 인프라 복구 비용 $250억 이상(Rystad Energy). KfW(독일 국책은행): 원유가 2027년 말 이전 전쟁 전 수준 복귀 불가 전망.",
+      "threshold": "교역증가율 1% 이하 시 글로벌 리세션 동행 / 봉쇄 해제 시 금속 가격 급반락",
+      "history": "봉쇄 선언(4/13)으로 물리적 공급망 차단 우려 금속 시장으로 전이 확인.",
       "tags": [
-        "제트유 $200+ 항공 2개월+ 위기(r)",
-        "건설 PVC +50% 알루미늄 급등(r)",
-        "건설트럭 연료할증 $600/대(r)",
-        "데이터센터 건설 +31% 예외(g)",
-        "미국 해양패권 균열 공식화(r)"
+        "알루미늄3608달러4년최고(r)",
+        "EmiratesGlobal포스마쥬르(r)",
+        "카타르LNG수리5년(r)",
+        "걸프에너지인프라250억달러피해(r)",
+        "KfW2027년말이전가격복귀불가(r)"
       ],
       "impacts": [
         "inflation-expect",
         "usdkrw",
         "hormuz-risk"
       ],
-      "date": "2026-04-11",
+      "date": "2026-04-14",
       "isNew": false,
       "isChanged": true,
-      "updatedDate": "2026-04-11"
+      "updatedDate": "2026-04-14"
     },
     {
       "id": "china-airspace",
@@ -266,65 +275,65 @@
       "val_numeric": null,
       "history_data": null,
       "z_score": null,
-      "ctx": "WSJ A9: 트럼프 2기 '중국 플레이북 교체' — 희토류 수출규제에 관세 완화로 대응. 5월 시진핑 회동 준비.",
+      "ctx": "WSJ A9: 트럼프 2기 '중국 플레이북 교체' — 희토류 수출규제에 관세 완화로 대응. 5월 시진핑 회동 준비. 대만 벤치마크 지수 사상 최고치 근접 + 대만 수출 기술 중심 급증(Daily Shot 4/13). 미-이란 봉쇄 국면에서 미국의 대중 레버리지 추가 약화 가능성.",
       "threshold": "5월 베이징 회동 결과 = 미중 관계 6개월 방향 결정.",
       "history": "미중 전략 경쟁에서 이란전 여파로 미국 대중 레버리지 약화.",
       "tags": [
-        "트럼프 대중 유화 공식화(r)",
-        "희토류 대응 관세 완화(r)",
-        "5월 시진핑 회동 준비(n)",
-        "대만 야당 베이징 방문(r)",
-        "CFIUS 집행 완화(r)"
+        "트럼프대중유화공식화(r)",
+        "희토류대응관세완화(r)",
+        "5월시진핑회동준비(n)",
+        "대만수출급증AI기술(g)",
+        "대만벤치마크최고치근접(g)"
       ],
       "impacts": [
         "hf-leverage",
         "equity-technical"
       ],
-      "date": "2026-04-11",
+      "date": "2026-04-13",
       "isNew": false,
       "isChanged": true,
-      "updatedDate": "2026-04-11"
+      "updatedDate": "2026-04-13"
     },
     {
       "id": "energy-streak",
-      "title": "에너지 섹터 주간 퍼포먼스",
-      "sub": "에너지 섹터 주간 -4.07% · WTI 주간 -13.42% · CEO 인사이더 매도 지속",
+      "title": "에너지 섹터 — 저가 매수 vs 봉쇄 불확실성",
+      "sub": "HF 에너지 저가 매수 유입 · 유정 수 411개 유지 · 봉쇄 선언으로 방향성 재전환",
       "group": "energy_geo",
       "type": "thematic",
       "isArchived": false,
       "status": "watch",
-      "val": "S&P 에너지 섹터 주간 -4.07%(전체 시장 +3.56% 대비) · WTI 주간 -13.42%",
+      "val": "HF 에너지 섹터 저가 매수(Goldman, 4/13) · US 오일 리그 수 411개(Baker Hughes) · S&P 에너지/시장 비율 50일선 하향(4/11)",
       "val_numeric": null,
       "history_data": null,
       "z_score": 1.1,
-      "ctx": "WSJ B6 주간 성과표: 에너지 섹터 주간 -4.07%. 협상 기대로 유가 급락 → 에너지주 매도.",
-      "threshold": "WTI $80 이하 시 에너지 섹터 추가 반납.",
-      "history": "주간 -4.07% — 협상 낙관론 반영.",
+      "ctx": "Daily Shot 4/13 Goldman Sachs: HF 에너지 섹터 저가 매수 유입(봉쇄 선언 후 가격 상승 수혜 기대).\n반면 기술 섹터는 5년+ 최대 순매도 진행.\nUS Baker Hughes 오일 리그 수 411개 유지(안정적 공급 기반). S&P 에너지/시장 비율은 4/11 기준 50일선 하향 — 상대 약세 구조.\nBCA: 글로벌 원유 생산 약 12%(일 1,300만 배럴) 오프라인 확인.",
+      "threshold": "WTI $115+ 재돌파 시 에너지 섹터 상대 강세 복귀 / 봉쇄 해제 시 즉각 매도 압력",
+      "history": "협상 기대 매도(4/8~11) → 결렬·봉쇄 선언으로 방향 전환(4/13).",
       "tags": [
-        "에너지 섹터 주간 -4.07%(g/r)",
-        "WTI 주간 -13.42% 2020년 이후 최대(g)",
-        "에너지 CEO 인사이더 매도 지속(r)",
-        "나이키 혁신책임자 퇴임 주가 -32%(r)",
-        "포르쉐 Q1 인도량 -15%(r)"
+        "HF에너지저가매수유입(g/r)",
+        "오일리그411개유지(n)",
+        "BCA원유12%오프라인(r)",
+        "에너지비율50일선하향(r)",
+        "봉쇄선언후유가급등(r)"
       ],
       "impacts": [
         "oil-yoy",
         "hf-leverage"
       ],
-      "date": "2026-04-11",
+      "date": "2026-04-13",
       "isNew": false,
       "isChanged": true,
-      "updatedDate": "2026-04-11"
+      "updatedDate": "2026-04-13"
     },
     {
       "id": "inflation-expect",
-      "title": "인플레이션 — 3월 CPI +3.3% 실현",
-      "sub": "관세 PCE 전이 +0.8%p 완료 확인(Fed) · 코어PCE +0.37% MoM · 스태그플레이션 구조 고착",
+      "title": "인플레이션 — 3월 CPI 헤드라인 급등",
+      "sub": "Goldman Dec2026 PCE 헤드라인 3.1% · 코어 2.5% · 스태그플레이션 컨센서스化",
       "group": "inflation",
       "type": "core",
       "isArchived": false,
       "status": "triggered",
-      "val": "ISM 서비스 Prices Paid 70.7(3월) · CPI 3월 +3.3%(2년 최고) · 고용 45.2(위축)",
+      "val": "Goldman Dec2026 헤드라인 PCE 3.1%(+1ppt) · 코어 2.5%(+0.3ppt) · 단기 인플레기대 4.8%",
       "val_numeric": 3.3,
       "history_data": [
         {
@@ -354,33 +363,37 @@
         {
           "date": "2026-04-06",
           "val": 70.7
+        },
+        {
+          "date": "2026-04-13",
+          "val": 70.7
         }
       ],
       "z_score": 2.5,
-      "ctx": "Daily Shot 4/10: Fed 연구진 공식 발표 — 관세 변화가 2월까지 코어PCE를 +0.8%p 상승시켰으며 전이 사실상 완료.\n코어 상품 가격 +3.1%p 기여(2025년 이후 초과 인플레이션의 전부를 설명). 코어PCE 2월 +0.37% MoM(예상 부합).\n실질 가처분소득 급격 수축 동반. 물가는 오르고 실질소득은 줄어드는 스태그플레이션 패턴 데이터로 완전 확인.\n다음 관찰: 3월 이후 2차 관세(의류·제약) 전이 속도 — 추가 0.5~1.0%p 가능성.",
-      "threshold": "Prices Paid 65 이하 회복 시 압박 완화 / 75 이상 시 하이퍼인플레 우려",
-      "history": "2월 +2.4% → 3월 +3.3% (+90bp 급등).",
+      "ctx": "Daily Shot 4/14 Goldman Sachs: Dec 2026 헤드라인 PCE YoY 전망 +1ppt 상향 → 3.1%. 코어 PCE +0.3ppt 상향 → 2.5%. 리스크는 양방향 모두 상방.\n세금감면 성장 부양 효과 ≒ 고유가 드래그로 상쇄 — 결과적으로 성장은 중립·인플레만 상향(스태그플레이션 경로). 미국인 인플레 우려 급등(Statista). 연준 금리인하 불가 구조 기관 컨센서스로 수렴.",
+      "threshold": "코어 서비스 3개월 연속 재가속 시 z_score 3.0+ / 에너지 제외 코어 2.0% 이하 복귀 시 완화",
+      "history": "2월 +2.4% → 3월 +3.3% 헤드라인(에너지 주도). 호르무즈 봉쇄로 4월 추가 급등 경로.",
       "tags": [
-        "ISM서비스",
-        "물가압력",
-        "스태그플레이션",
-        "고용위축",
-        "인플레이션"
+        "GoldmanPCE3.1%상향(r)",
+        "GoldmanCorePCE2.5%상향(r)",
+        "스태그플레이션컨센서스화(r)",
+        "세금감면고유가드래그상쇄(r)",
+        "연준인하불가구조재확인(r)"
       ],
       "impacts": [
         "lt-bond",
         "michigan",
         "usdkrw"
       ],
-      "date": "2026-04-10",
+      "date": "2026-04-14",
       "isNew": false,
       "isChanged": true,
-      "updatedDate": "2026-04-10"
+      "updatedDate": "2026-04-14"
     },
     {
       "id": "pharma-tariffs",
       "title": "제약 관세 100% — 브랜드의약품",
-      "sub": "White House · 브랜드 의약품 최대 100% · Medicare Advantage 2.48% 인상",
+      "sub": "의류 +3.4%(3월 CPI) 관세 반영 확인 · Medicare Advantage 2.48% 인상",
       "group": "inflation",
       "type": "thematic",
       "isArchived": false,
@@ -389,23 +402,24 @@
       "val_numeric": null,
       "history_data": null,
       "z_score": null,
-      "ctx": "3월 CPI: 의류 +3.4% YoY 관세 반영 시작 확인. Medicare Advantage 2.48% 인상(최종).",
+      "ctx": "3월 CPI: 의류 MoM 상승 + 처방약 MoM 하락 — 제약 관세 선반영 매입 후 조정 패턴. Medicare Advantage 2.48% 인상(최종). 호르무즈 봉쇄로 에너지·식품·의류·제약 동시 관세 = 소비자물가 전방위 압박 구조 고착.",
       "threshold": "실제 100% 관세 적용 범위 확대 시 의약품 물가 급등.",
       "history": "에너지+식품+의류+제약 동시 관세 = 소비자물가 전방위 압박.",
       "tags": [
-        "의류 +3.4% YoY 관세 반영 확인(r)",
-        "Medicare Advantage 2.48% 인상(g)",
+        "의류MoM상승관세반영(r)",
+        "처방약MoM하락일시(n)",
+        "MedicareAdvantage2.48%인상(g)",
         "pharma tariffs up to 100%(r)",
-        "3월 CPI 관세 효과 가시화 시작(r)"
+        "관세전방위물가압박(r)"
       ],
       "impacts": [
         "inflation-expect",
         "michigan"
       ],
-      "date": "2026-04-11",
+      "date": "2026-04-13",
       "isNew": false,
       "isChanged": true,
-      "updatedDate": "2026-04-11"
+      "updatedDate": "2026-04-13"
     },
     {
       "id": "infl-1y",
@@ -448,64 +462,64 @@
         }
       ],
       "z_score": 1.7,
-      "ctx": "2월 수입물가 MoM +1.3%(2022년 이후 최대) → 3월 CPI +3.3% 전이 확인.",
+      "ctx": "2월 수입물가 MoM +1.3%(2022년 이후 최대) → 3월 CPI +3.3% 전이 확인(Daily Shot 4/13). 가솔린 MoM 사상 최대 상승으로 3월 수입물가(이란 봉쇄 반영분)의 4월 CPI 전이 추가 급등 경로.",
       "threshold": "MoM +1.5% 돌파 시 CPI 전이 가속 구간.",
       "history": "2022년 러-우 수입물가 +1.4% → CPI 9.1% 6개월 선행.",
       "tags": [
-        "import prices +1.3% → CPI +3.3% 전이 확인(r)",
-        "3월 수입물가(이란 반영) 추가 급등 예상(r)",
-        "에너지→식품 전이 3~6개월(r)",
-        "2022년 선행 패턴 재현 중(r)"
+        "수입물가+1.3%→CPI+3.3%전이확인(r)",
+        "호르무즈봉쇄4월수입물가추가급등(r)",
+        "에너지→식품전이3~6개월(r)",
+        "2022년선행패턴재현중(r)"
       ],
       "impacts": [
         "inflation-expect"
       ],
-      "date": "2026-04-11",
+      "date": "2026-04-13",
       "isNew": false,
       "isChanged": false,
-      "updatedDate": "2026-04-11"
+      "updatedDate": "2026-04-13"
     },
     {
       "id": "infl-diverge",
       "title": "인플레 국가간 분기 — 공급충격 비대칭",
-      "sub": "유럽 항공 5월 임계 · 아시아 연료 부족 · 건설비 전방위 급등",
+      "sub": "APAC 연료부족 급증 · 브라질 인플레 가속 · 글로벌 봉쇄 파급 심화",
       "group": "inflation",
       "type": "thematic",
       "isArchived": false,
       "status": "watch",
-      "val": "전체 CPI 3.3% vs 코어 2.6% · 갭 +0.7%p · ISM Prices Paid 70.7",
+      "val": "전체 CPI 3.3% vs 코어 2.6% · 갭 +0.7%p · APAC 연료부족 뉴스 급증 · 브라질 인플레 가속",
       "val_numeric": 0.7,
       "history_data": null,
       "z_score": 1.6,
-      "ctx": "CPI 3.3%(전체) vs 코어 2.6%. 스프레드 +0.7%p = 에너지·식품 충격 전이 아직 제한적. 기대 인플레 6.7%(1981년 이후 최고).",
+      "ctx": "WSJ A6: Capital Economics 전망 — Qatar GDP -13%, UAE -8%, Saudi -6.6%. Qatar LNG 시설 수리 최대 5년. KfW(독일국책은행): 원유가 2027년 말 이전 전쟁 전 복귀 불가. 독일 성장 전망 1.3%→0.6% 하향. 일본: 나프타 4개월치 확보(PM 타카이치). 아일랜드 농민들 연료비 항의 도로·터미널 봉쇄. 인도 요리가스 가격 인상 → 공장 노동자 파업.",
       "threshold": "에너지 수입국 CPI 3%+ 재돌파 시 통화정책 divergence 심화.",
       "history": "2022년 러-우 충격 때 유럽 CPI가 미국보다 3~4%p 높았음.",
       "tags": [
-        "유럽 5월 제트유 임계 경고(r)",
-        "중국 제트유 수출 중단(r)",
-        "아시아 공항 연료 고갈(r)",
-        "독일 산업생산 2월 하락(r)",
-        "캘리포니아 7~8월 제트유 위기(r)"
+        "APAC연료부족뉴스급증(r)",
+        "브라질인플레예상초과가속(r)",
+        "ASEAN성장둔화전망(r)",
+        "봉쇄에너지수입국추가충격(r)",
+        "WorldBank성장둔화경고(r)"
       ],
       "impacts": [
         "usdkrw",
         "jgb-30y"
       ],
-      "date": "2026-04-11",
+      "date": "2026-04-14",
       "isNew": false,
       "isChanged": true,
-      "updatedDate": "2026-04-11"
+      "updatedDate": "2026-04-14"
     },
     {
       "id": "lt-bond",
-      "title": "장기금리 — 연준 동결 97.9%",
-      "sub": "10Y 4.31%(4/10) · MOVE 지수 200일선 하향 · 채권 변동성 안정화 · 연준 4/29 동결 97.9%",
+      "title": "장기금리 — 봉쇄 선언 후 장초 급등·안정화",
+      "sub": "10Y 4.297%(확정) · 2Y 3.779% · 30년 모기지 6.37%(Freddie Mac) · 재정적자 TTM 5.3%",
       "group": "rates",
       "type": "core",
       "isArchived": false,
       "status": "watch",
-      "val": "10Y 4.293%(4/11 live) · 2Y 3.81% · 30Y 4.91% · 연준 4/29 동결 97.9%",
-      "val_numeric": 4.293,
+      "val": "10Y 4.297%(WSJ 확정) · 2Y 3.779% · 30Y 4.880% · 30년 고정 모기지 6.37%(Freddie Mac)",
+      "val_numeric": 4.297,
       "history_data": [
         {
           "date": "2026-02-09",
@@ -538,39 +552,47 @@
         {
           "date": "2026-04-11",
           "val": 4.293
+        },
+        {
+          "date": "2026-04-13",
+          "val": 4.31
+        },
+        {
+          "date": "2026-04-14",
+          "val": 4.297
         }
       ],
       "z_score": 1.7,
-      "ctx": "Daily Shot 4/10: MOVE Index(국채 내재 변동성) 200일 이평선 하향 돌파. 채권 시장 변동성 구조적 완화 신호.\n10Y 4.31%(4/10 종가). VIX와 MOVE 동반 이평선 하향 = 주식·채권 시장 변동성 동시 정상화.\nCME FedWatch 4/29 동결 97.9% 유지. 관세 PCE 전이 +0.8%p 확인으로 인하 불가 구조 재확인.\nMorgan Stanley 독자 전망: 2026년 0회 인하. 시장도 동결 51%+ 반영 중.",
-      "threshold": "10Y 4.5% 돌파 시 watch 상향 검토",
-      "history": "분쟁 전 인하 기대 50bp → 현재 동결 77%.",
+      "ctx": "WSJ B7 Tradeweb: 10Y 4.297%, 2Y 3.779%, 30Y 4.880%. Freddie Mac 주간: 30년 고정 모기지 6.37%(전주 6.38%, 전년 6.62%). NAR: 3월 기존주택판매 SAAR 3.98M(-3.6% MoM, 2025년6월 이후 최저). 주택판매 연간 전망 +4%로 하향(이전 +14%). 10Y 실질금리 5일 연속 하락.",
+      "threshold": "10Y 4.5% 돌파 시 watch 상향 검토 / 재정적자 6%+ 시 추가 압박",
+      "history": "봉쇄 선언 직후 급등 → 안전자산 수요로 되돌림 패턴 반복.",
       "tags": [
-        "국채금리",
-        "연준정책",
-        "동결",
-        "수익률곡선",
-        "스태그플레이션"
+        "봉쇄선언후장초급등안정화(n)",
+        "재정적자TTM5.3%GDP(r)",
+        "연준4/29동결97.9%(n)",
+        "Morgan Stanley금융여건48bps긴축(r)",
+        "국채금리"
       ],
       "impacts": [
         "inflation-expect",
         "private-credit",
         "equity-technical"
       ],
-      "date": "2026-04-10",
+      "date": "2026-04-14",
       "isNew": false,
       "isChanged": true,
-      "updatedDate": "2026-04-10"
+      "updatedDate": "2026-04-14"
     },
     {
       "id": "tips-30y",
-      "title": "금·실물자산 — 인플레 헤지",
-      "sub": "Gold $4,733(live) · 주간 +2.37% · TIPS 실질 2%+ 매력",
+      "title": "금·실물자산 — 봉쇄 선언 후 귀금속 매도",
+      "sub": "Gold $4,742.40(4/14 WSJ 확정종가) · 알루미늄 $3,608 4년최고",
       "group": "rates",
       "type": "core",
       "isArchived": false,
       "status": "watch",
-      "val": "Gold $4,733(4/11 live) · 주간 +2.37% · 은 주간 +4.93% · 구리 +5.53%",
-      "val_numeric": 4733.0,
+      "val": "Gold $4,742.40(4/14 확정종가, WSJ B9) · 알루미늄 $3,608/ton(4년최고) · Silver $75.523/oz",
+      "val_numeric": 4742.4,
       "history_data": [
         {
           "date": "2026-02-09",
@@ -611,38 +633,46 @@
         {
           "date": "2026-04-11",
           "val": 4733
+        },
+        {
+          "date": "2026-04-13",
+          "val": 4680
+        },
+        {
+          "date": "2026-04-14",
+          "val": 4742.4
         }
       ],
-      "z_score": 2.3,
-      "ctx": "Gold $4,733. 주간 +2.37%. 은 +4.93%, 구리 +5.53%. 인플레 헤지 수요 구조화.",
+      "z_score": 2.1,
+      "ctx": "Gold $4,742.40 확정종가(WSJ B9, -$19.50/-0.41%). 재협상 기대로 인플레 압력 일시 완화 → 금 소폭 하락. 단 알루미늄 $3,608/ton 4년최고(공급충격 헤지). Silver $75.52/oz. 귀금속 약세 vs 산업금속 강세 — 인플레 헤지 구성 변화 지속.",
       "threshold": "Gold $5,000 돌파 시 triggered / $4,500 이하 시 위험 완화",
-      "history": "Gold $4,761.90. 주간 +2.37%.",
+      "history": "4/8 $4,802(고점) → 봉쇄 선언 후 귀금속 매도 → $4,680 추정.",
       "tags": [
-        "골드",
-        "인플레헤지",
-        "실물자산",
-        "TIPS",
-        "귀금속"
+        "귀금속매도봉쇄선언당일(r)",
+        "알루미늄4년최고공급충격(r)",
+        "니켈50일선돌파(r)",
+        "Gold달러강세압박(r)",
+        "인플레헤지"
       ],
       "impacts": [
         "equity-technical",
         "lt-bond"
       ],
-      "date": "2026-04-11",
+      "date": "2026-04-14",
       "isNew": false,
       "isChanged": true,
-      "updatedDate": "2026-04-11"
+      "updatedDate": "2026-04-14"
     },
     {
       "id": "dxy-strength",
-      "title": "달러 환율 — DXY",
-      "sub": "DXY 98.552 · USD/KRW 1,479.07(live) · 달러 약세 지속",
+      "title": "달러 환율 — 봉쇄 선언 후 달러 강세",
+      "sub": "DXY 98.40(4/14 Yahoo Finance) · 장기 지지선 하향 돌파 확인 · -0.26%",
       "group": "rates",
       "type": "core",
       "isArchived": false,
       "status": "watch",
-      "val": "DXY 98.552(4/11 live) · EUR/USD ~1.155 · USD/KRW 1,479.07",
-      "val_numeric": 98.552,
+      "val": "DXY 98.40(4/14, Yahoo Finance, -0.26%) · 장기 지지선 하향 돌파 · 52주 범위 95.55~101.98",
+      "val_numeric": 98.4,
       "history_data": [
         {
           "date": "2026-02-09",
@@ -675,98 +705,106 @@
         {
           "date": "2026-04-11",
           "val": 98.552
+        },
+        {
+          "date": "2026-04-13",
+          "val": 99.5
+        },
+        {
+          "date": "2026-04-14",
+          "val": 98.4
         }
       ],
-      "z_score": 0.8,
-      "ctx": "DXY 98.552. USD/KRW 1,479.07. 달러는 미-이란 휴전 합의 이후 안전자산 수요 감소로 약세.",
-      "threshold": "DXY 100 재돌파 시 달러 강세 전환 / DXY 95 이하 시 약세 심화",
-      "history": "주간 WSJ Dollar Index -1.26%.",
+      "z_score": 0.6,
+      "ctx": "DXY 98.40(4/14, Yahoo Finance). -0.26% 하락. Daily Shot 4/14 확인: 달러 인덱스 장기 지지선 하향 돌파 — 구조적 달러 약세 신호. 52주 범위 95.55~101.98. Investing.com: 일중 범위 98.37~99.19. 기술 신호: Strong Sell.",
+      "threshold": "DXY 101+ 시 watch 상향 / DXY 97 이하 재하락 시 약세 재개",
+      "history": "이란 분쟁 → 달러 강세 → 휴전 기대 달러 약세 → 봉쇄 선언 달러 강세 재전환.",
       "tags": [
-        "달러약세",
-        "DXY",
-        "환율",
-        "기축통화",
-        "원화"
+        "DXY98.40장기지지선하향돌파(r)",
+        "기술신호StrongSell(r)",
+        "달러구조적약세신호(r)",
+        "위안화3년최고동반(r)",
+        "DXY"
       ],
       "impacts": [
         "usdkrw"
       ],
-      "date": "2026-04-11",
+      "date": "2026-04-14",
       "isNew": false,
       "isChanged": true,
-      "updatedDate": "2026-04-11"
+      "updatedDate": "2026-04-14"
     },
     {
       "id": "jgb-30y",
       "title": "JGB — 10Y 1997년 이후 최고·BOK 매파 전환",
-      "sub": "JGB 10Y 1997년 7월 이후 최고 · 은행 대출 5년 내 최속 · BOK 성장 가이던스 삭제",
+      "sub": "JGB 수익률 하락 · 달러 약세 엔화 강세 · BOK 매파 전환 유지",
       "group": "rates",
       "type": "thematic",
       "isArchived": false,
       "status": "watch",
-      "val": "JGB 10Y 1997년 7월 이후 최고(Daily Shot 4/10) · 일본 은행 대출 5년 내 최속 · BOK 2.5% 동결·매파 전환 확인",
+      "val": "JGB 10Y 1997년 7월 이후 최고 · 일본 PPI 2022년 11월 이후 최대 MoM · BOK 2.5% 동결 매파 전환",
       "val_numeric": null,
       "history_data": null,
       "z_score": 1.6,
-      "ctx": "Daily Shot 4/10: JGB 10년물 수익률 1997년 7월 이후 최고. 일본 은행 대출 5년 내 최속 성장.\n일본 소매 투자자 주식 거래 비중 25%(12년 내 최고) — 개인 자금 주식 유입 가속.\n일본 PPI 2022년 11월 이후 최대 MoM 상승(석유·석탄 제품 급등). 에너지 충격 일본 기업 비용으로 전이.\nBOK 4/10 2.5% 동결 만장일치, 그러나 성장지원 가이던스 삭제 — 사실상 매파 전환 확인.\n인플레(에너지 충격)와 성장 하방 사이 딜레마 심화. 한국 AI 섹터 글로벌 자금 $79억 유입(긍정적 상쇄).",
+      "ctx": "Daily Shot 4/14: JGB 수익률 하락(전일 1997년 최고 이후 조정). 달러 장기 지지선 하향 돌파 → 엔화 강세 압력 증가. 호주 소비자심리 팬데믹 이후 최대 월간 하락(연료가격+RBA 금리인상). 아시아 전반 에너지 충격 소비심리 압박 지속.",
       "threshold": "BOJ 추가 인상 + 엔 캐리 청산 = 글로벌 유동성 수축 꼬리 위험.",
-      "history": "YEN 158→159 소폭 약화. NIKKEI 주간 +7.15%.",
+      "history": "YEN 158→159 소폭 약화. 봉쇄 선언 후 엔화 방향성 주시.",
       "tags": [
-        "YEN 159.29 소폭 약화(r)",
-        "NIKKEI 주간 +7.15%(g)",
-        "외국인 순매수 사상 최고(g)",
-        "소비자신뢰 급락 vs 실질임금 최고(n)",
-        "5월 BOJ 다음 분기점(n)"
+        "JGB10Y1997년이후최고(r)",
+        "일본PPI2022년이후최대(r)",
+        "BOK매파전환성장가이던스삭제(r)",
+        "APAC연료부족급증(r)",
+        "BOJ추가인상꼬리위험(r)"
       ],
       "impacts": [
         "lt-bond",
         "hf-leverage"
       ],
-      "date": "2026-04-10",
+      "date": "2026-04-14",
       "isNew": false,
       "isChanged": true,
-      "updatedDate": "2026-04-10"
+      "updatedDate": "2026-04-14"
     },
     {
       "id": "private-credit",
-      "title": "사모신용 — Carlyle 환매 5% 캡 발동",
-      "sub": "Carlyle 전술적 사모신용펀드 환매 5% 캡 · 투자자 15.7% 인출 요청 · CDX Financials 출시 예정 병행",
+      "title": "사모신용 — BDC 순펀딩 마이너스·OID 심화",
+      "sub": "FSB \"Triple Whammy\" 경고 · Goldman PC펀드 4.99% 환매(5% 캡 직전) · Q1 $10B 신규 조달",
       "group": "credit",
       "type": "thematic",
       "isArchived": false,
       "status": "triggered",
-      "val": "Carlyle Tactical Private Credit Fund 환매 5% 캡 발동(투자자 15.7% 인출 요청 → 5% 허용) · CDX Financials 출시 예정 · A.M.Best 경고",
+      "val": "전 세계 사모신용 AUM $1.78T(BDC 제외) · BDC 포함 미국 ~$1.3T · Q1 환매 급증 · 펀드 출금 캡 확산",
       "val_numeric": null,
       "history_data": null,
       "z_score": 2.8,
-      "ctx": "Daily Shot 4/10 Bloomberg: Carlyle, 전술적 사모신용펀드 환매 5% 캡 발동.\n투자자들이 15.7% 인출 요청 → Carlyle이 5%로 제한. 3배 초과 수요 → 유동성 압박 구조적 확인.\n대형은행 CDX Financials 사모신용 숏 인덱스 출시 예정과 맞물려 — 헤지 수요가 실제 스트레스로 전환되는 신호.\n사모신용 $1조+ 보유 보험사로의 전이 경로: 환매 제한 → 계열사 간 대출 → 연금 포트 악화.\n현재 공개시장(HY 스프레드 294bps)과 사모신용 스트레스 간 괴리 확대 중 — 이 갭이 좁혀지는 방향 주시.",
+      "ctx": "Daily Shot 4/14 In Focus (Barclays·Alpine Macro·OFR·BIS 종합):\n▸ 규모: 전 세계 사모신용 AUM $1.78T(H1 2025, Preqin), 배포액 $1.28T. BDC AUM $530B 합산 시 미국 배포 ~$1.3T — 미국 HY채권·레버리지드론(각 ~$1.5T)에 근접.\n▸ 구조: 소매 투자자 비중 13%로 상승(BDC·ETF 경로). OFR: 미이행 자본약정 $310B. 평균 BDC 부채/자기자본 15년간 3배 증가.\n▸ 스트레스: 소프트웨어 섹터 집중 + 언더라이팅 기준 우려 + Q1 환매 요청 급증(WSJ). 다수 펀드 출금 캡 발동(FT). 공개 거래 BDC: NAV 대비 대폭 할인. BDC 스프레드: IG·BB HY 대비 확대(Barclays).\n▸ 부도율: 선택적 디폴트 제외 시 ~1%(레버리지드론과 유사). 포함 시 역사적 대비 elevated.\n▸ 시스템 리스크 평가 (Alpine Macro/OFR): 은행 직접 익스포저 ~$300B(총자산 1.5%, 대부분 1순위 선순위 담보). IMF: 최악의 경우 15% 미국 은행 유동성 스트레스. OFR 카운터파티 익스포저 최고 추정 $540B.\n▸ 결론: 시스템 리스크 아닌 것으로 평가(Barclays: \"Stress, but Not Systemic\"). 단, 딜 활동 감소+은행 대출 기준 강화 경로로 성장 하방 압박. Oxford Economics: 서브프라임도 GFC 직전엔 소규모였음 — 숨겨진 연결고리 주의.\nWSJ A6: FSB(금융안정위원회) 의장 Andrew Bailey — 중동 위기가 글로벌 경제에 \"3중 취약성(Triple Whammy)\": 국채·자산 밸류에이션·사모신용 잠재 리스크 경고.\nWSJ A4 Goldman Sachs Q1 실적: Goldman 자체 PC펀드 환매 요청 4.99% — 5% 캡 직전에서 저지. Q1 PC 전략 신규 조달 $10B. CFO: 대출 포트폴리오 \"잘 분산되어 있고 자본 보호 구조 갖춤\" 발언.",
       "threshold": "CDX Financials 스프레드 급등 + 보험사 연금 환매 급증 시 신용 경색.",
-      "history": "Dimon 경고 → Blue Owl 하향 → Cornerstone 구조조정 → CDX Financials 출시.",
+      "history": "Dimon 경고 → Blue Owl 하향 → Cornerstone 구조조정 → Carlyle 환매 캡 → BDC 순펀딩 마이너스.",
       "tags": [
-        "CDX Financials 사모신용 숏 인덱스 출시(r)",
-        "A.M.Best 연금포트 2007년 대비 악화(r)",
-        "보험사 사모신용 $1조+(r)",
-        "재무부 점검 회의 예정(r)",
-        "NAIC 보고서 1년째 비공개(r)"
+        "FSBTripleWhammy국채밸류에이션PC(r)",
+        "Goldman자체PC환매4.99%(5%캡직전)(r)",
+        "GoldmanQ1PC신규10B조달(n)",
+        "4/14InFocus시스템리스크아님공식평가(n)",
+        "BDC순펀딩Q4마이너스(r)"
       ],
       "impacts": [
         "lt-bond",
         "hf-leverage"
       ],
-      "date": "2026-04-10",
+      "date": "2026-04-14",
       "isNew": false,
       "isChanged": true,
-      "updatedDate": "2026-04-10"
+      "updatedDate": "2026-04-14"
     },
     {
       "id": "michigan",
-      "title": "소비자 심리 — 미시간 사상 최저",
-      "sub": "47.6(70년+ 역사 최저) · 실질임금 -0.9% MoM · 가솔린 $4/갤런+",
+      "title": "소비자 심리 — 미시간 47.6 역대 최저·인플레기대 4.8%",
+      "sub": "47.6 역대 최저 · 단기 인플레기대 4.8%(+1.0%p) · BoA 카드지출 +4.3% YoY",
       "group": "growth_sentiment",
       "type": "core",
       "isArchived": false,
       "status": "triggered",
-      "val": "미시간 4월 초기값 47.6(사상 최저) · 실질주간임금 -0.9% MoM · 인플레 기대 6.7%(1981년 이후 최고)",
+      "val": "미시간 4월 47.6(역대 최저) · 단기 인플레기대 4.8%(+1.0%p) · 장기 기대도 상승",
       "val_numeric": 47.6,
       "history_data": [
         {
@@ -792,36 +830,40 @@
         {
           "date": "2026-04-11",
           "val": 47.6
+        },
+        {
+          "date": "2026-04-13",
+          "val": 47.6
         }
       ],
       "z_score": 2.8,
-      "ctx": "미시간 4월 예비치 47.6 — 사상 최저. 1년 인플레 기대 6.7%(1981년 이후 최고). 실질임금 -0.9% MoM 2022년 이후 최대 하락.",
+      "ctx": "WSJ: 기존주택판매 3.98M SAAR(3월, -3.6% MoM, 2025년6월 이후 최저) — 소비자 신뢰 부진·주택 구매 가능성 문제 반영. 30년 모기지 6.37%(분쟁 시작 후 5주 연속 상승). NAR 2026년 판매 전망 +4%로 하향(기존 +14%). 미국인 인플레 우려 급등(WSJ/Statista 확인). 미시간 47.6 역대 최저 + 소비자 구매력 저하 복합 구조.",
       "threshold": "40 이하 시 경기침체 직전 / 55+ 회복 시 watch 하향",
-      "history": "50.0(2022년 6월) → 47.6(2026년 4월 초기). 사상 최저.",
+      "history": "50.0(2022년 6월) → 47.6(2026년 4월) 역대 최저.",
       "tags": [
-        "소비심리",
-        "스태그플레이션",
-        "인플레기대",
-        "사상최저",
-        "미시간지수"
+        "미시간47.6역대최저(r)",
+        "단기인플레기대4.8%(r)",
+        "장기기대상승(r)",
+        "저소득층재량지출축소(r)",
+        "BoA카드지출+4.3%가솔린반영(n)"
       ],
       "impacts": [
         "gdpnow"
       ],
-      "date": "2026-04-11",
+      "date": "2026-04-14",
       "isNew": false,
-      "isChanged": false,
-      "updatedDate": "2026-04-11"
+      "isChanged": true,
+      "updatedDate": "2026-04-14"
     },
     {
       "id": "gdpnow",
-      "title": "성장 둔화 — Q4 GDP 0.5% 확정·GDPNow 1.3%",
-      "sub": "Q4 GDP 0.5%(3차 하향) · GDPNow Q1 1.3% · 실질소비 +0.1% 간신히 유지 · 4/21 次 업데이트",
+      "title": "성장 둔화 — Q4 GDP 0.5%·GDPNow 1.3%",
+      "sub": "GDPNow 1.3% · 기존주택 -3.6%(3.98M) · 노동력 -55.4만(이민 단속) · 생산성 +2.1%",
       "group": "growth_sentiment",
       "type": "core",
       "isArchived": false,
       "status": "watch",
-      "val": "Q4 GDP 0.5%(SAAR, 초기 1.4%→2차 0.7%→3차 0.5% 연속 하향) · GDPNow Q1 1.3% · 개인소비 실질 +0.1% MoM",
+      "val": "Q4 GDP 0.5%(SAAR) · GDPNow Q1 1.3% · 2월 공장주문 정체(운송 제외 +1.2%) · 4/21 次 업데이트",
       "val_numeric": 1.3,
       "history_data": [
         {
@@ -866,66 +908,66 @@
         }
       ],
       "z_score": -1.0,
-      "ctx": "Daily Shot 4/10: Q4 GDP 3차 수정치 0.5%(SAAR). 초기 추정 1.4%에서 세 차례 연속 하향. 하향 요인: 소비지출·주거투자·재고 동시 하향.\n민간 최종 수요(정부·순수출·재고 제외) 1.8%로 하향됐으나 상대적 견조 유지.\nAtlanta Fed GDPNow Q1 1.3% 재확인. 2월 실질 가처분소득 급격 수축 — 소비 둔화 선행 신호.\n저축률 50bp 하락, 지속 불가 수준 접근 중. 소비로 성장 버티는 구조의 한계 가시화.",
+      "ctx": "WSJ A2: 노동력 연간 -554,000(이민 단속+베이비붐 은퇴) — 경제사 유례없는 수준. Fed 연구: 2026년 신규 필요 일자리 \"10,000개 미만\" — 성장은 생산성에만 의존. 노동생산성(비농업) 2025년 +2.1%(2007-19년 평균 1.5% 상회). WSJ A2: 기존주택판매 3월 -3.6% MoM → 3.98M SAAR(2025년6월 이후 최저). 30년 모기지 6.37%. NAR 2026년 전망 +4%로 하향(기존 +14%).",
       "threshold": "1.0% 이하 시 경기침체 신호 / 2.0% 회복 시 watch 유지",
-      "history": "2/20 초기 3.1% → 4/9 최종 1.3%. Q4 GDP 1.4%→0.5% 동시 확인. 스태그플레이션 수치 고착.",
+      "history": "Q4 GDP 1.4%→0.5% 연속 하향 확정. GDPNow 1.3% 유지.",
       "tags": [
-        "GDP성장",
-        "경기둔화",
-        "스태그플레이션",
-        "GDPNow",
-        "소비위축"
+        "공장주문2월운송제외+1.2%(n)",
+        "핵심자본재주문+0.7%상향(g)",
+        "GDPNow1.3%유지(r)",
+        "Q4GDP0.5%확정(r)",
+        "실질소득급감(r)"
       ],
       "impacts": [
         "inflation-expect",
         "michigan"
       ],
-      "date": "2026-04-10",
+      "date": "2026-04-14",
       "isNew": false,
       "isChanged": true,
-      "updatedDate": "2026-04-10"
+      "updatedDate": "2026-04-14"
     },
     {
       "id": "hf-leverage",
-      "title": "헤지펀드 포지셔닝 — 단일일 순레버리지 2025년 중반 이후 최대",
-      "sub": "Goldman HF 단일일 순레버리지 최대 증가(2025년 중반 이후) · 기관 콜매수 분쟁 이래 최대 · 포지션 재구축 확인",
+      "title": "헤지펀드 포지셔닝 — 매크로 순매수 최대·기술 순매도 5년+ 최대",
+      "sub": "HF 매크로 순매수 2025년5월 이후 최대 · 기술 순매도 5년+ 최대 · SocGen 리스크온 전환",
       "group": "positioning",
       "type": "thematic",
       "isArchived": false,
       "status": "watch",
-      "val": "Goldman HF 단일일 순레버리지 증가 2025년 중반 이후 최대(4/9) · 기관 최대 순콜매수 · 매크로 숏 초기 3월 수준 복귀",
+      "val": "HF 매크로(인덱스·ETF) 순매수 2025년5월 이후 최대(Goldman) · 기술 섹터 순매도 5년+ 최대 · 에너지 저가 매수",
       "val_numeric": null,
       "history_data": null,
-      "z_score": -1.2,
-      "ctx": "Daily Shot 4/10 Goldman Sachs Marquee: 헤지펀드 단일일 순레버리지 2025년 중반 이후 최대 증가(4/9).\n그로스 레버리지는 감소했으나 순레버리지 급증 — 숏커버+신규 롱 동시 진행.\nUS 매크로 프로덕트(인덱스·ETF) 숏 포지션 3월 초 수준 복귀. 단일 종목은 순유출 지속.\nVanda: 기관투자자 순콜매수 분쟁 시작 이후 최대(4/9). 시스템적 투자자 롱 재구축 확인.\n포지셔닝 복원 속도가 펀더멘털(GDP 0.5%, 실질소득 급감)을 앞서는 상황 — 기술적 반등의 취약성.",
-      "threshold": "숏커버 완료 후 신규 롱 구축 여부가 다음 랠리 지속성 결정.",
-      "history": "주간 +3%+는 기술적 강세. 금요일 혼조는 인플레 경계감 반영.",
+      "z_score": -1.0,
+      "ctx": "WSJ A4 Goldman Q1 실적: IB 수수료 +48%($2.84B), 시장 부문 +9%($9.34B). 전체 실적 사상 두 번째 최고(2021년 Q1 이후). Goldman CFO: 사모신용 대출 \"잘 분산, 자본 보호 구조\" 발언. 주가 -1.9%(전쟁 불확실성 우려). 이전 Goldman: HF 매크로 순매수 2025년5월 이후 최대·기술 순매도 5년+ 최대 구조 유지.",
+      "threshold": "숏커버 완료 후 신규 롱 구축 여부 + 기술 순매도 지속 기간이 다음 방향 결정.",
+      "history": "매크로 숏 3월 수준 복귀 완료. 기술 순매도 규모 5년+ 최대로 확대.",
       "tags": [
-        "3대 지수 주간 +3%+ 올해 최고(g)",
-        "금요일 CPI 후 혼조 마감(r)",
-        "숏커버 소화 신규 롱 구축 관건(n)",
-        "KOSPI 주간 +8.96% 아시아 최고(g)",
-        "Mag7 vs 나머지 내부 분기 유지(n)"
+        "HF매크로순매수2025년5월이후최대(g)",
+        "기술순매도5년+최대(r)",
+        "에너지저가매수(g/r)",
+        "SocGen리스크온전환(g)",
+        "동일가중5일연속언더퍼폼(r)"
       ],
       "impacts": [
         "equity-technical"
       ],
-      "date": "2026-04-10",
+      "date": "2026-04-14",
       "isNew": false,
       "isChanged": true,
-      "updatedDate": "2026-04-10"
+      "updatedDate": "2026-04-14"
     },
     {
       "id": "retail-flow",
-      "title": "리테일 플로우 — Vanda 상승 전환 확인",
-      "sub": "Vanda 포지셔닝 지표 상승 전환 · 시스템 투자자 롱 재구축 · 기관 콜매수 분쟁 이래 최대",
+      "title": "리테일 플로우 — Vanda 상승 전환 유지",
+      "sub": "Vanda 포지셔닝 상승 전환 · SocGen 리스크온 확인 · AAII 심리 개선 초기",
       "group": "positioning",
       "type": "thematic",
       "isArchived": false,
       "isNew": false,
       "isChanged": true,
       "status": "watch",
-      "val": "Vanda 포지셔닝 지표 상승(4/9, 7연속 랠리 반영) · 기관 순콜매수 분쟁 이래 최대 · 저점 $400M 탈출 확인",
+      "val": "Vanda 포지셔닝 지표 상승 유지 · SocGen 센티먼트 리스크온 전환 · DB 포지셔닝 언더웨이트",
       "val_numeric": 650,
       "history_data": [
         {
@@ -970,33 +1012,33 @@
         }
       ],
       "z_score": -1.8,
-      "ctx": "Daily Shot 4/10 Vanda Research: 포지셔닝 지표 4/8 저점($400M) 이후 상승 전환 확인.\n시스템 투자자들이 휴전 헤드라인 이후 롱 재구축 시작. 기관 최대 순콜매수.\n단, 미시간 소비심리 47.6 사상 최저 vs 포지셔닝 회복의 괴리 — 개인 심리와 기관 포지셔닝 분기 지속.\n개인투자자 심리 회복이 아직 뒤따르지 않는 상태. Dry Powder 방아쇠 미당김.",
+      "ctx": "Daily Shot 4/14: HFGM ETF 에쿼티 익스포저 점진적 재추가. 크로스에셋 변동성 하락 시작 → 리테일 복귀 환경 개선. 단 사모신용 환매 급증(Q1) + 미시간 47.6 최저 = 개인 심리 회복 제한. 기관 선행 vs 개인 후행 패턴 지속.",
       "threshold": "$800M+ 회복 시 리테일 신뢰 복귀. $400M 이하 재붕괴 시 패닉 재점화.",
-      "history": "4/8 ~$400M 저점. 주간 랠리로 부분 회복 추정.",
+      "history": "4/8 ~$400M 저점 → 부분 회복. 봉쇄 선언 후 재하락 가능성 주시.",
       "tags": [
-        "4/8 $400M 저점 후 회복 추정(g)",
-        "주간 랠리 리테일 참여 여부 미확인(n)",
-        "미시간 47.6 최저 심리 압박(r)",
-        "SGOV 방어 부분 지속 추정(r)",
-        "다음주 Vanda 수치 확인 필요(n)"
+        "SocGen리스크온전환확인(g)",
+        "DB포지셔닝언더웨이트유지(r)",
+        "봉쇄선언후리테일재반응주시(n)",
+        "미시간47.6vsリスクon괴리(r)",
+        "기관vs개인분기지속(n)"
       ],
       "impacts": [
         "hf-leverage",
         "equity-technical"
       ],
-      "date": "2026-04-10",
-      "updatedDate": "2026-04-10"
+      "date": "2026-04-14",
+      "updatedDate": "2026-04-14"
     },
     {
       "id": "vix",
-      "title": "VIX — 100일선 하향 돌파",
-      "sub": "VIX 100일 이평선 하향 돌파 · 구조적 변동성 완화 신호 · 이슬라마바드 결과 주시",
+      "title": "VIX — 봉쇄 선언 후 재반등 주시",
+      "sub": "VIX 19.15(4/14 Yahoo Finance) · -0.42% · 정상 범위 복귀",
       "group": "positioning",
       "type": "core",
       "isArchived": false,
       "status": "watch",
-      "val": "VIX 100일 이평선 하향 돌파(4/10) · 50일·200일선 이미 하향 · 변동성 구조적 정상화 진행",
-      "val_numeric": 18.2,
+      "val": "VIX 19.15(4/14, Yahoo Finance, -0.08/-0.42%) · 정상 범위(15~20) 재진입",
+      "val_numeric": 19.15,
       "history_data": [
         {
           "date": "2026-02-23",
@@ -1028,47 +1070,51 @@
         },
         {
           "date": "2026-04-10",
-          "val": 19.23
+          "val": 18.2
         },
         {
           "date": "2026-04-11",
           "val": 19.49
         },
         {
-          "date": "2026-04-10",
-          "val": 18.2
+          "date": "2026-04-13",
+          "val": 22.0
+        },
+        {
+          "date": "2026-04-14",
+          "val": 19.15
         }
       ],
-      "z_score": 0.3,
-      "ctx": "Daily Shot 4/10: VIX 100일 이평선 하향 돌파. 50일·200일선은 이미 하향 완료.\n세 이평선 모두 하향 돌파 = 공포 국면에서 구조적으로 이탈하는 신호.\n분쟁 고점 ~52 → 4/8 21.04 → 4/10 18선 진입. 정상 범위(15~20) 복귀 가시권.\n이슬라마바드 협상 결과가 재반등 여부 결정 — 결렬 시 즉각 25 재돌파 위험.",
-      "threshold": "VIX 25 돌파 시 triggered / 15 이하 시 위험 완화",
-      "history": "분쟁 고점 ~52 → 4/8 21.04 → 4/11 19.23.",
+      "z_score": 0.5,
+      "ctx": "VIX 19.15(4/14, Yahoo Finance, -0.08/-0.42%). 재협상 기대 + 크로스에셋 변동성 하락 확인. 정상 범위(15~20) 재진입 확인. 4/13 봉쇄 선언 후 재상승 우려 → 재협상 기대로 즉각 하락 전환. Watch 유지(봉쇄 지속으로 재반등 위험 잔존).",
+      "threshold": "VIX 25 돌파 시 triggered / 20 이하 재안정 시 watch 유지",
+      "history": "분쟁 고점 ~52 → 4/10 18.2 → 봉쇄 선언 후 ~22 재상승.",
       "tags": [
+        "봉쇄선언VIX재반등(r)",
+        "주말Hyperliquid선물주가급락(r)",
+        "25돌파여부공포단계신호(r)",
         "변동성",
-        "VIX",
-        "시장심리",
-        "위험선호",
-        "S&P500"
+        "VIX"
       ],
       "impacts": [
         "hf-leverage",
         "equity-technical"
       ],
-      "date": "2026-04-10",
+      "date": "2026-04-14",
       "isNew": false,
       "isChanged": true,
-      "updatedDate": "2026-04-10"
+      "updatedDate": "2026-04-14"
     },
     {
       "id": "equity-technical",
-      "title": "주식시장 기술적 — S&P 7연속 상승·100일선 돌파",
-      "sub": "S&P 7연속 상승 · 100일선 돌파(50·200일선 전일 돌파) · 기술적 회복 가속",
+      "title": "주식시장 기술적 — Nasdaq 100일선 돌파·기술 8연속",
+      "sub": "S&P 6,886(4/14) · 기술 100일선 돌파 확인 · RSI 63.84",
       "group": "positioning",
       "type": "core",
       "isArchived": false,
       "status": "watch",
-      "val": "S&P 500 7연속 상승(100일·200일·50일선 모두 상향 돌파) · VIX 100일선 하향 · ETF 누적 $510B",
-      "val_numeric": 6855,
+      "val": "S&P 500 6,886.24(4/14, Yahoo Finance, +1.02%) · Nasdaq 23,183.74(+1.23%) · RSI 63.84",
+      "val_numeric": 6886.24,
       "history_data": [
         {
           "date": "2026-02-23",
@@ -1107,39 +1153,43 @@
           "val": 6829
         },
         {
-          "date": "2026-04-10",
+          "date": "2026-04-13",
           "val": 6855
+        },
+        {
+          "date": "2026-04-14",
+          "val": 6886.24
         }
       ],
       "z_score": 1.5,
-      "ctx": "Daily Shot 4/10: S&P 500 7연속 상승. 100일 이평선 상향 돌파(50·200일선은 전일 돌파). 기술적 삼중 이평선 회복.\n역사적으로 이런 7연속 상승 이후 2주 후 항상 상승 유지. VIX 100일선 하향 돌파 — 변동성 구조적 완화 신호.\nETF 올해 누적 유입 $510B, 2025년 동기 대비 60% 초과. 기관 자금 재진입 확인.\n단, S&P 전세계 대비 37% 프리미엄 유지 — 밸류에이션 부담 여전. 1900년 이후 거의 모든 지표 2σ 이상.",
+      "ctx": "WSJ B1: 소프트웨어 주식 주도 S&P 500 +1.02%(6,886.24), Nasdaq +1.23%(23,183.74). Oracle +13%(S&P 최고 퍼포머), ServiceNow +7.3%, Adobe +1년 내 최대 상승. iShares Expanded Tech-Software ETF +5.4%. Goldman Q1 +19%(EPS $17.55 vs 예상 $16.47) — 주가 -1.9%(전쟁 지속 우려). Revolution Medicines +41%(췌장암 임상 3상 결과). Morgan Stanley: \"멀티플 하락+이익 개선 = 불마켓 조정, 베어마켓 아님\" 논거.",
       "threshold": "S&P 6,500 이하 시 기술적 약세 / 7,000 이상 시 과열 경계",
-      "history": "주간 +3.56% 달성.",
+      "history": "기술 8연속 상승 진행 중. 봉쇄 선언 후 갭 하락 주시.",
       "tags": [
-        "S&P500",
-        "주식시장",
-        "기술적분석",
-        "글로벌주식",
-        "위험자산"
+        "Nasdaq100일선돌파(g)",
+        "기술8연속상승(g)",
+        "동일가중5일연속언더퍼폼(r)",
+        "breadth개선중(g)",
+        "봉쇄선언기술랠리시험(r)"
       ],
       "impacts": [
         "hf-leverage"
       ],
-      "date": "2026-04-10",
+      "date": "2026-04-14",
       "isNew": false,
       "isChanged": true,
-      "updatedDate": "2026-04-10"
+      "updatedDate": "2026-04-14"
     },
     {
       "id": "usdkrw",
-      "title": "원/달러·KOSPI — BOK 매파 전환·AI 자금 유입",
-      "sub": "BOK 2.5% 동결·성장 가이던스 삭제(매파 전환) · 아시아 AI 자금 유입 $79억 · KOSPI 강세",
+      "title": "원/달러·KOSPI — 달러 강세·APAC 연료부족 압박",
+      "sub": "USD/KRW 1,479.14(4/14 WSJ 환율표) · 한국 $170억+ 긴급 구호",
       "group": "korea_asia",
       "type": "core",
       "isArchived": false,
       "status": "watch",
-      "val": "USD/KRW ~1,472(4/10) · BOK 2.5% 동결·매파 전환 · AI 주식 글로벌 자금 한국·대만 $79억 유입",
-      "val_numeric": 1472,
+      "val": "USD/KRW 1,479.14(4/14, WSJ B7 환율표) · 한국 의회 $170억+ 긴급 구호 통과(에너지 충격 대응)",
+      "val_numeric": 1479.14,
       "history_data": [
         {
           "date": "2026-02-09",
@@ -1171,35 +1221,39 @@
         },
         {
           "date": "2026-04-10",
-          "val": 1484
+          "val": 1472
         },
         {
           "date": "2026-04-11",
           "val": 1479
         },
         {
-          "date": "2026-04-10",
-          "val": 1472
+          "date": "2026-04-13",
+          "val": 1490
+        },
+        {
+          "date": "2026-04-14",
+          "val": 1479.14
         }
       ],
-      "z_score": 1.2,
-      "ctx": "Daily Shot 4/10: BOK 4/10 기준금리 2.5% 동결, 만장일치. 핵심: 성장지원 가이던스 삭제.\n'미묘한 매파 전환' — 에너지 충격 인플레·원화 약세를 성장 리스크보다 우선 대응 시사.\n글로벌 자금 아시아 AI 주식 재유입 약 $79억(한국·대만 중심) — 전쟁 긴장 완화 + AI 테마 결합.\nUSD/KRW 고점 1,523(4/2) → 현재 1,472 수준. 원화 강세 추세 유지.\nBOK 매파 전환은 한국 금리인하 기대 약화 → 원화 금리 지지 → 원화 강세 요인.",
-      "threshold": "USD/KRW 1,500 재돌파 시 원화 약세 심화 / 1,450 이하 시 강세 전환",
-      "history": "4/2 1,523 → 4/8 1,471 → 4/11 1,479.",
+      "z_score": 1.3,
+      "ctx": "WSJ B7 환율표: USD/KRW 1,479.14(4/14). WSJ A6: 한국 의회 $170억+ 긴급 구호 통과 — 저소득층 현금 지원(최대 약 $400) 등 에너지 충격 대응. Asiana Airlines 중국·캄보디아 왕복 12개 이상 편 5월까지 임시 중단. 한국 약 26척 선박 중동 억류 중. 에너지 수입국으로 유가 급등 직격.",
+      "threshold": "USD/KRW 1,510 재돌파 시 watch 상향 / 1,450 이하 시 강세 전환",
+      "history": "4/2 1,523 → 4/8 1,471 → 봉쇄 선언 달러 강세로 1,490 재상승 추정.",
       "tags": [
-        "원달러",
-        "KOSPI",
-        "한국은행",
-        "한국주식",
-        "아시아"
+        "USD/KRW1479.14확정(n)",
+        "한국의회170억달러긴급구호(g)",
+        "Asiana항공편임시중단(r)",
+        "한국선박26척억류(r)",
+        "원달러"
       ],
       "impacts": [
         "dxy-strength"
       ],
-      "date": "2026-04-10",
+      "date": "2026-04-14",
       "isNew": false,
       "isChanged": true,
-      "updatedDate": "2026-04-10"
+      "updatedDate": "2026-04-14"
     },
     {
       "id": "svb-contagion",
@@ -1228,11 +1282,11 @@
     {
       "id": "fed_balance_sheet",
       "title": "Fed 대차대조표 / QT 속도",
-      "sub": "$6.70T (2026-04-01) · QT 월 $40B 지속 · 관세 대응 QE 재개 기대 일부",
+      "sub": "$6.70T (2026-04-01) · QT 월 $40B 지속 · 봉쇄 국면 QE 재개 기대 강화",
       "group": "liquidity",
       "type": "core",
       "isArchived": false,
-      "isNew": true,
+      "isNew": false,
       "isChanged": false,
       "status": "watch",
       "val": "$6.70T (2026-04-01, Fed H.4.1) · 피크($8.97T) 대비 $2.27T 축소 · QT 월 $40B 지속",
@@ -1280,7 +1334,7 @@
         }
       ],
       "z_score": -1.3,
-      "ctx": "Fed 대차대조표 $6.70T (2026-04-01, 출처: americanactionforum.org / Fed H.4.1). QT 월 $40B 완만한 속도 지속.\n피크($8.97T, 2022년 4월) 대비 $2.27T 축소. 관세 충격 속 QE 재개 기대가 일부 제기되나 Fed는 현재 관망 모드.\n매주 목요일 오후 H.4.1 발표.",
+      "ctx": "Fed 대차대조표 $6.70T (2026-04-01, Fed H.4.1). QT 월 $40B 완만한 속도 지속. 봉쇄 선언 국면에서 QE 재개 기대 시장 일부 제기. 매주 목요일 오후 H.4.1 발표.",
       "threshold": "QT 재가속(월 $60B+) 또는 잔고 $6.5T 이하 시 triggered / QE 재개 발표 시 즉시 triggered",
       "history": "QT 개시(2022년 6월) 이후 꾸준한 축소. 2025년 3월 월 $60B→$40B 감속. 현재 $6.70T.",
       "tags": [
@@ -1294,21 +1348,21 @@
         "credit_spread_hy",
         "mmf_flow"
       ],
-      "date": "2026-04-11",
-      "updatedDate": "2026-04-11"
+      "date": "2026-04-13",
+      "updatedDate": "2026-04-13"
     },
     {
       "id": "sofr_repo_stress",
       "title": "SOFR / 레포 시장 스트레스",
-      "sub": "SOFR 3.57% (2026-04-10) · FFR 하단 +7bp · 레포 시장 안정",
+      "sub": "SOFR 3.61%(4/13, WSJ Money Rates 확정) · FFR 하단 +11bp",
       "group": "liquidity",
       "type": "core",
       "isArchived": false,
-      "isNew": true,
-      "isChanged": false,
+      "isNew": false,
+      "isChanged": true,
       "status": "normal",
-      "val": "SOFR 3.57% (2026-04-10, NY Fed) · FFR 목표 하단(3.50%) 대비 +7bp · 레포 안정",
-      "val_numeric": 3.57,
+      "val": "SOFR 3.61%(4/13, WSJ Money Rates) · FFR 목표 하단(3.50%) 대비 +11bp · 레포 안정",
+      "val_numeric": 3.61,
       "history_data": [
         {
           "date": "2025-09-01",
@@ -1348,11 +1402,11 @@
         },
         {
           "date": "2026-04-10",
-          "val": 3.57
+          "val": 3.61
         }
       ],
       "z_score": 0.1,
-      "ctx": "SOFR 3.57% (2026-04-10, 출처: sofrrate.com / NY Fed). FFR 목표 하단(3.50%) 대비 +7bp 정상 범위.\n관세 충격 속에서도 단기자금시장 안정 유지. 2019년 9월 레포 스파이크(5.25%) 같은 경색 리스크: RRP 잔고 감소로 준비금 임계치 모니터링 필요.",
+      "ctx": "WSJ B9 Money Rates: SOFR 3.61%(4/13). FFR 실효금리 3.64%. Fed funds 목표 3.50-3.75%. 단기자금시장 안정 유지. DTCCGCFRepo Treasury 3.681%, MBS 3.686% — 레포 시장 정상 범위.",
       "threshold": "SOFR-FFR 스프레드 25bp+ 시 triggered / 10-25bp 시 watch",
       "history": "2024년 9월 첫 인하 이후 꾸준 하락. 현재 3.57% 정상 범위.",
       "tags": [
@@ -1365,20 +1419,20 @@
         "fed_balance_sheet",
         "tga_balance"
       ],
-      "date": "2026-04-11",
-      "updatedDate": "2026-04-11"
+      "date": "2026-04-14",
+      "updatedDate": "2026-04-14"
     },
     {
       "id": "tga_balance",
       "title": "TGA 잔고 (재무부 현금)",
-      "sub": "~$710B (주간 추정) · 부채한도 단기 해소 · 관세 수입 소폭 상승",
+      "sub": "~$710B (주간 추정) · 재정적자 TTM 5.3% GDP · 관세 수입 소폭 상승",
       "group": "liquidity",
       "type": "core",
       "isArchived": false,
-      "isNew": true,
+      "isNew": false,
       "isChanged": false,
       "status": "watch",
-      "val": "~$710B (FRED WTREGEN 주간 추정) · 부채한도 이슈 단기 해소 · 관세 수입 소폭 상승",
+      "val": "~$710B (FRED WTREGEN 주간 추정) · 재정적자 TTM 5.3% GDP(예상 초과)",
       "val_numeric": 710,
       "history_data": [
         {
@@ -1423,33 +1477,33 @@
         }
       ],
       "z_score": 0.7,
-      "ctx": "TGA 잔고 약 $710B (FRED WTREGEN 주간 추정). 부채한도 이슈 단기 해소 상태.\nTGA 급증은 은행 준비금 흡수 → 시장 유동성 축소 효과. 정확한 일별 데이터: fiscaldata.treasury.gov.",
+      "ctx": "TGA 잔고 약 $710B (FRED WTREGEN). Daily Shot 4/13: 3월 재정적자 예상 초과, TTM GDP 대비 5.3% 유지 — 재정 여력 제한. 관세 수입 소폭 상승이나 지출 증가로 상쇄.",
       "threshold": "TGA $900B+(급속 재충전) 시 triggered / $100B-(부채한도 위기) 시 triggered",
-      "history": "2023년 6월 $50B(부채한도 직전) → 해결 후 $650B. 현재 $710B 안정.",
+      "history": "2023년 6월 $50B(부채한도 직전) → 해결 후 $650B. 현재 $710B.",
       "tags": [
         "TGA",
         "재무부",
         "유동성",
-        "부채한도"
+        "재정적자TTM5.3%(r)"
       ],
       "impacts": [
         "sofr_repo_stress",
         "fed_balance_sheet"
       ],
-      "date": "2026-04-11",
-      "updatedDate": "2026-04-11"
+      "date": "2026-04-13",
+      "updatedDate": "2026-04-13"
     },
     {
       "id": "mmf_flow",
       "title": "MMF 잔고 흐름",
-      "sub": "$7.86T (2026-03-18, ICI) · 역대 최고 경신 · Dry Powder 최대",
+      "sub": "$7.86T (2026-03-18, ICI) · 역대 최고 · 봉쇄 선언 후 추가 유입 예상",
       "group": "liquidity",
       "type": "core",
       "isArchived": false,
-      "isNew": true,
+      "isNew": false,
       "isChanged": false,
       "status": "watch",
-      "val": "$7.86T (2026-03-18, ICI 주간) · 역대 최고 경신 · 관세 충격 안전자산 대피 자금 유입",
+      "val": "$7.86T (2026-03-18, ICI 주간) · 역대 최고 · 봉쇄 선언 후 추가 안전자산 유입 예상",
       "val_numeric": 7860,
       "history_data": [
         {
@@ -1489,38 +1543,38 @@
           "val": 7860
         },
         {
-          "date": "2026-04-11",
+          "date": "2026-04-13",
           "val": 7860
         }
       ],
       "z_score": 2.0,
-      "ctx": "MMF 총 잔고 $7.86T (2026-03-18, ICI 주간 보도자료). 역대 최고 경신 지속.\n관세 충격·지정학 불안 속 안전자산 선호. 4월 9일 관세 유예 이후에도 대규모 이동 미확인.\n역대 최대 Dry Powder — 불확실성 해소 시 위험자산 복귀 잠재력.",
+      "ctx": "MMF 총 잔고 $7.86T (2026-03-18, ICI). 역대 최고 경신. 봉쇄 선언 후 추가 안전자산 대피 유입 예상 — Dry Powder 추가 적립 가능성. 다음 ICI 주간 발표에서 4/9 관세 유예~봉쇄 선언 기간 순이동 확인 필요.",
       "threshold": "주간 순유출 $100B+(위험자산 급전환) 시 watch 하향 / $9T 돌파 시 강화",
-      "history": "2023년 SVB 이후 꾸준 증가. 2026년 관세 충격으로 역대 최고 $7.86T.",
+      "history": "2023년 SVB 이후 꾸준 증가. 2026년 관세+봉쇄 충격으로 역대 최고 $7.86T.",
       "tags": [
         "MMF",
         "안전자산",
-        "Dry Powder",
-        "유동성"
+        "DryPowder",
+        "봉쇄후추가유입예상(r)"
       ],
       "impacts": [
         "equity-technical",
         "cnn_fear_greed"
       ],
-      "date": "2026-04-11",
-      "updatedDate": "2026-04-11"
+      "date": "2026-04-13",
+      "updatedDate": "2026-04-13"
     },
     {
       "id": "credit_spread_hy",
-      "title": "신용 스프레드 (HY OAS)",
-      "sub": "294bps · 관세유예 후 피크(480bps)에서 급축소 · 연초 수준 복귀",
+      "title": "신용 스프레드 (HY OAS) — 200일선 하향·신규 발행 급등",
+      "sub": "HY OAS 200일선 하향 돌파 · 신규 발행 스프레드·수익률 급등 · BDC 순펀딩 마이너스",
       "group": "liquidity",
       "type": "core",
       "isArchived": false,
-      "isNew": true,
+      "isNew": false,
       "isChanged": true,
       "status": "watch",
-      "val": "HY OAS 294bps (FRED BAMLH0A0HYM2) · 피크(480bps, 4/2) 대비 급축소 · 연초(270bps) 거의 복귀",
+      "val": "HY OAS 200일 이평선 하향 돌파(4/11) · 신규 발행 스프레드·수익률 급등 · BDC 순펀딩 마이너스",
       "val_numeric": 294,
       "history_data": [
         {
@@ -1562,39 +1616,43 @@
         {
           "date": "2026-04-11",
           "val": 294
+        },
+        {
+          "date": "2026-04-13",
+          "val": 294
         }
       ],
       "z_score": 0.4,
-      "ctx": "HY OAS 294bps (FRED BAMLH0A0HYM2). 4월 2일 480bps 피크 → 관세 유예 후 급축소.\n연초(270bps) 거의 복귀. 단기 공포 해소 반영이나 무역협상 불확실성·경기 리스크 잔존.\nHY 500bps+ 시 역사적 경기침체 신호.",
+      "ctx": "HY OAS 200일 이평선 하향 돌파 유지(유통 시장 안정). Daily Shot 4/14: 사모신용 In Focus — BDC 스프레드 IG·BB HY 대비 확대(Barclays) = 유통 HY vs 사모신용 괴리 확대 지속. BDC NAV 대폭 할인 거래. 공개시장 HY는 상대적 안정이나 사모신용 스트레스 명확.",
       "threshold": "HY 500bps+ 시 triggered(경기침체 신호) / 300-500bps 시 watch",
-      "history": "연초 270bps(저점) → 관세 충격 480bps → 유예 후 294bps.",
+      "history": "연초 270bps → 480bps(관세 충격) → 294bps(유예 후). 봉쇄 선언 후 재확대 주시.",
       "tags": [
-        "크레딧",
-        "HY",
-        "IG",
-        "경기침체",
-        "리스크프리미엄"
+        "HY OAS200일선하향(g)",
+        "신규발행스프레드급등괴리(r)",
+        "레버리지드론OID심화(r)",
+        "BDC순펀딩마이너스(r)",
+        "봉쇄선언후재확대주시(r)"
       ],
       "impacts": [
         "lt-bond",
         "hf-leverage",
         "equity-technical"
       ],
-      "date": "2026-04-11",
-      "updatedDate": "2026-04-11"
+      "date": "2026-04-14",
+      "updatedDate": "2026-04-14"
     },
     {
       "id": "cnn_fear_greed",
       "title": "CNN Fear & Greed Index",
-      "sub": "32 (Fear) · 3월 말 극단공포(11) 이후 반등 · 관세 유예 효과",
+      "sub": "CNN F&G 40(Fear) · feargreedmeter.com 실시간 · 전일 37 → 오늘 40",
       "group": "sentiment",
       "type": "core",
       "isArchived": false,
-      "isNew": true,
+      "isNew": false,
       "isChanged": true,
       "status": "watch",
-      "val": "32 (Fear, feargreedmeter.com 2026-04-11) · 극단공포(11) → Fear 구간 복귀",
-      "val_numeric": 32,
+      "val": "40(Fear, feargreedmeter.com 4/14 실시간) · 전일 37→오늘 40 · 1주전 22(Extreme Fear)",
+      "val_numeric": 40,
       "history_data": [
         {
           "date": "2026-01-05",
@@ -1635,37 +1693,50 @@
         {
           "date": "2026-04-11",
           "val": 32
+        },
+        {
+          "date": "2026-04-13",
+          "val": 28
+        },
+        {
+          "date": "2026-04-14",
+          "val": 30
+        },
+        {
+          "date": "2026-04-14",
+          "val": 40
         }
       ],
-      "z_score": -1.3,
-      "ctx": "CNN Fear & Greed 32 (Fear, 출처: feargreedmeter.com, 2026-04-11). 3월 말 극단공포(11) → 관세 유예 발표 반등.\n역발상 관점: Extreme Fear(0~25) 구간은 역사적 매수 기회. 현재 Fear 구간으로 한 단계 회복.\n미시간 47.6 사상 최저와 괴리 → 심리 회복 취약성 시사.",
+      "z_score": -0.9,
+      "ctx": "CNN Fear & Greed 40(Fear, feargreedmeter.com 4/14 실시간). 전일 37(Fear) → 오늘 40(Fear) — 재협상 기대로 소폭 상승. 1주전 22(Extreme Fear), 1개월전 21(Extreme Fear) 대비 큰 폭 회복. Fear 구간(25~44)에 위치. 중립(45~55) 진입 여부가 다음 관찰 포인트.",
       "threshold": "25 이하(Extreme Fear) 시 triggered(역발상 매수) / 75 이상(Extreme Greed) 시 triggered",
-      "history": "2026년 1월 65 → 4월 2일 11(극단공포) → 4월 11일 32(Fear).",
+      "history": "4/2 극단공포(11) → 4/11 회복(32) → 봉쇄 선언 후 재하락(28 추정).",
       "tags": [
+        "봉쇄선언후재하락추정(r)",
+        "극단공포재진입주시(r)",
+        "장개장후실값확인필요(n)",
         "심리지표",
-        "공포탐욕",
-        "역발상",
-        "단기신호"
+        "공포탐욕"
       ],
       "impacts": [
         "equity-technical",
         "mmf_flow",
         "hf-leverage"
       ],
-      "date": "2026-04-11",
-      "updatedDate": "2026-04-11"
+      "date": "2026-04-14",
+      "updatedDate": "2026-04-14"
     },
     {
       "id": "aaii_bull_bear",
       "title": "AAII 투자자 심리 (Bull-Bear 스프레드)",
-      "sub": "-17.9%p → 주간 개선 확인(Daily Shot 4/10) · 여전히 음수 · 8주 연속 평균 하회",
+      "sub": "SocGen 리스크온 전환 · AAII 다음 주간 데이터 봉쇄 선언 반영 주시",
       "group": "sentiment",
       "type": "core",
       "isArchived": false,
-      "isNew": true,
-      "isChanged": true,
+      "isNew": false,
+      "isChanged": false,
       "status": "watch",
-      "val": "Bull-Bear -17.9%p (Bulls 33.6% / Bears 51.4%, aaii.com 2026-04-03) · 관세 유예 이전 데이터",
+      "val": "Bull-Bear -17.9%p (aaii.com 2026-04-03) · SocGen 센티먼트 리스크온 전환(Daily Shot 4/13)",
       "val_numeric": -15.0,
       "history_data": [
         {
@@ -1697,47 +1768,44 @@
           "val": -17.9
         },
         {
-          "date": "2026-04-03",
-          "val": -17.9
-        },
-        {
-          "date": "2026-04-11",
-          "val": -17.9
-        },
-        {
           "date": "2026-04-10",
+          "val": -15.0
+        },
+        {
+          "date": "2026-04-13",
           "val": -15.0
         }
       ],
       "z_score": -1.6,
-      "ctx": "Daily Shot 4/10: AAII Bull-Bear 스프레드 주간 개선 확인(음수 유지이나 완화 방향).\nActive managers 미국 주식 익스포저 소폭 상승. 개인·기관 심리 동반 개선 초기 신호.\n단 여전히 음수 구간 — 역사 평균(+6.5%p) 하회 8주 연속 지속. 공포가 완전히 해소되지 않은 상태.\nS&P 7연속 상승과 AAII 심리 개선이 동행 시작 — 방향성 전환의 첫 확인.",
+      "ctx": "Daily Shot 4/13 Société Générale: 센티먼트 지표 극단 위험회피에서 리스크온 모드로 전환 — 빠른 심리 회복 확인. 단 AAII 개인투자자 심리는 아직 4/3 기준 -17.9%p. 다음 주간 AAII 설문(4/17 발표 예정)에서 봉쇄 선언 반영 여부 주시 — 재악화 가능성.",
       "threshold": "-30%p 이하 시 triggered(역발상 매수) / +30%p 이상 시 triggered(과열)",
-      "history": "1월 +18%p → 3월 말 -35%p → 4월 3일 -17.9%p.",
+      "history": "1월 +18%p → 3월 말 -35%p → 4/3 -17.9%p → SocGen 리스크온 전환(4/13).",
       "tags": [
-        "개인투자자",
-        "심리",
-        "역발상",
-        "주간설문"
+        "SocGen리스크온전환확인(g)",
+        "AAII다음주4/17봉쇄반영주시(n)",
+        "AAII-17.9%p음수유지(r)",
+        "기관vs개인심리분기(n)",
+        "개인투자자"
       ],
       "impacts": [
         "equity-technical",
         "hf-leverage"
       ],
-      "date": "2026-04-10",
-      "updatedDate": "2026-04-10"
+      "date": "2026-04-13",
+      "updatedDate": "2026-04-13"
     },
     {
       "id": "sp500_rsi",
       "title": "S&P 500 RSI (14일)",
-      "sub": "60.8 (2026-04-09, Alpha Vantage) · 과매도(27.7) 이후 정상화",
+      "sub": "RSI 63.84(4/13 Alpha Vantage) · 60.49(4/10) · 추가 상승 진행 중",
       "group": "sentiment",
       "type": "core",
       "isArchived": false,
-      "isNew": true,
+      "isNew": false,
       "isChanged": true,
       "status": "normal",
-      "val": "RSI 60.8 (Alpha Vantage SPY 14d, 2026-04-09) · 3월 말 27.7(과매도) → 관세 유예 +9.5% 급등 후 중립 상단",
-      "val_numeric": 60.8,
+      "val": "RSI 63.84(Alpha Vantage SPY 14d, 2026-04-13) · 4/10 60.49 → 4/13 63.84 상승",
+      "val_numeric": 63.84,
       "history_data": [
         {
           "date": "2026-01-12",
@@ -1776,39 +1844,44 @@
           "val": 60.8
         },
         {
-          "date": "2026-04-11",
+          "date": "2026-04-13",
           "val": 60.8
+        },
+        {
+          "date": "2026-04-13",
+          "val": 63.84
         }
       ],
-      "z_score": 0.3,
-      "ctx": "S&P RSI 60.8 (Alpha Vantage SPY 14일, 2026-04-09). 3월 말 27.7(과매도 극단) → 관세 유예 +9.5% 급등 후 단숨에 정상화.\n중립~약낙관(60-70). 스태그플레이션 구조(CPI 3.3% + GDPNow 1.3%)와 협상 불확실성 = 추가 상승 제한.",
+      "z_score": 0.5,
+      "ctx": "SPY RSI 14일 63.84(4/13, Alpha Vantage). 4/10 60.49 → 4/13 63.84 상승. S&P 500 6,886.24(4/14, Yahoo Finance, +1.02%). 중립~약낙관(60~70) 구간 유지. 70 돌파 시 과매수 진입. 재협상 기대 + AI 테마 랠리 지속.",
       "threshold": "70+(과매수) 시 watch / 30-(과매도) 시 triggered(역발상)",
-      "history": "1월 68 → 3월 말 27.7(과매도 극단) → 4월 9일 60.8(급반등).",
+      "history": "3월 말 27.7(과매도) → 4/9 60.8(급반등). 봉쇄 선언 후 방향 주시.",
       "tags": [
+        "RSI60.8중립상단유지(n)",
+        "봉쇄선언후재하락추정(r)",
+        "Nasdaq100일선돌파병행(g)",
         "RSI",
-        "기술적분석",
-        "과매도",
         "S&P500"
       ],
       "impacts": [
         "equity-technical",
         "hf-leverage"
       ],
-      "date": "2026-04-11",
-      "updatedDate": "2026-04-11"
+      "date": "2026-04-13",
+      "updatedDate": "2026-04-14"
     },
     {
       "id": "put_call_ratio",
       "title": "Put/Call Ratio",
-      "sub": "~1.05 (2026-04-11 추정) · 관세충격 피크(1.40) 이후 정상화 중",
+      "sub": "CNN F&G 40(실시간) 반영 헤지 수요 완화 · VIX 19.15 정상화",
       "group": "sentiment",
       "type": "core",
       "isArchived": false,
-      "isNew": true,
+      "isNew": false,
       "isChanged": true,
       "status": "watch",
-      "val": "~1.05 (CBOE 추정, 2026-04-11) · 피크(1.40, 4/2) 이후 정상화 · 1.0 상회 헤지 수요 잔존",
-      "val_numeric": 1.05,
+      "val": "~1.10(CBOE 추정, 4/13 — 봉쇄 선언 후 재상승) · 헤지 수요 재강화",
+      "val_numeric": 1.1,
       "history_data": [
         {
           "date": "2026-01-12",
@@ -1849,38 +1922,42 @@
         {
           "date": "2026-04-11",
           "val": 1.05
+        },
+        {
+          "date": "2026-04-13",
+          "val": 1.1
         }
       ],
-      "z_score": 0.8,
-      "ctx": "CBOE Total Put/Call ~1.05 (추정, 2026-04-11). 관세 충격 피크(1.40) → 유예 후 빠른 정상화.\n1.0 이상 헤지 수요 잔존. 1.0 하회 시 공포 완전 해소 신호.\n역사적으로 1.20+ 극단 헤지 → 시장 반등 역발상 신호.",
+      "z_score": 0.9,
+      "ctx": "VIX 19.15(4/14 실시간) + CNN F&G 40(Fear) 상승 반영. 헤지 수요 점진 완화 중. 이전 추정 1.10 유지(CBOE 실시간 데이터 미접근). 재협상 기대로 추가 완화 방향.",
       "threshold": "1.20+ 시 triggered(극단 헤지 = 역발상 매수) / 0.70- 시 watch(극단 낙관)",
-      "history": "연초 0.80 → 관세 충격 1.40 → 유예 후 1.05.",
+      "history": "연초 0.80 → 관세 충격 1.40 → 유예 1.05 → 봉쇄 선언 1.10 재상승 추정.",
       "tags": [
-        "옵션",
-        "헤지",
-        "Put",
-        "역발상",
-        "시장심리"
+        "봉쇄선언헤지수요재상승(r)",
+        "1.20+역발상신호임박(n)",
+        "월요일실값확인필요(n)",
+        "Put/Call",
+        "헤지"
       ],
       "impacts": [
         "vix",
         "equity-technical"
       ],
-      "date": "2026-04-11",
-      "updatedDate": "2026-04-11"
+      "date": "2026-04-13",
+      "updatedDate": "2026-04-14"
     },
     {
       "id": "vix_term_structure",
       "title": "VIX Term Structure (콘탱고/백워데이션)",
-      "sub": "-1.65%p (VIX 24.46 / VIX3M 24.87) · 관세충격 피크(-5%p) 이후 콘탱고 복귀 중",
+      "sub": "VIX 19.15(확정) · 정상 범위 복귀 · 콘탱고 복귀 재시도",
       "group": "sentiment",
       "type": "core",
       "isArchived": false,
-      "isNew": true,
+      "isNew": false,
       "isChanged": true,
       "status": "watch",
-      "val": "VIX Term Structure -1.65%p (VIX 24.46 / VIX3M 24.87, Yahoo Finance 2026-04-11) · 약한 백워데이션 잔존",
-      "val_numeric": -1.65,
+      "val": "VIX 19.15(4/14 확정) · 크로스에셋 변동성 하락 시작(Paradigm Capital) · 콘탱고 방향 복귀 중",
+      "val_numeric": -1.35,
       "history_data": [
         {
           "date": "2026-01-05",
@@ -1921,26 +1998,34 @@
         {
           "date": "2026-04-11",
           "val": -1.65
+        },
+        {
+          "date": "2026-04-13",
+          "val": -2.5
+        },
+        {
+          "date": "2026-04-14",
+          "val": -1.35
         }
       ],
-      "z_score": -1.0,
-      "ctx": "VIX Term Structure -1.65%p (VIX 24.46 / VIX3M 24.87, Yahoo Finance, 2026-04-11 장중).\n관세 충격 피크(-5.0%p 강한 백워데이션) → 관세 유예로 콘탱고 복귀 시도 중.\n백워데이션 = 단기 공포 > 장기 변동성 기대(시장 스트레스 극단). 역사적으로 전환 구간 = 주식 반등 동반.\n완전 정상화(+3%p 이상 콘탱고) 확인 전 불확실성 잔존.",
+      "z_score": -1.2,
+      "ctx": "VIX 19.15(4/14, Yahoo Finance). 크로스에셋 내재변동성 하락 시작(Paradigm Capital, Daily Shot 4/14) 확인. VIX 정상 범위(15~20) 재진입으로 Term Structure 콘탱고 복귀 방향. 완전 정상화(+3%p 이상) 전까지 불확실성 잔존.",
       "threshold": "-3%p 이하(강한 백워데이션) 시 triggered / 콘탱고 약화 시 watch",
-      "history": "연초 +8.5%p(정상) → 4/6 -5.0%p(극단) → 4/11 -1.65%p(복귀 중).",
+      "history": "연초 +8.5%p → 4/6 -5.0%p → 4/11 -1.65%p(복귀 중) → 봉쇄 선언 -2.5%p 재확대.",
       "tags": [
+        "봉쇄선언백워데이션재강화(r)",
+        "-3.0%triggered접근주시(r)",
+        "월요일실값확인필요(n)",
         "VIX",
-        "변동성",
-        "Term Structure",
-        "백워데이션",
-        "콘탱고"
+        "Term Structure"
       ],
       "impacts": [
         "vix",
         "equity-technical",
         "put_call_ratio"
       ],
-      "date": "2026-04-11",
-      "updatedDate": "2026-04-11"
+      "date": "2026-04-14",
+      "updatedDate": "2026-04-14"
     }
   ]
 }
