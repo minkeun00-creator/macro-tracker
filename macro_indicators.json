@@ -1,21 +1,21 @@
 {
   "_schema_version": "2.0",
-  "_comment": "Daily Shot 4/30 + 5/1 최종 반영. 4/30 핵심: FOMC 동결(3.5-3.75%, 1992이후최다이견 4명·Miran 인하+Hammack·Kashkari·Logan 완화편향반대) · 2026 금리인하 시장가격 소멸 · DB Liberation Day이후최고 매파 · Brent 4년 최고(Trump 군사옵션 브리핑예정) · 원유재고 예상이상감소 · 중국 Caixin PMI 52.2(2020.12이후최고) · 한국 소매판매 급반등 · 이란 리알 역대최저. 5/1 핵심: Q1 GDP +2.0%(AI투자주도) · Q2 GDPNow 3.7%(Atlanta초기) · 초기실업청구 189K(1969.9이후최저) · Core PCE MoM +0.29% · ECI Q1 +0.9% · 유로존CPI 3.0%(에너지급등) · BOE 3.75% 동결(8-1, active hold) · ECB 2.0% 동결(인상논의) · 엔화 3년최대급등(BOJ공식개입) · 한국수출 +48%(반도체+173%) · 대만Q1 +13.7%(1987이후최고) · AAII 마이너스재전환 · Goldman 시스템재레버링 2016이후2번째.",
+  "_comment": "WSJ 4/30 + Daily Shot 4/30 + 5/1 최종반영. WSJ 4/30핵심: FOMC 동결(1992이후최다이견4명) 2026인하소멸 DB Liberation Day이후최고매파 Powell이사잔류 Brent June $118.03(+6.1% 8일연속) WTI $106.88(+$6.95) 10Y 4.415%(이란전쟁휴전이후최고) 2Y 3.932% SOFR 3.64% Gold $4,545.20 EURO $1.1677 YEN 160.44 USD/KRW 1,488.67 이란전쟁비용 $25B Pentagon첫공식발표 UAE OPEC탈퇴+이스라엘군사협력 MFC동맹연합 Mega Cap 어닝서프라이즈(Meta+33% Alphabet+22% Amazon AWS+28% MS Azure+40%) 내구재+0.8% 핵심자본재+3.3%(2020.6이후최고) 주택착공+10.8% 건축허가-10.8% Warsh Banking Committee 13-11통과. Daily Shot 4/30+5/1 반영내용은 기존JSON에 이미 반영.",
   "summary": {
     "week": "2026-W18",
     "date": "2026-05-02",
-    "thesis": "【 레벨: 61점 — FOMC 1992이후최다이견+2026금리인하소멸+Brent4년최고 vs Q1GDP+2.0%+초기실업189K+Q2GDPNow3.7%】\nFOMC 3.5-3.75% 동결 확정. 단 반대표 4명(Miran 인하 주장 + Hammack·Kashkari·Logan 완화편향 삭제 요구) — 1992년 이후 최다 이견. 성명: 인플레이션 'elevated'(기존 'somewhat elevated'), 에너지만의 문제 아님. 시장: 2026년 금리인하 가격 완전 소멸. Deutsche Bank: Liberation Day 이후 최고 매파. Powell: 의장 임기 후 이사 잔류. Brent 4년 최고(Trump 이란 군사옵션 브리핑 예정 보도). Q1 GDP +2.0%(AI투자 주도), 민간최종매출 +2.5%. Q2 GDPNow 초기 3.7%.\n\n【 방향성: 엔화 3년최대급등(BOJ공식개입)+BOE active hold+ECB인상논의+Core PCE 지속+한국수출+48%】\n엔화 3년 이상 최대 급등 — BOJ 공식 달러 매도 개입. 엔 캐리 청산 글로벌 유동성 충격 위험 현실화. BOE 3.75% 동결(8-1, Pill 인상 주장) — Bailey 'active hold, 인상 불필요 경로 존재'. ECB 2.0% 동결(만장일치)이나 인상 논의 사실 공개 — Lagarde 매파 시그널. Core PCE MoM +0.29%(예상 부합이나 추세 유지). ECI Q1 +0.9%(예상 상회, 혜택 비용 급등). 한국 수출 4월 +48%(반도체 +173% AI 수요). 대만 Q1 +13.7%(1987년 이후 최고).\n\n【 Liquidity/Sentiment: AAII 마이너스재전환+Goldman2016이후2번째재레버링+레버리지론감소 vs 초기실업189K+EPS상향】\nAAII Bull-Bear 다시 마이너스 전환(낙관론 재후퇴). Goldman: 주요 시스템 코호트 재레버링 2016년 이후 2번째 규모(과도한 재진입 위험). 레버리지 론 발행 4월 지속 감소. S&P 500 밸류에이션 2 STD 초과(거의 전 지표). 단 초기실업청구 189K(1969년 이후 최저). 애널리스트 2026 EPS 전망 지속 상향.\n\n【 촉매: 엔화개입 지속여부+Brent추가급등(Trump군사옵션)+5/14-15Trump-Xi+BOE인상전환+이란탱크톱+5/1 ISM】\n엔화 개입 지속 여부(BOJ 추가 개입 vs 달러 반등). Brent 추가 급등 — Trump 이란 군사옵션 브리핑. 5/14-15 Trump-Xi 제네바. BOE 다음 회의 인상 전환 가능성. 이란 탱크톱 임박(2주 이내). 5/2 ISM 제조업(Chicago PMI 수축 선행 부정적). 멕시코 Q1 GDP 급수축 — USMCA 충격 현실화.",
+    "thesis": "【 레벨: 63점 — Brent June $118(8일연속)+이란전쟁$25B+UAE OPEC탈퇴+10Y 4.415% vs Q1GDP+2.0%+Mega Cap서프라이즈+초기실업189K】\nBrent June선물 $118.03(+6.1%, 이란전쟁휴전이후최고). WTI $106.88(+$6.95). 이란전쟁비용 $25B(Pentagon 첫 공식 발표). UAE OPEC탈퇴 공식선언(생산쿼터 제약 해소+Hormuz우회). UAE-이스라엘 Iron Dome 군사협력. MFC(Maritime Freedom Construct) 동맹국 연합 구성. 10Y 4.415%, 2Y 3.932%(연중 최고 근접). Q1 GDP +2.0%(AI투자 서프라이즈). Mega Cap 4개 모두 예상 상회.\n\n【 방향성: 에너지인플레 → 채권급매도 + FOMC 매파 + BOJ개입(5/1) + AAII마이너스재전환】\nBrent $118 → 10Y 4.415%(이란휴전이후최고). 2Y 3.932%(+8.9bp — 금리기대 급격 상향). 2026 인하 완전 소멸, 시장은 오히려 인상 가능성 90%까지 반영. BOJ 공식 개입(5/1, Daily Shot) — 엔화 3년이상 최대 급등. AAII 마이너스 재전환. Goldman 2016이후 2번째 재레버링.\n\n【 Liquidity/Sentiment: Mega Cap CapEx급증+Goldman재레버링+밸류에이션2STD vs 에너지충격소비자】\nMeta $125-145B, Alphabet $180-190B, Amazon $43.2B, Microsoft $190B — AI인프라 투자 가속. Goldman 시스템 재레버링 2016이후 2번째. 밸류에이션 전 지표 2STD 초과. 5월 역사적 최대 유출월. 반면 소비자 지표(Michigan 49.8, 실질가처분소득 약화, 저축률 하락) 계속 악화.\n\n【 촉매: BOJ개입지속여부+Brent$120+이란군사옵션+5/14-15Trump-Xi+5/2ISM(Chicago PMI수축선행)】\nBOJ 개입 지속 여부 — 엔 캐리 청산 규모 결정. Brent $120+ — 이란 군사옵션 브리핑(Trump). 5/14-15 Trump-Xi 제네바 회동. 5/2 ISM 제조업(Chicago PMI 수축 선행 부정적). BOE/ECB 인상논의 지속.",
     "risk_level": "high",
     "triggers_count": 5,
     "watch_count": 25,
-    "updated_by": "Daily Shot 4/30 + Daily Shot 5/1",
-    "updated_at": "2026-05-02T09:00:00+09:00",
-    "update_type": "daily_shot_update",
+    "updated_by": "WSJ 4/30 + Daily Shot 4/30 + Daily Shot 5/1",
+    "updated_at": "2026-05-02T12:00:00+09:00",
+    "update_type": "wsj_daily_shot_combined",
     "scores": {
-      "composite": 61,
-      "liquidity": 50,
-      "sentiment": 72,
-      "composite_label": "FOMC 1992이후최다이견+2026금리인하소멸+Brent4년최고+엔화BOJ개입 vs Q1GDP+2.0%+초기실업189K+Q2 GDPNow3.7%+한국수출+48%",
+      "composite": 63,
+      "liquidity": 51,
+      "sentiment": 75,
+      "composite_label": "FOMC 1992이후최다이견+2026인하소멸+Brent June $118(8일연속)+이란전쟁$25B+UAE OPEC탈퇴 vs Q1GDP+2.0%+초기실업189K+Mega Cap서프라이즈",
       "composite_signal": "Late-Normalization → Pre-Overheat",
       "details": {
         "liquidity": {
@@ -67,27 +67,29 @@
       "phase": "정상화→과열 전환 경계",
       "phase_en": "LATE-NORMALIZATION",
       "phase_color": "#f59e0b",
-      "phase_comment": "Daily Shot 4/30+5/1: FOMC 1992이후최다이견+2026금리인하소멸(매파). Q1 GDP +2.0%(AI주도)+Q2 GDPNow 3.7%(성장 서프라이즈). Brent 4년 최고(군사옵션 브리핑). 엔화 BOJ 공식 개입(3년최대급등) — 캐리청산 위험. AAII 마이너스 재전환. Goldman 시스템 재레버링 2016이후 2번째. 밸류에이션 전지표 2 STD 초과. 단 초기실업 189K(1969이후최저)+EPS 상향 실물 지지.",
+      "phase_comment": "WSJ 4/30+Daily Shot 4/30+5/1: Brent June $118.03(8일연속, 이란전쟁휴전이후최고). 이란전쟁비용 $25B 첫공식발표. UAE OPEC탈퇴(중동지정학질서재편). 10Y 4.415%(이란휴전후최고). 2Y 3.932%(연중최고근접). FOMC 1992이후최다이견. 2026 금리인하소멸. Q1 GDP +2.0%(AI투자서프라이즈). Mega Cap 어닝 4개 모두 예상상회(Meta+33%, Alphabet+22%, Amazon AWS+28%, Microsoft Azure+40%). 초기실업 189K(1969이후최저). AAII 마이너스재전환. Goldman 2016이후2번째재레버링. 밸류에이션 전지표 2STD초과.",
       "phase_conditions": [
-        "FOMC 3.5-3.75% 동결, 반대표 4명(1992이후최다) — Daily Shot 4/30",
-        "2026년 금리인하 시장가격 완전 소멸 — Daily Shot 4/30",
-        "Deutsche Bank: Liberation Day이후 최고 매파 성명 — Daily Shot 4/30",
-        "Brent 4년 최고(Trump 이란 군사옵션 브리핑 예정) — Daily Shot 4/30",
-        "Q1 GDP +2.0% 연율(AI투자 주도, 민간최종매출 +2.5%) — Daily Shot 5/1",
-        "Q2 GDPNow 초기 3.7%(Atlanta Fed) — Daily Shot 5/1",
-        "초기실업청구 189K(1969.9이후 최저) — Daily Shot 5/1",
-        "Core PCE MoM +0.29%, ECI Q1 +0.9%(예상상회) — Daily Shot 5/1",
-        "유로존 CPI 3.0%(에너지급등), Core 2.2% — Daily Shot 5/1",
-        "BOE 3.75% 동결(8-1, active hold), ECB 인상논의 — Daily Shot 5/1",
-        "엔화 3년이상 최대급등(BOJ 공식달러매도 개입) — Daily Shot 5/1",
-        "한국수출 +48% YoY(반도체+173% AI수요) — Daily Shot 5/1",
-        "대만 Q1 GDP +13.7%(1987이후최고) — Daily Shot 5/1",
-        "AAII Bull-Bear 마이너스 재전환 — Daily Shot 5/1",
-        "Goldman 시스템재레버링 2016이후 2번째 규모 — Daily Shot 5/1"
+        "Brent June선물 $118.03(+6.1%, WSJ B8) WTI $106.88(+$6.95) 8일연속",
+        "이란전쟁비용 $25B Pentagon첫공식발표(WSJ A8) Hegseth·Caine 상원증언",
+        "UAE OPEC탈퇴 공식선언(WSJ A9) 생산쿼터 해소+Hormuz우회파이프라인",
+        "UAE-이스라엘 Iron Dome군사협력 심화(WSJ A9)",
+        "MFC Maritime Freedom Construct 동맹국연합 구성(WSJ A9)",
+        "10Y 4.415%(WSJ front page) 2Y 3.932%(Tradeweb) 이란전쟁휴전이후최고",
+        "FOMC 반대4명 1992이후최다·2026인하소멸(Daily Shot 4/30)",
+        "Q1 GDP +2.0%(AI투자주도) Q2 GDPNow 초기 3.7%(Daily Shot 5/1)",
+        "초기실업청구 189K(1969.9이후최저, Daily Shot 5/1)",
+        "Mega Cap 어닝 서프라이즈 — Meta+33% Alphabet+22% Amazon AWS+28% Microsoft Azure+40%",
+        "CapEx 급증: Meta $125-145B Alphabet $180-190B Amazon $43.2B Microsoft $190B",
+        "AAII Bull-Bear 마이너스재전환(Daily Shot 5/1)",
+        "Goldman 시스템재레버링 2016이후2번째(Daily Shot 5/1)",
+        "S&P 밸류에이션 전지표 2STD초과(Daily Shot 5/1)",
+        "Gold $4,545.20(-$46.80) WSJ front page(지속 하락)",
+        "내구재주문+0.8% 핵심자본재+3.3%(2020.6이후최고, WSJ A2)",
+        "주택착공+10.8% 1.502M(예상 1.40M 대폭상회, WSJ A2)"
       ],
-      "phase_next": "엔화 개입 지속 → 캐리청산 가속 → 글로벌 유동성 수축. Brent 군사충돌 → $120+. Trump-Xi 5/14-15 협상 결과 → 위험자산 방향성."
+      "phase_next": "엔화 BOJ개입(5/1 Daily Shot) 캐리청산 가속. Brent $120+ — Trump 군사옵션 브리핑. 5/14-15 Trump-Xi 제네바 위험자산 방향성. 5/2 ISM(Chicago PMI 수축 부정선행)."
     },
-    "composite": 61
+    "composite": 63
   },
   "indicators": [
     {
@@ -98,8 +100,8 @@
       "type": "core",
       "isArchived": false,
       "status": "triggered",
-      "val": "Brent 4년 최고(Daily Shot 4/30) Trump CENTCOM 이란 군사옵션 브리핑 예정(Axios/Daily Shot 4/30) 원유·휘발유·증류유 재고 예상이상 감소 WTI Goldman Q4 $90 상향 유지",
-      "val_numeric": 115,
+      "val": "Brent June선물 $118.03(+6.1%, WSJ B8) WTI $106.88(+$6.95, WSJ front) 8일연속 2026.3.31이후최고 UAE OPEC탈퇴 Goldman Q4 $90 상향유지 US이란전쟁비용 $25B Pentagon첫공식발표",
+      "val_numeric": 118.03,
       "history_data": [
         {
           "date": "2026-02-09",
@@ -168,18 +170,22 @@
         {
           "date": "2026-04-30",
           "val": 115.0
+        },
+        {
+          "date": "2026-04-29",
+          "val": 118.03
         }
       ],
-      "z_score": 2.4,
-      "ctx": "Daily Shot 4/30(에너지): Brent 4년 최고로 급등. Trump 대통령이 CENTCOM으로부터 이란 군사 옵션 브리핑 예정이라는 Axios 보도가 촉매. 원유·휘발유·증류유 재고 모두 예상 이상 감소(주간 EIA 데이터). 정유소 가동률 추가 하락. 이란 리알 병행환율 역대 최저(Daily Shot 4/30) — 봉쇄 효과 경제 침투. Goldman Q4 Brent $90/WTI $83 상향 유지. Daily Shot 5/1: 에너지 섹션 천연가스 재고 소폭 증가(컨센서스 부합) — WTI/Brent 방향성에 영향 없음.",
+      "z_score": 2.6,
+      "ctx": "WSJ front page(4/29 마감): WTI $106.88(+$6.95 +6.95%). WSJ B8(Market Digest): Brent June선물 $118.03(+6.1%) — 2026년 3월 31일 이후 최고, 8일 연속 상승. Trump '블록케이드 genius, 100% fool proof' 발언. 블록케이드 핵 요구 충족될 때까지 유지 의지. UAE가 OPEC 탈퇴 공식 선언 — 생산쿼터 제약 해소 후 독자 증산 및 Hormuz 우회 파이프라인 투자 계획. UAE-이스라엘 군사협력 심화(Iron Dome 파견, 이스라엘군 UAE 운용). Maritime Freedom Construct(MFC) — 미국 국무부가 각국 대사관에 케이블 발송, 동맹국 Hormuz 항행자유 연합 구성 요청. 이란전쟁 비용 $25B(Pentagon 첫 공식 발표, 대부분 탄약 소진). 미국 이란전쟁 예산 요청 $1.5T(FY2027, 전쟁비용 별도). 일본 산업생산 3월 2개월 연속 감소 — 중동 분쟁 화학·석유 섹터 공급망 타격 확인.",
       "threshold": "Hormuz 완전 개방+협상 타결 시 $80 이하 / 군사충돌 시 $120+ triggered 심화",
-      "history": "4/28 Brent $110 돌파 → 4/30 4년 최고. Trump 군사옵션 브리핑 보도 급등 촉매.",
+      "history": "4/29 Daily Shot 4년최고 → WSJ B8 Brent June $118.03(+6.1%) 확정. 8일연속.",
       "tags": [
-        "Brent 4년 최고 Daily Shot 4/30(r)",
-        "Trump CENTCOM 이란 군사옵션 브리핑 예정 Axios Daily Shot 4/30(r)",
-        "원유·휘발유·증류유 재고 예상이상 감소(r)",
-        "이란 리알 병행환율 역대최저(r)",
-        "Goldman Q4 Brent $90 상향 유지(r)"
+        "Brent June선물 $118.03(+6.1%) WSJ B8 8일연속(r)",
+        "WTI $106.88(+$6.95) WSJ front page(r)",
+        "UAE OPEC탈퇴 독자증산 Hormuz우회파이프라인(r)",
+        "Maritime Freedom Construct MFC 동맹국 연합 구성(r)",
+        "이란전쟁비용 $25B Pentagon첫공식발표 WSJ A8(r)"
       ],
       "impacts": [
         "inflation-expect",
@@ -199,19 +205,20 @@
       "type": "thematic",
       "isArchived": false,
       "status": "triggered",
-      "val": "Trump CENTCOM 이란 군사옵션 브리핑 예정(Axios/Daily Shot 4/30) · Brent 4년 최고 · 이란 리알 병행환율 역대최저 · 탱크톱 2주 이내(기준일 4/29) · 3단계 협상 교착 유지",
+      "val": "UAE OPEC탈퇴(WSJ A9) Maritime Freedom Construct MFC 동맹국연합 구성(WSJ A9) Trump '블록케이드 genius 100% foolproof' 유지의지 이란전쟁비용 $25B Pentagon첫공식발표 Brent June $118.03",
       "val_numeric": null,
       "history_data": null,
-      "z_score": 2.8,
-      "ctx": "Daily Shot 4/30(이머징마켓/에너지): 이란 리알이 병행시장(parallel market)에서 역대 최저 기록 — 미국 해군 봉쇄로 원유 수출 차단·경제 압박 심화(Bloomberg). Trump가 CENTCOM으로부터 이란 군사 옵션 브리핑을 받을 예정(Axios). 이란 3단계 협상 제안(Hormuz 중단↔전쟁종료+봉쇄해제)은 교착 지속 — Rubio '불허' 유지. 탱크톱 2주 이내(Kpler 4/27 기준) 상황 유지. Brent 4년 최고 — 군사옵션 보도 직접 촉매. 원유·휘발유·증류유 재고 예상이상 감소(추가 가격 상방 압력). Goldman Brent Q4 $90/Citi Q2 $110 상향 유지.",
+      "z_score": 3.0,
+      "ctx": "WSJ A9(4/29): UAE가 OPEC 탈퇴 공식 선언 — 걸프 국가들의 OPEC 회의 도중 시점 선택으로 충격 극대화. 생산쿼터 30% 제약 해소 → 독자 증산 및 Hormuz 우회 파이프라인 투자. 이스라엘과 군사협력 심화(Iron Dome UAE 파견, 이스라엘군 운용). UAE-이스라엘 Abraham Accords 이후 안보협력 심화. Maritime Freedom Construct(MFC) — 국무부 케이블 통해 각국 대사관에 Hormuz 항행자유 연합 참여 요청(외교·정보·제재 조정). WSJ A8: 미국 이란전쟁 비용 $25B(Pentagon 첫 공식 발표, Hegseth·Caine 상원 증언). 핵능력 '완파'(obliterated) 주장. WSJ B1: Trump '블록케이드 genius, 100% foolproof'. 핵 포기까지 유지 의지. Brent $118.03(8일 연속). 이란 리알 역대최저(병행환율). 탱크톱 2주 이내(4/27 기준) 유지.",
       "threshold": "Hormuz 완전 개방 시 완화 / 미·이란 직접 군사충돌 시 triggered 최고도",
       "history": "4/28 이란 3단계 협상 제안 교착 → 4/30 Trump 군사옵션 브리핑 예정 보도 → Brent 4년 최고.",
       "tags": [
-        "Trump CENTCOM 이란 군사옵션 브리핑 예정 Axios Daily Shot 4/30(r)",
-        "이란 리알 병행환율 역대최저 Daily Shot 4/30(r)",
-        "Brent 4년 최고 Daily Shot 4/30(r)",
-        "탱크톱 2주 이내 유지(r)",
-        "Rubio 이란 Hormuz 통제 불허 유지(r)"
+        "UAE OPEC탈퇴 독자증산 Hormuz우회파이프라인 WSJ A9(r)",
+        "UAE-이스라엘 Iron Dome군사협력 WSJ A9(r)",
+        "MFC Maritime Freedom Construct 동맹국연합 구성 WSJ A9(r)",
+        "이란전쟁비용 $25B Pentagon첫공식발표 Hegseth WSJ A8(r)",
+        "Trump 블록케이드 genius 핵포기까지 유지 WSJ B1(r)",
+        "Brent June $118.03 8일연속(r)"
       ],
       "impacts": [
         "oil-yoy",
@@ -314,18 +321,18 @@
       "type": "thematic",
       "isArchived": false,
       "status": "watch",
-      "val": "Caixin 제조업 PMI 52.2(2020.12이후최고, Daily Shot 4/30) · NBS 제조업 50.3(확장 유지, 예상상회) · NBS 비제조업 수축전환 · 중국 투입·산출 가격지수 상승(중동분쟁 인플레) · 5/14-15 Trump-Xi 제네바",
+      "val": "Caixin PMI 52.2(2020.12이후최고) NBS 비제조업 수축 UAE OPEC탈퇴(새 중동지정학 질서) 5/14-15 Trump-Xi 제네바 UAE-이스라엘 군사협력심화",
       "val_numeric": null,
       "history_data": null,
       "z_score": 0.6,
-      "ctx": "Daily Shot 4/30(중국): NBS 제조업 PMI 50.3(4월, 예상상회 확장유지). 단 신규주문·생산 소폭 둔화. 투입·산출 가격지수 상승 — 중동 분쟁 에너지·원자재 인플레 중국 제조업 침투. NBS 비제조업 PMI 수축 전환 — 서비스·건설 광범위 둔화. RatingDog(구 Caixin) 제조업 PMI 52.2(2020년 12월 이후 최고) — 신규주문·생산 동반 강세. Daily Shot 5/1: 중국 중앙은행이 금 보유량 세계 최고권(Deutsche Bank) — 탈달러화·안전자산 헤지. 5/14-15 Trump-Xi 제네바 회동 유지.",
+      "ctx": "Daily Shot 4/30: Caixin PMI 52.2(2020.12이후최고). NBS 비제조업 수축. WSJ A9: UAE OPEC 탈퇴 — 이란전쟁이 중동 지정학 질서 재편. UAE-이스라엘 군사협력(Iron Dome 파견). Saudi-UAE 경쟁 심화. 5/14-15 Trump-Xi 제네바 회동 유지.",
       "threshold": "중국 이란 채널 차단 → 미중 충돌 triggered.",
       "history": "4/30 NBS vs Caixin PMI 분기 — Caixin 수출 수요 강세, NBS 내수 약화.",
       "tags": [
-        "Caixin 제조업 PMI 52.2 2020.12이후최고 Daily Shot 4/30(r)",
-        "NBS 비제조업 PMI 수축전환 Daily Shot 4/30(r)",
-        "NBS 투입·산출가격 상승 중동인플레 침투(r)",
-        "중국 중앙은행 금보유 세계최고권 Daily Shot 4/30(n)",
+        "Caixin PMI 52.2 2020.12이후최고 Daily Shot 4/30(r)",
+        "NBS 비제조업 수축 Daily Shot 4/30(r)",
+        "UAE OPEC탈퇴 중동지정학질서 재편 WSJ A9(r)",
+        "UAE-이스라엘 Iron Dome군사협력 WSJ A9(r)",
         "5/14-15 Trump-Xi 제네바 유지(r)"
       ],
       "impacts": [
@@ -563,8 +570,8 @@
       "type": "core",
       "isArchived": false,
       "status": "watch",
-      "val": "FOMC 3.5-3.75% 동결(반대표4명: Miran인하+Hammack·Kashkari·Logan 완화편향반대, Daily Shot 4/30) · 2026년 금리인하 시장가격 완전소멸 · DB Liberation Day이후최고매파 · 단기 국채 급매도 · Powell 이사잔류",
-      "val_numeric": 4.4,
+      "val": "10Y 4.415%(WSJ front page 4/29 마감) 2Y 3.932%(Tradeweb) SOFR 3.64% Brent급등 인플레기대 채권급매도 Warsh Banking Committee 13-11 당파적 통과 5/11주 상원투표",
+      "val_numeric": 4.415,
       "history_data": [
         {
           "date": "2026-02-09",
@@ -593,20 +600,22 @@
         {
           "date": "2026-04-30",
           "val": 4.4
+        },
+        {
+          "date": "2026-04-29",
+          "val": 4.415
         }
       ],
-      "z_score": 2.1,
-      "ctx": "Daily Shot 4/30(미국): FOMC 3.5-3.75% 동결(예상 부합). 반대표 4명 — Miran(인하 주장), Hammack·Kashkari·Logan(완화편향 문구 삭제 요구 '소프트 반대') — 1992년 이후 단일 회의 최다 이견. 성명 수정: 인플레이션 'elevated'(기존 'somewhat elevated'), 에너지 '일부만 원인'. LLM 기반 감성 분석 매파 성향. 2026년 금리인하 시장가격 완전 소멸. 단기 국채 금리 급매도. Deutsche Bank: Liberation Day 이후 최고 매파 성명 수준. Powell: 의장 임기 후에도 이사로 잔류. 캐나다 BOC 2.25% 동결(소폭 조정만 시사). 캐나다 10Y 2024.5이후 최고. Daily Shot 5/1: 실질 가처분소득 약화+ECI 상회 → 장기 금리 상방 압력 지속. 일본 투자자 해외채권 매도 급증 — 글로벌 장기금리 추가 상방 압력.",
+      "z_score": 2.3,
+      "ctx": "WSJ front page(4/29 마감): 10Y 4.415%(+8bp, 이란전쟁 휴전 이후 최고). WSJ B8(Tradeweb): 2Y 3.932%(+8.9bp — 가장 큰 단기금리 급등). 30Y 모기지 6.23%(Freddie Mac), 6.38%(Bankrate). SOFR 3.64%. Warsh Banking Committee 13-11 당파적 통과(Tillis — DOJ 수사 취소 후 지지 전환). 5/11주 상원 본회의 투표. 6월 FOMC 전 인준 완료 예정. WSJ B1: Brent $118.03 → 에너지 인플레 → 채권 급매도. 2Y는 4/29 하루만에 연중 최고 근접. Powell: '인플레 아직 정점 아님. 걸프 에너지 인플레 가늠 중'. 일본 투자자 해외채권 매도 급증 → 장기금리 추가 상방 압력.",
       "threshold": "10Y 4.5% 돌파 시 watch 상향 / 2026 인하 재가격 시 완화",
       "history": "4/27 4.335% → 4/30 FOMC 매파(2026 인하소멸) → 단기금리 급매도.",
       "tags": [
-        "FOMC 반대표 4명 1992이후최다 Daily Shot 4/30(r)",
-        "2026 금리인하 시장가격 완전소멸 Daily Shot 4/30(r)",
-        "Deutsche Bank Liberation Day이후최고 매파 Daily Shot 4/30(r)",
-        "FOMC 인플레 elevated 상향 Daily Shot 4/30(r)",
-        "Powell 이사잔류 Daily Shot 4/30(n)",
-        "일본투자자 해외채권 매도급증 Daily Shot 5/1(r)",
-        "캐나다 10Y 2024.5이후최고 Daily Shot 4/30(r)"
+        "10Y 4.415% WSJ front page(r) 이란전쟁휴전이후최고",
+        "2Y 3.932% Tradeweb(r) 단기금리 연중최고 근접",
+        "Warsh Banking Committee 13-11 통과 WSJ A2(r)",
+        "Brent $118.03 에너지인플레 채권급매도(r)",
+        "Powell 인플레 아직정점아님 WSJ B1(r)"
       ],
       "impacts": [
         "inflation-expect",
@@ -626,8 +635,8 @@
       "type": "core",
       "isArchived": false,
       "status": "watch",
-      "val": "지상 금 총시총 > 미국 국채 시총(Deutsche Bank Daily Shot 4/30) · 중국·러시아·인도·터키 중앙은행 금 최대보유 · 동유럽·MENA 중앙은행 금 추가매입 · Gold $4,675 수준 유지(이란협상기대소폭조정후)",
-      "val_numeric": 4675.4,
+      "val": "Gold $4,545.20(-$46.80 -1.02%, WSJ front page 4/29 마감) Brent $118.03 에너지급등 인플레헤지 구조적유지 지상금시총>미국국채시총(Deutsche Bank)",
+      "val_numeric": 4545.2,
       "history_data": [
         {
           "date": "2026-04-17",
@@ -652,17 +661,20 @@
         {
           "date": "2026-04-27",
           "val": 4675.4
+        },
+        {
+          "date": "2026-04-29",
+          "val": 4545.2
         }
       ],
       "z_score": 2.0,
-      "ctx": "Daily Shot 4/30(상품): 지상(above-ground) 금의 총 시장가치가 미국 국채 시장가치를 초과(Deutsche Bank) — 달러 자산 대체 수요 구조적 전환 확인. 중국·러시아·인도·터키가 최대 중앙은행 금 보유. 신흥국 중앙은행 금 보유 증가를 선도. 동유럽·MENA 중앙은행 최근 몇 년간 금 추가 매입. Brent 4년 최고+2026 금리인하 소멸 → 금 인플레 헤지 수요 구조적 유지. Daily Shot 5/1: 4월 자산 퍼포먼스 데이터 공개(구체 수치 미제공).",
+      "ctx": "WSJ front page(4/29 마감): Gold $4,545.20(-$46.80 -1.02%). WSJ B8: June선물 $4,561.50(-$46.90). Silver $71.569(-$1.657). Palladium $1,468.70. 이란전쟁비용 $25B+블록케이드 지속 → 금 인플레헤지 구조적 수요 유지. Daily Shot 4/30 확인: 지상 금 총시총 > 미국 국채 시총(Deutsche Bank). 달러 약세+Brent $118 → 하락 압박 vs 인플레헤지 수요 균형.",
       "threshold": "Gold $5,000 돌파 시 triggered / $4,500 이하 시 위험 완화",
       "history": "4/27 $4,675. Daily Shot 4/30: 지상 금 시총 > 미국국채 시총 — 구조적 전환 확인.",
       "tags": [
-        "지상 금 시총 > 미국국채 시총 Deutsche Bank Daily Shot 4/30(r)",
-        "중국·러·인·터키 중앙은행 금 최대보유 Daily Shot 4/30(r)",
-        "EM 중앙은행 금비중 급증 Daily Shot 4/30(r)",
-        "Brent 4년최고 인플레헤지 수요 유지(r)"
+        "Gold $4,545.20(-$46.80) WSJ front page(r) 기존 $4,675→추가하락",
+        "Brent $118.03 인플레헤지 구조적유지(r)",
+        "지상금시총 > 미국국채시총 Deutsche Bank Daily Shot(r)"
       ],
       "impacts": [
         "equity-technical",
@@ -681,8 +693,8 @@
       "type": "core",
       "isArchived": false,
       "status": "watch",
-      "val": "달러인덱스 4월 마감일 2025.8이후 최대 일간 하락(Daily Shot 5/1) · 엔화 3년이상 최대급등(BOJ 공식달러매도개입, Daily Shot 5/1) · FOMC 매파에도 달러 약세 지속",
-      "val_numeric": 94.5,
+      "val": "EURO $1.1677(WSJ front page) YEN 160.44(WSJ front page) USD/KRW 1,488.67(WSJ B8 통화표) WSJ Dollar Index 소폭약세 엔화 BOJ개입 급등 전(4/29 기준)",
+      "val_numeric": 95.88,
       "history_data": [
         {
           "date": "2026-04-20",
@@ -707,17 +719,21 @@
         {
           "date": "2026-04-30",
           "val": 94.5
+        },
+        {
+          "date": "2026-04-29",
+          "val": 95.88
         }
       ],
       "z_score": 0.3,
-      "ctx": "Daily Shot 5/1(글로벌): 달러 인덱스가 4월 마감일에 2025년 8월 이후 최대 일간 하락. FOMC 매파에도 달러 약세 — 엔화 급등·글로벌 리밸런싱 압력. 엔화: BOJ 공식 달러 매도 개입으로 3년 이상 최대 급등(Nikkei, Daily Shot 5/1). 엔 캐리 청산 가속 → 글로벌 유동성 수축 위험. 일본 투자자 해외채권 매도 급증. 캐나다 주류 금지 대응 관세 위험 → 캐나다 달러 변수.",
+      "ctx": "WSJ front page(4/29 마감): EURO $1.1677. YEN 160.44. WSJ B8 통화표: USD/KRW 1,488.67(Daily Shot 1,473대와 상이 — WSJ B8 확정값). WSJ Dollar Index 95.88(+0.34%). FOMC 매파+Brent $118 급등으로 달러 소폭 강세. Warsh 인준 후 달러 방향성 변수. 엔화 160.44 — 다음날 BOJ 개입으로 급등 전 수준.",
       "threshold": "DXY 95 돌파 유지 실패 시 달러 추가 약세 / 엔 개입 지속 여부 핵심",
       "history": "4/27 DXY 95.39 → 4/30 94.5 수준. FOMC 매파에도 달러 약세 지속. 엔화 BOJ 개입 급등.",
       "tags": [
-        "달러인덱스 4월마감 2025.8이후최대 일간하락 Daily Shot 5/1(r)",
-        "엔화 BOJ 공식개입 3년이상최대급등 Daily Shot 5/1(r)",
-        "FOMC 매파에도 달러약세 지속(r)",
-        "일본투자자 해외채권 매도급증(r)"
+        "EURO $1.1677 WSJ front page(n)",
+        "YEN 160.44 WSJ front page(r)",
+        "USD/KRW 1,488.67 WSJ B8 확정(r)",
+        "WSJ Dollar Index 95.88(+0.34%)(n)"
       ],
       "impacts": [
         "usdkrw",
@@ -853,7 +869,7 @@
       "type": "core",
       "isArchived": false,
       "status": "watch",
-      "val": "Q1 GDP +2.0% 연율(AI투자주도 Daily Shot 5/1) · 민간최종매출 +2.5% · Q2 GDPNow 초기 3.7%(Atlanta Fed) · 초기실업청구 189K(1969.9이후최저) · Pantheon: Q2 성장 급감속 전망",
+      "val": "Q1 GDP +2.0% AI투자주도 내구재주문+0.8%(예상+0.2%대폭상회) 핵심자본재+3.3%(2020.6이후최고) 주택착공+10.8%(1.502M, 예상1.40M대폭상회) 건축허가-10.8%",
       "val_numeric": 2.0,
       "history_data": [
         {
@@ -874,17 +890,16 @@
         }
       ],
       "z_score": 0.2,
-      "ctx": "Daily Shot 5/1(미국): Q1 GDP 최종 +2.0% 연율(예상 상회). AI 관련 투자(정보처리장비·소프트웨어·지식재산) 기여도 가속. 민간최종매출 +2.5%(견조). 단 정부지출·순수출·재고 제외 후 수치. Q2 GDPNow 초기 3.7%(Atlanta Fed) — 초기치로 하향 조정 가능성. Pantheon Macroeconomics: Q2 급감속 전망. 초기실업청구 189K(1969년 9월 이후 최저) — 뉴욕 계절조정 이슈 포함이나 강한 신호. 지속청구 예상 이상 감소. Daily Shot 4/30: 내구재 주문 +0.8%(예상상회), 핵심 자본재 주문 +3.3%(2020.6이후최고). 대만 Q1 GDP +13.7%(1987이후최고, AI수출). 한국 Q1 산업생산 소폭증가(반도체 급감).",
+      "ctx": "WSJ A2(4/29): 내구재 주문 +0.8%(예상 +0.2% 대폭 상회), 핵심자본재 +3.3%(2020년 6월 이후 최고) — 기업투자 강세. WSJ A2: 주택착공 +10.8% to 1.502M(예상 1.40M 대폭 상회). 단 건축허가 -10.8% to 1.372M → 선행 건설 둔화 예고. Daily Shot 5/1: Q1 GDP +2.0%(AI투자 주도). Q2 GDPNow 초기 3.7%. 초기실업 189K(1969이후 최저). Pantheon: Q2 급감속 전망. 자동차 음의equity 30%·월$932 역대최고. Nissan $3.45B 손실. 멕시코 Q1 급수축. 한국 기업신뢰 개선.",
       "threshold": "GDPNow 1.5% 이하 시 경기침체 우려 / Q2 3%+ 유지 시 성장 서프라이즈",
       "history": "GDPNow Q1 1.2 최종 → 실제 Q1 GDP +2.0%(AI 투자 서프라이즈). Q2 초기 3.7%.",
       "tags": [
+        "내구재주문+0.8% 핵심자본재+3.3% 2020.6이후최고 WSJ A2(r)",
+        "주택착공+10.8%(1.502M) 예상 1.40M 대폭상회 WSJ A2(r)",
+        "건축허가-10.8%(1.372M) 선행건설 둔화예고 WSJ A2(r)",
         "Q1 GDP +2.0% AI투자주도 Daily Shot 5/1(r)",
-        "민간최종매출 +2.5% Daily Shot 5/1(n)",
-        "Q2 GDPNow 초기 3.7% Daily Shot 5/1(n)",
-        "초기실업청구 189K 1969.9이후최저 Daily Shot 5/1(n)",
-        "Pantheon Q2 급감속 전망(r)",
-        "내구재주문 +0.8% 핵심자본재 +3.3% Daily Shot 4/30(n)",
-        "대만 Q1 GDP +13.7% 1987이후최고 Daily Shot 5/1(n)"
+        "Q2 GDPNow 초기 3.7% Atlanta(n)",
+        "초기실업청구 189K 1969이후최저(n)"
       ],
       "impacts": [
         "inflation-expect",
@@ -1036,7 +1051,7 @@
       "type": "core",
       "isArchived": false,
       "status": "watch",
-      "val": "S&P 밸류에이션 거의전지표 2STD초과(Daily Shot 5/1) · AAII 마이너스재전환(Daily Shot 5/1) · Forward P/E 재상승 · Chicago PMI 수축전환(ISM 선행) · 단 EPS전망 지속상향+Q1 이닝 3%만 가이던스 하향",
+      "val": "Mega Cap 어닝 서프라이즈 — Meta+33%($56.3B) Alphabet+22%($110B) Amazon AWS+28% Microsoft Azure+40% vs FOMC매파+Brent$118 밸류에이션 2STD초과 AAII마이너스",
       "val_numeric": 7173.91,
       "history_data": [
         {
@@ -1061,16 +1076,16 @@
         }
       ],
       "z_score": 2.4,
-      "ctx": "Daily Shot 5/1(주식): S&P 500 밸류에이션 지표 — 1900년 이후 거의 모든 척도가 장기 평균 2 STD 이상 이탈. Forward P/E 재반등 유지. 미국 주식 나머지 세계 대비 42% 프리미엄. AAII Bull-Bear 마이너스 재전환 — 리테일 낙관론 후퇴. Goldman: 시스템 재레버링 2016이후 2번째. 5월 역사적 최대 유출 월. Daily Shot 5/1: Q1 어닝 가이던스 하향 기업 3%(10년 평균 8% 대비 매우 낮음, Bespoke) — 기업 자신감. 애널리스트 2026 EPS 상향 지속. SmallCap PMI 확장+구리/금 비율 상승 동반 아웃퍼폼. Chicago PMI 수축 전환 — ISM 제조업 선행 부정적(Daily Shot 5/1).",
+      "ctx": "WSJ B1/B4(4/29): Mega Cap 어닝 서프라이즈 — Meta Q1 매출 +33%($56.3B), 순이익 $26.8B. Alphabet +22% 매출($110B), 순이익 +81%($62.6B), Cloud +63%. Amazon AWS +28%(2022년 이후 최고), 총매출 +17%($181.5B). Microsoft Azure +40%, Copilot 유료사용자 2,000만(+33%since Jan). CapEx 급증: Meta $125-145B, Alphabet $180-190B, Amazon $43.2B, Microsoft $190B. AI 데이터센터 메모리 부족 — Meta 서버 수명 6→7년 연장. FOMC 매파+Brent $118 → S&P 소폭 하락(-0.04%), Dow -0.57%. Daily Shot 5/1 확인: S&P 밸류에이션 전지표 2STD 초과. AAII 마이너스 재전환. Goldman 2016이후 2번째 재레버링.",
       "threshold": "S&P 7,000 이하 시 기술적 약세 / 7,300+ 시 과열 경계",
       "history": "S&P ATH 7,173.91. 4월 +9.9%. 밸류에이션 2STD. AAII 마이너스 재전환.",
       "tags": [
-        "S&P 밸류에이션 거의전지표 2STD초과 Daily Shot 5/1(r)",
-        "AAII Bull-Bear 마이너스재전환 Daily Shot 5/1(r)",
-        "Goldman 시스템재레버링 2016이후2번째(r)",
-        "5월 역사적최대유출월 Goldman(r)",
-        "Q1어닝 가이던스하향 3%(10년평균8%) Daily Shot 5/1(n)",
-        "Chicago PMI 수축전환 ISM선행부정 Daily Shot 5/1(r)"
+        "Meta Q1+33%($56.3B) CapEx $125-145B WSJ A1(r)",
+        "Alphabet +22%($110B) Cloud+63% 순이익+81% WSJ B1(r)",
+        "Amazon AWS+28% 2022이후최고 WSJ B4(r)",
+        "Microsoft Azure+40% Copilot 2,000만 WSJ B4(r)",
+        "S&P 밸류에이션 전지표 2STD초과 Daily Shot 5/1(r)",
+        "AAII 마이너스재전환 Daily Shot 5/1(r)"
       ],
       "impacts": [
         "hf-leverage",
@@ -1089,8 +1104,8 @@
       "type": "core",
       "isArchived": false,
       "status": "watch",
-      "val": "한국 수출 4월 +48% YoY(반도체 +173% AI수요, Daily Shot 5/1) · 엔화 BOJ공식개입 강세압력 원화간접영향 · 달러인덱스 4월최대하락 원화강세 유지 · Brent 4년최고 에너지수입비용 증가",
-      "val_numeric": 1470,
+      "val": "USD/KRW 1,488.67(WSJ B8 4/29 마감) 한국수출 4월+48%(반도체+173%) 대만Q1+13.7% Brent $118.03 에너지수입비용 급증",
+      "val_numeric": 1488.67,
       "history_data": [
         {
           "date": "2026-04-17",
@@ -1119,19 +1134,22 @@
         {
           "date": "2026-04-30",
           "val": 1470.0
+        },
+        {
+          "date": "2026-04-29",
+          "val": 1488.67
         }
       ],
       "z_score": 0.8,
-      "ctx": "Daily Shot 5/1(아시아): 한국 수출 4월 +48% YoY — 반도체 +173%(AI 관련 데이터센터 수요). 대만 Q1 GDP +13.7%(1987년 이후 최고, AI 수출·투자 주도). Daily Shot 5/1: 엔화 BOJ 공식 달러 매도 개입 → 3년이상 최대 급등 → 원화 간접 강세 압력. 달러인덱스 4월 마감 2025.8이후 최대 하락 → 원화 강세 유지. Brent 4년 최고 → 한국 에너지 수입 비용 추가 증가. Daily Shot 4/30: 한국 3월 산업생산 소폭 증가(반도체 급감 상쇄). 소매판매 급반등(내구재 주도). 싱가포르 PPI 급등. EM 주식 올해 미국 아웃퍼폼 유지.",
+      "ctx": "WSJ B8(4/29 마감): USD/KRW 1,488.67 — Brent $118 에너지 수입비용 급증+FOMC 매파로 원화 약세 전환(Daily Shot 인용치 1,473과 상이, WSJ 확정). 한국 수출 4월 +48%(반도체+173% AI수요, Daily Shot 5/1). 대만 Q1 +13.7%(1987이후최고). 엔화 BOJ 개입 전일(160.44) — 개입 후 원화 간접 강세 압력 예상. Brent $118 급등 → 한국 에너지 수입비용 추가 증가. KOSPI 반도체 수혜 vs 에너지 부담 상충.",
       "threshold": "USD/KRW 1,500 재돌파 시 원화 약세 심화 / 1,450 이하 시 강세 전환",
       "history": "4/27 1,473.78 → 4/30 ~1,470. 달러약세+한국수출서프라이즈 원화강세.",
       "tags": [
-        "한국수출 4월 +48% 반도체+173% Daily Shot 5/1(r)",
-        "대만 Q1 GDP +13.7% 1987이후최고 Daily Shot 5/1(n)",
-        "엔화 BOJ개입 원화간접 강세압력(r)",
-        "달러인덱스 4월최대하락 원화강세 유지(r)",
-        "Brent 4년최고 에너지수입비용 증가(r)",
-        "한국 소매판매 급반등 Daily Shot 4/30(n)"
+        "USD/KRW 1,488.67 WSJ B8 확정(r)",
+        "Brent $118 에너지수입비용 급증 원화약세(r)",
+        "한국수출 +48% 반도체+173% Daily Shot 5/1(n)",
+        "대만 Q1 +13.7% 1987이후최고(n)",
+        "엔화 BOJ개입 전일 원화간접강세 예상(r)"
       ],
       "impacts": [
         "dxy-strength",
@@ -1212,8 +1230,8 @@
       "isNew": false,
       "isChanged": true,
       "status": "normal",
-      "val": "FOMC 매파 후 단기국채 급매도(Daily Shot 4/30) · 2026 금리인하 완전소멸 · SOFR 3.66% 유지 · 장기 국채 하락(인플레기대 반영)",
-      "val_numeric": 3.66,
+      "val": "SOFR 3.64%(WSJ B8) 10Y 4.415%(WSJ front page) 2Y 3.932%(Tradeweb) 30Y모기지 6.23%(Freddie Mac) Brent$118 에너지인플레 채권급매도",
+      "val_numeric": 3.64,
       "history_data": [
         {
           "date": "2026-04-22",
@@ -1226,17 +1244,21 @@
         {
           "date": "2026-04-27",
           "val": 3.66
+        },
+        {
+          "date": "2026-04-29",
+          "val": 3.64
         }
       ],
       "z_score": 0.1,
-      "ctx": "Daily Shot 4/30(미국): FOMC 매파 성명 이후 단기 국채 수익률 급매도. 2026년 금리인하 시장 가격 완전 소멸. Daily Shot 5/1: ECI +0.9%(예상상회)+Core PCE 유지 → 단기 금리 상방 압력 추가. 일본 투자자 해외채권 매도 급증 → 장기금리 추가 상방 압력. SOFR 3.66% 유지(FFR 타겟 3.50-3.75% 기준).",
+      "ctx": "WSJ B8(Borrowing Benchmarks, 4/29): SOFR 3.64%(전주 3.63%+1bp). 연방기금실효금리 3.6400%. 10Y 4.415%(이란전쟁 휴전 이후 최고). 2Y 3.932%(Tradeweb, 연중 최고 근접). 30Y 모기지 6.23%(Freddie Mac). Bankrate avg 6.38%. Brent $118 급등 → 에너지인플레 → 단기금리 추가 상방. FOMC 매파(2026 인하소멸) 반영.",
       "threshold": "SOFR-FFR 스프레드 25bp+ 시 triggered",
       "history": "4/27 3.66% → FOMC 매파 확인. 단기 국채 급매도.",
       "tags": [
-        "FOMC 매파 후 단기국채 급매도 Daily Shot 4/30(r)",
-        "2026 금리인하 완전소멸(r)",
-        "ECI·Core PCE 단기금리 상방압력(r)",
-        "일본투자자 해외채권매도 장기금리압력(r)"
+        "SOFR 3.64% WSJ B8(r)",
+        "10Y 4.415% WSJ front page 이란전쟁휴전이후최고(r)",
+        "2Y 3.932% Tradeweb 연중최고근접(r)",
+        "30Y 모기지 6.23% Freddie Mac(n)"
       ],
       "impacts": [
         "fed_balance_sheet",
